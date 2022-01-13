@@ -1,9 +1,9 @@
 import * as THREE from 'three';
 import {Text} from 'troika-three-text';
-let scene, camera, renderer, group;
+let scene, camera, renderer, group, anim;
 let radius;
-let maxSpeed = 0.02;
-let norm, distance;
+let maxSpeed = 0.015;
+let speed = maxSpeed;
 let position = {
     x: 0,
     y: 0,
@@ -13,12 +13,16 @@ let br = false;
 
 let init = (box)=>{
     scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera( 75, box.offsetWidth / box.offsetHeight, 0.1, 1000 );
-    renderer = new THREE.WebGLRenderer();
+    camera = new THREE.PerspectiveCamera( 75, 1, 0.1, 1000 );
+    renderer = new THREE.WebGLRenderer({alpha: true});
     radius = 10;
     renderer.setPixelRatio(4);
-    renderer.setSize(box.offsetWidth, box.offsetHeight)
+    renderer.setSize(box.offsetWidth, box.offsetWidth);
+    renderer.setClearColor(0x000000, 0);
+    scene.background = null;
+    // scene.background = new THREE.Color(0x0D0C0B)
     console.log(box.offsetWidth)
+    console.log(box.children.length)
     box.appendChild(renderer.domElement);
     camera.position.z = 20;
     camera.position.y = 0; 
@@ -53,20 +57,25 @@ let animate = ()=>{
     let x = position.x;
     let y = position.y;
     let axis = new THREE.Vector3(y,x,0)
-
-
     if (br){
-        maxSpeed *= 0.95;
+        speed *= 0.95;
     }
-    group.rotateOnWorldAxis(axis,maxSpeed * position.distance)
+    group.rotateOnWorldAxis(axis,speed * position.distance)
     for (let i=0; i<group.children.length; i++){
         const element = group.children[i];
-        element.rotateOnAxis(axis, -maxSpeed * position.distance);
+        element.rotateOnAxis(axis, -speed * position.distance);
     }
     renderer.render(scene, camera)
-    requestAnimationFrame( animate );
-    
-
+    anim = requestAnimationFrame(animate);
+}
+let stopAnimation= ()=>{
+    window.cancelAnimationFrame(anim);
+}
+let resize = (box)=>{
+    renderer.setSize(box.offsetWidth, box.offsetWidth)
+    // stopAnimation();
+    // box.removeChild();
+    // scene,camera, renderer, group, anim = undefined;
 }
 let addText = (word, x, y, z)=> {
     const text = new Text();
@@ -97,7 +106,7 @@ let direction = (e)=>{
     position.y = position.y/norm;
     if(br){
         br = false;
-        maxSpeed = 0.02;
+        speed = maxSpeed
     }
 }
 let sqr = (x,pot)=>{
@@ -107,4 +116,4 @@ let sqr = (x,pot)=>{
     }
     return val;
   }
-export {init}
+export {init, resize}

@@ -1,32 +1,24 @@
 <template>
-  <div id="app">
-    <div id="nav">
+  <div id="app" class="bg-background min-h-screen overflow-x-hidden">
+    <div class="fixed h-full w-full z-0">
+      <canvas width="150" height="600" ref="can" class="w-full h-full"></canvas>
+    </div>
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    </div> -->
+    <router-view class="relative z-10" />
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import {initCanvas, destroyCanvas} from '@/js/canvasDraw.js';
+export default {
+  mounted(){
+    initCanvas(this.$refs.can);
+  },
+  beforeDestroy(){
+    destroyCanvas()
+  },
 }
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+</script>
