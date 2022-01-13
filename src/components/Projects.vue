@@ -63,7 +63,7 @@ export default {
         {
           name: 'Hemp-for-future',
           img: require('@/assets/images/hemp-for-future.png'),
-          goto: '/HempForFuture/index.html',
+          goto: '/Hemp_For_Future/index.html',
           github: 'https://github.com/DenisMathan/hemp_for_future',
           description:[
             'This was my first "larger" project, which I developed in the fourth semester as part of the subject design with three other fellow students. While I did the programming, the others took care of the design and project management. The title is based on the "Fridays for future" movement and is meant to illustrate that the blanket demonization of cannabis has promoted more environmentally harmful substances.',
