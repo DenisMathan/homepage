@@ -1,0 +1,3 @@
+[submodule "public/hemp_for_future"]
+	path = public/hemp_for_future
+	url = https://github.com/DenisMathan/hemp_for_future.git
