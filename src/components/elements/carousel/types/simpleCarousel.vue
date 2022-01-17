@@ -156,4 +156,7 @@ export default {
 .flip{
     transform: rotateY(180deg) scale(1);
 }
+::-webkit-scrollbar {
+    width: 0rem;
+  }
 </style>

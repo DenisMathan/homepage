@@ -4,34 +4,39 @@
               <video data-vid ref="vid"  :class="(ratio<=1.8)?('w-full h-auto'):('w-auto h-full')" @loadedmetadata="fillData" :muted="muted" :src="url"  :poster="poster" controlslist="nodownload"></video>
       </div>
       <div ref="controls" data-vid class="controls controls-on absolute w-full bg-gray-700 bg-opacity-70 bottom-0">
-        <div data-vid class="h-8 px-3 flex items-center">
+          <!-- Timeline -->
+        <div data-vid class="h-8 mobile:h-2 px-3 flex items-center">
           <div data-vid ref="timebar" class="timebar-container w-full bg-backgroundLight m-auto rounded-full relative cursor-pointer" @mousemove="getTime" @click="setTime">
               <div data-vid class="bufferbar h-full bg-gray-200 rounded-full absolute" :style="'width:'+bufferedPercent+'%'"> </div>
               <div data-vid class="timebar h-full bg-gray-700 rounded-full absolute" :style="'width:'+(currentTime/duration)*100+'%'"> </div>
               <div data-vid class="mouseTime absolute -top-6 -translate-1/2 text-white shadow-sm" :style="'left:'+100* mouseTime/duration + '%'">{{parseTimeToString(mouseTime)}}</div>
           </div>
         </div>
-        <div data-vid class="h-12 w-full relative">
-            <div data-vid class="play h-12 w-12 absolute left-2 cursor-pointer" @click="playing=!playing">
-                <img data-vid v-if="!playing" class="w-6 h-auto absolute top-1/2 left-1/2 -translate-1/2" :src="require('@/components/elements/video/icons/play.png')" alt="">
-                <img data-vid v-else class="w-6 h-auto absolute top-1/2 left-1/2 -translate-1/2" :src="require('@/components/elements/video/icons/pause.png')" alt="">
+        <!-- controls-->
+        <div data-vid class="h-12 mobile:h-4 w-full relative">
+            <!-- play pause -->
+            <div data-vid class="play h-12 w-12 mobile:h-4 mobile:w-4 absolute left-2 cursor-pointer" @click="playing=!playing">
+                <img data-vid v-if="!playing" class="w-6 mobile:w-2 h-auto absolute top-1/2 left-1/2 -translate-1/2" :src="require('@/components/elements/video/icons/play.png')" alt="">
+                <img data-vid v-else class="w-6 mobile:w-2 h-auto absolute top-1/2 left-1/2 -translate-1/2" :src="require('@/components/elements/video/icons/pause.png')" alt="">
             </div>
-            <div class="time h-12 absolute left-16">
-                <div class="leading-12">
+            <!-- timecode -->
+            <div class="time h-12 mobile:h-4 absolute left-16 mobile:left-20">
+                <div class="leading-12 mobile:leading-4 mobile:text-xs">
                     <span data-vid>{{parseTimeToString(currentTime)}}</span>/
                     <span data-vid>{{parseTimeToString(duration)}}</span>
                 </div>
             </div>
-            <div class="volume h-12 w-12 absolute right-16 cursor-pointer"  @click="muted=!muted">
-                 <img data-vid class="w-6 h-auto absolute top-1/2 left-1/2 -translate-1/2" :class="(muted)?'opacity-50':''" :src="require('@/components/elements/video/icons/volume.png')" alt="">
+            <!-- volume -->
+            <div class="volume h-12 w-12 mobile:h-4 mobile:w-4 absolute right-16 mobile:right-8 cursor-pointer"  @click="muted=!muted">
+                 <img data-vid class="w-6 mobile:w-2 h-auto absolute top-1/2 left-1/2 -translate-1/2" :class="(muted)?'opacity-50':''" :src="require('@/components/elements/video/icons/volume.png')" alt="">
             </div>
-            <div class="fullscreen h-12 w-12 absolute right-2 cursor-pointer" @click="fullscreen=!fullscreen">
-              <img data-vid v-if="!fullscreen" class="w-6 h-auto absolute top-1/2 left-1/2 -translate-1/2" :src="require('@/components/elements/video/icons/fullscreen.png')" alt="">
-              <img data-vid v-else class="w-6 h-auto absolute top-1/2 left-1/2 -translate-1/2" :src="require('@/components/elements/video/icons/minimize.png')" alt="">
+            <!-- fullscreen -->
+            <div class="fullscreen h-12 w-12 mobile:h-4 mobile:w-4 absolute right-2 cursor-pointer" @click="fullscreen=!fullscreen">
+              <img data-vid v-if="!fullscreen" class="w-6 mobile:w-2 h-auto absolute top-1/2 left-1/2 -translate-1/2" :src="require('@/components/elements/video/icons/fullscreen.png')" alt="">
+              <img data-vid v-else class="w-6 mobile:w-2 h-auto absolute top-1/2 left-1/2 -translate-1/2" :src="require('@/components/elements/video/icons/minimize.png')" alt="">
             </div>
         </div>
-      </div>
-      
+      </div>     
   </div>
 </template>
 
@@ -100,7 +105,7 @@ export default {
             this.currentTime = this.media.currentTime;
             this.anim = requestAnimationFrame(this.animate)
             let length = this.media.buffered.length;
-            this.bufferedPercent = 100 * (this.media.buffered.start(length-1)+ this.media.buffered.end(length-1))/this.duration;
+            this.bufferedPercent = 100 * (this.media.buffered.end(length-1))/this.duration;
         },
         pause(){
             this.$refs.vid.pause();
@@ -121,9 +126,7 @@ export default {
             this.currentTime=this.media.currentTime
         },
         checkRatio(){
-            console.log('jup')
             this.ratio = this.$refs.fullscreen.offsetWidth/this.$refs.fullscreen.offsetHeight;
-            console.log(this.$refs.fullscreen.offsetWidth,this.$refs.fullscreen.offsetHeight, this.ratio)
         },
         getTime(e){
             this.mouseTime = e.offsetX/this.$refs.timebar.offsetWidth * this.duration;
@@ -193,6 +196,11 @@ export default {
 }
 .timebar-container:hover{
     height: 1rem
+}
+@media screen and (max-width: 566px) {
+.timebar-container:hover{
+    height: 0.4rem
+}  
 }
 /* .smooth{
     transition: width 0.25s;
