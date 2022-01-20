@@ -14,7 +14,7 @@
                   <h4 class="absolute right-4 bottom-0 z-20 tex" :class="(project.text==='dark')?'text-background':''">{{project.name}}</h4>
                 </div>
                 <div class="back bg-center bg-cover" :style="(project.img)?('background-image: url('+project.img+')'):('bg-backgroundLight')">
-                  <div class="h-full w-full bg-gray-600 bg-opacity-80 p-12 overflow-y-auto">
+                  <div class="h-full w-full bg-gray-600 bg-opacity-80 p-12">
                     <h4 class="text-center mb-8">{{project.name}}</h4>
                     <div class="text-white text-base ">
                       <p v-for="paragraph in project.description" :key="paragraph">{{paragraph}}</p>
@@ -126,5 +126,6 @@ export default {
 }
 ::-webkit-scrollbar {
     width: 0rem;
-  }
+}
+
 </style>
