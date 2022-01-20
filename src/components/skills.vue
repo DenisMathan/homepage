@@ -1,8 +1,9 @@
 <template>
-<section ref= "content" class="about min-h-screen">
+<section id="skills" ref= "content" class="about">
   <h2 data-headinganim-skills class="opacity-0">&lt;My Skills&gt;</h2>
   <div class="flex tablet:flex-col justify-stretch">
-    <div class="w-1/2 tablet:w-full pr-12">
+    <div class="w-1/2 tablet:w-full pr-12 flex items-center">
+    <div class="w-full">
       <h3>Programming</h3>
       <div v-for="program in programming" :key="program.name" class="px-6">
         <h4>{{program.name}}</h4>
@@ -18,9 +19,11 @@
         </div>
       </div>
     </div>
+
+    </div>
     <div class="w-1/2 tablet:w-full">
     <h3 class="text-center tablet:text-left">Technologies I have worked with</h3>
-      <div class="h-full flex items-center">
+      <div class="h-full flex justify-center">
         <div ref="gl" :style="'height:' +width + 'px'" class="threeDContainer w-full"></div>
       </div>
     </div>
@@ -89,7 +92,7 @@ export default {
   transform-origin: left;
   transition:all 4s ease-out;
   transform:scale(0,1);
-  box-shadow: 0px 0px 4px 2px greenyellow;
+  box-shadow: 0px 0px 4px 2px #21FFFD;
 }
 .show{
   transform:scale(1,1);

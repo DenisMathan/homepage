@@ -1,8 +1,8 @@
 <template>
-  <section id="contact" ref="content" class="contact min-h-screen flex flex-col justify-center">
+  <section id="contact" ref="content" class="contact min-h-screen flex flex-col justify-center mb-0 px-12">
       <h2 data-headinganim-5 class="opacity-0">&lt;Contact Me&gt;</h2>
       <div>
-        <form action="https://formsubmit.co/denis.mathan@gmail.com" method="POST" class="">
+        <form action="https://formsubmit.co/1e04c71884179372b455a4f5caa6cb0c" method="POST" class="">
             <div class="flex mb-2">          
                 <label for="email">E-Mail:</label>
                 <input type="email" name="email" id="email" placeholder="E-Mail" required>
@@ -27,21 +27,10 @@
 import {manipulate} from '@/js/headlineManipulation.js';
 export default {
     mounted(){
-        window.addEventListener("scroll", this.onScroll, true);
+      let all_headings = [].slice.call(document.querySelectorAll("[data-headinganim-5]"));
+      console.log(all_headings)
+      manipulate(all_headings);
     },
-    beforeDestroy(){
-        window.removeEventListener("scroll", this.onScroll, true);
-    },
-    methods:{
-        onScroll(){
-            if(this.$refs.content.getBoundingClientRect().y <= 0){
-                let all_headings = [].slice.call(document.querySelectorAll("[data-headinganim-5]"));
-                manipulate(all_headings);
-                window.removeEventListener("scroll", this.onScroll, true)
-            }
-        },
-    }
-
 }
 </script>
 

@@ -1,59 +1,29 @@
 <template>
   <div class="">
     <h3 class=" mb-6">{{name}}</h3>
-<!--  <div class="flex">
-        <div @click="moveback()" class="text-white cursor-pointer z-20">
-          <button class="h-full text-4xl">&lt;</button>
-        </div>
-        <div class="flex-1 px-12">
-          <div class="custom-h w-full relative">
-            <div v-for="project in projects" :key="project.name" data-project class="project z-10" :class="(project.position<3)?'project-'+ project.position:'hidden'"  :title="(project.position!==2)?project.name:''">
-                  <div :class="(project.position===1)?'flip-card':''" >
-                    <div :class="(project.position===1)?'flip-card-inner':''">
-                      <div class="front bg-backgroundLight">
-                        <h4 class="absolute right-0 bottom-0 z-20 tex" :class="(project.text==='dark')?'text-background':''">{{project.name}}</h4>
-                        <div v-if="project.img" class="relative h-full w-full z-10  overflow-hidden">
-                          <img :src="project.img" alt="" class="absolute h-full  left-1/2 top-1/2">
-                        </div>
-                      </div>
-                      <div class="back bg-backgroundLight p-12 ">
-                        <h4 class="text-center">{{project.name}}</h4>
-                        <div class="text-white text-base">
-                          <p>{{project.description}}</p>
-                          <p v-if="project.link">To view the whole page click<a :href="project.link" target="_blank"> here</a>!</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-            </div>
-          </div>
-        </div>
-        <div @click="moveforward();" class="cursor-pointer z-20"><button class="text-white h-full text-4xl">&gt;</button></div>
-      </div> -->
-      <div class="relative custom-h  max-w-4xl m-auto">
-        <div @click="moveback()" class="text-white cursor-pointer z-40 absolute opacity-50 h-full w-12 text-center">
-          <button class="h-full text-4xl">&lt;</button>
-        </div>
-        <div class="absolute w-full z-20">
-          <div class="custom-h w-full relative">
-            <div v-for="(project, index) in projects" :key="project.name" data-project class="project z-10" :class="(project.position<4 && project.position>0)?'project-'+ project.position:'hidden'"  :title="(project.position==2)?project.name:''">
-              <div  :class="(project.position===2)?'flip-card':''">
-                <div :id="name+'-'+index" :class="(project.position===2)?'flip-card-inner':''" @click="(e)=>{flip(name+'-'+index,e)}">
-                  <div class="front bg-center bg-cover text-white cursor-pointer" :class="(!project.img)?('bg-backgroundLight'):('')" :style="'background-image: url('+project.img+')'">
-                    <h4 class="absolute right-4 bottom-0 z-20 tex" :class="(project.text==='dark')?'text-background':''">{{project.name}}</h4>
-                  </div>
-                  <div class="back bg-center bg-cover" :style="(project.img)?('background-image: url('+project.img+')'):('bg-backgroundLight')">
-                    <div class="h-full w-full bg-gray-600 bg-opacity-80 p-12 overflow-y-auto">
-                      <h4 class="text-center mb-8">{{project.name}}</h4>
-                      <div class="text-white text-base ">
-                        <p v-for="paragraph in project.description" :key="paragraph">{{paragraph}}</p>
-                        <p v-if="project.link">Click <a :href="project.link" target="_blank">here</a> to learn more!</p>
-                        <p v-if="project.learnMore"><a :href="'./'+project.name" target="_blank">Want to see more?</a></p>
-                        <p v-if="project.goto"><a :href="project.goto" target="_blank">Go to {{project.name}}!</a></p>
-                        <p v-if="project.github"><a :href="project.github" target="_blank">Go to code!</a></p>
-                        <div  :class="(project.position!==2)?('hidden'):''" v-if="project.vid">
-                          <cine :url="project.vid"/>
-                        </div>
+    <div class="relative custom-h  max-w-4xl m-auto">
+      <div @click="moveback()" class="text-white cursor-pointer z-40 absolute opacity-50 h-full w-12 text-center">
+        <button class="h-full text-4xl">&lt;</button>
+      </div>
+      <div class="absolute w-full z-20">
+        <div class="custom-h w-full relative">
+          <div v-for="(project, index) in projects" :key="project.name" data-project class="project z-10" :class="(project.position<4 && project.position>0)?'project-'+ project.position:'hidden'"  :title="(project.position==2)?project.name:''">
+            <div :class="(project.position===2)?'flip-card':''">
+              <div :id="name+'-'+index" :class="(project.position===2)?'flip-card-inner':''" @click="(e)=>{flip(name+'-'+index,e)}">
+                <div class="front bg-center bg-cover text-white cursor-pointer" :class="(!project.img)?('bg-backgroundLight'):('')" :style="'background-image: url('+project.img+')'">
+                  <h4 class="absolute right-4 bottom-0 z-20 tex" :class="(project.text==='dark')?'text-background':''">{{project.name}}</h4>
+                </div>
+                <div class="back bg-center bg-cover" :style="(project.img)?('background-image: url('+project.img+')'):('bg-backgroundLight')">
+                  <div class="h-full w-full bg-gray-600 bg-opacity-80 p-12 overflow-y-auto">
+                    <h4 class="text-center mb-8">{{project.name}}</h4>
+                    <div class="text-white text-base ">
+                      <p v-for="paragraph in project.description" :key="paragraph">{{paragraph}}</p>
+                      <p v-if="project.link">Click <a :href="project.link" target="_blank">here</a> to learn more!</p>
+                      <p v-if="project.learnMore"><a :href="'./'+project.learnMore" target="_blank">Want to see more?</a></p>
+                      <p v-if="project.goto"><a :href="project.goto" target="_blank">Go to {{project.name}}!</a></p>
+                      <p v-if="project.github"><a :href="project.github" target="_blank">Go to code!</a></p>
+                      <div  :class="(project.position!==2)?('hidden'):''" v-if="project.vid">
+                        <cine :url="project.vid"/>
                       </div>
                     </div>
                   </div>
@@ -62,14 +32,13 @@
             </div>
           </div>
         </div>
-        <div @click="moveforward();" class="absolute opacity-50 h-full w-12 text-center right-0 li z-40">
-          <button class="text-white h-full text-4xl">&gt;</button>
-        </div>
+      </div>
+      <div @click="moveforward();" class="absolute opacity-50 h-full w-12 text-center right-0 li z-40">
+        <button class="text-white h-full text-4xl">&gt;</button>
+      </div>
     </div>
   </div>
-
 </template>
-
 <script>
 import cine from '@/components/elements/video/video.vue';
 export default {
@@ -86,7 +55,6 @@ export default {
       if(pos===this.projects.length) this.projects[i].position = 0;
       else if(pos>this.projects.length) this.projects[i].position = 1;
       else this.projects[i].position = i+2;
-      console.log(this.projects[i].position)
     }
   },
   methods: {

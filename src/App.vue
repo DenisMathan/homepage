@@ -8,17 +8,24 @@
       <router-link to="/about">About</router-link>
     </div> -->
     <router-view class="relative z-10" />
+    <myfooter  class="tablet:ml-0 relative z-10"/>
   </div>
 </template>
 
 <script>
 import {initCanvas, destroyCanvas} from '@/js/canvasDraw.js';
+import myfooter from '@/components/footer.vue'
 export default {
+  components:{
+    myfooter
+  },
   mounted(){
+    document.title = "Denis Mathan || Webdeveloper"
+    window.addEventListener('scroll',this.test)
     initCanvas(this.$refs.can);
   },
   beforeDestroy(){
     destroyCanvas()
-  },
+  }
 }
 </script>

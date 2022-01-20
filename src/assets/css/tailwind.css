@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Road+Rage&family=Roboto:wght@400;700&display=swap');
+section{
+    margin-bottom: 10rem;
+}
 a{
-    color: #4BC96A;
+    color: #00FFBC;
     text-decoration: underline;
     cursor: pointer;
 }
@@ -30,6 +33,7 @@ h1,h2,h3,h4,h5{
 } */
 html{
     scroll-behavior: smooth;
+    overflow-y: overlay;
 }
 h1{
     font-size: 10rem;
@@ -46,7 +50,7 @@ h3{
     font-size: 3rem
 }
 h4{
-    font-size: 2rem
+    font-size: 1.5rem
 }
 p{
     margin-bottom: 1rem;
@@ -54,6 +58,9 @@ p{
 }
 .\-translate-1\/2{
     transform: translate(-50%, -50%)
+}
+.\-translate-x-1\/2{
+    transform: translate(-50%, 0)
 }
 .flip-card{
     width: 100%;
@@ -88,26 +95,17 @@ p{
   backface-visibility: hidden;
 }
 
-/* width */
-::-webkit-scrollbar {
-    width: 0.7rem;
-    background-color: #0D0C0B;
+  ::-webkit-scrollbar {
+    width: 0.8rem;
   }
   
-  /* Track */
-  ::-webkit-scrollbar-track {
-    /* box-shadow: inset 0 0 5px #4BC96A; 
-    border-radius: 0.5rem; */
-    background-color: #0D0C0B; 
-  }
-   
-  /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgb(43, 42, 42);
-    box-shadow: inset 0 0 0 0.2rem #0D0C0B ;
-    /* border-radius: 0.5rem; */
+    border-left: 0.3rem solid rgba(0, 0, 0, 0);
+    border-right: 0.3rem solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    /* border-radius: 9999px; */
+    background-color: rgb(43, 42, 42,1)
   }
-
 
 @media screen and (max-width: 1111px) {
     .menu-on{
@@ -127,14 +125,20 @@ p{
     h2{
         font-size: 3.5rem;
     }
+    h3{
+        font-size: 2rem;
+    }
 }
 @media screen and (max-width: 590px) {
 
     h1{
-        font-size: 2.5rem;
+        font-size: 4.5rem;
         letter-spacing: 0.25;
     }
     h2{
-        font-size: 1.25rem;
+        font-size: 2.55rem;
+    }
+    h3{
+        font-size: 2rem;
     }
 }

@@ -1,23 +1,27 @@
 <template>
-  <div>
-    <div class="relative mobile:h-64 h-128 mb-6">
-      <div @click="moveback()" class="text-white cursor-pointer z-40 absolute opacity-50 h-full w-12 text-center">
-        <button class="h-full text-4xl">&lt;</button>
+  <div class="flex tablet:block">
+    <div class="w-1/2 m-auto relative mobile:h-64 h-128 mb-6">
+      <div @click="moveback()" class="text-white cursor-pointer z-40 absolute opacity-50 h-full w-1/2">
+        <button class="h-full text-4xl w-8/12 ml-0">&lt;</button>
       </div>
-      <div class="absolute w-full mobile:h-64 h-128 z-20" >
+      <div class="absolute w-full mobile:h-64 h-128 z-20">
         <div class=" h-full w-full relative">
-          <div v-for="(project) in projects" :key="project.name" data-project class="project z-10 flex justify-center items-center" :class="(project.position<3)?'project-'+ project.position:'hidden'"  :title="(project.position!==2)?project.name:''">
+          <div v-for="(project) in projects" :key="project.headline" data-project class="project z-10 flex justify-center items-center" :class="(project.position<3)?'project-'+ project.position:'hidden'"  :title="(project.position===1)?project.name:''">
             <div class="mobile:h-64 mobile:w-64 h-128 w-128 flex justify-center items-center">
-              <img :class="(project.form==='upright')?'h-full w-auto':'w-full h-auto'"  :src="project.img" alt="">
+              <img v-if="project.img" :class="(project.form==='upright')?'h-full w-auto':'w-full h-auto'"  :src="project.img" alt="">
+              <div v-else class="h-full w-full bg-backgroundLight flex justify-center items-center"><h2 >{{project.headline}}</h2></div>
             </div>
           </div>
         </div>
       </div>
-      <div @click="moveforward();" class="absolute opacity-50 h-full w-12 text-center right-0 li z-40"><button class="text-white h-full text-4xl">&gt;</button></div>
+      <div @click="moveforward();" class="absolute opacity-50 h-full w-1/2 text-right right-0 li z-40"><button class="text-white h-full w-8/12 text-4xl">&gt;</button></div>
     </div>
-    <div class="text-white w-128 h-150 mobile:w-full m-auto" :class="(textwidthLikeImg)?'w-128':'w-full'">
+    <div class="w-1/2 'tablet:w-128 text-white mobile:w-full m-auto" :class="(textwidthLikeImg)?'tablet:w-128':''">
       <h3 :key="obj.headline">{{obj.headline}}</h3>
-      <p v-for="paragraph in obj.p" :key="paragraph" @change="test()" @>{{paragraph}}</p>
+      <div class="h-32 p-2 border-solid border-myGreen border rounded-md overflow-x-auto mb-12">
+        <p v-for="(paragraph, index) in obj.p" :key="index" @change="test()" @>{{paragraph}}</p>
+        <a v-if="obj.link" :href="obj.link.link" target="_blanc">Go to {{obj.link.name}} </a>
+      </div>
     </div>
   </div>
 </template>
@@ -33,15 +37,23 @@ export default {
     obj: []
   }
   },
+  beforeMount(){
+    for(let i=0; i<this.projects.length; i++){
+      let pos = i+1;
+      if(pos!==this.projects.length) this.projects[i].position = pos;
+      else this.projects[i].position = 0;
+    }
+  },
   mounted(){
-    this.obj = this.$props.projects[1]
+    this.obj = this.$props.projects[0]
+
   },
   methods: {
     test(){
       console.log('hihi')
     },
     switchParagraph(){
-      console.log(this.$props.projects.filter((a)=>{return a.position === 1}))
+      console.log(this.$props.projects.filter((a)=>{return a.position === 2}))
       this.obj = this.$props.projects.filter((a)=>{return a.position === 1})[0]
     },
     moveforward(){

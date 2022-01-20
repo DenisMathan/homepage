@@ -1,0 +1,186 @@
+{
+    "BA":{
+        "motivation": {   
+            "title": "Motivation",
+            "text": "My bachelor thesis should not only be a work that can be left to gather dust after submission. It is much more a vision of an app that should make life easier for many musicians, from beginners to advanced. The work described here, however, initially contains only a very rudimentary prototype of this vision."
+            
+        },
+        "problem":{
+            "title": "Problem to solve",
+            "text": "Music is and will always be a big part of our society. In addition, there are more and more people who create music themselves in various forms. The problem that unites most creative minds is that they often give free rein to their creativity without recording their ideas. If this does happen, it is usually in a very unorganized form, so that the idea is lost in the long term."
+            
+        },
+        "team":{
+            "title": "Smells like Teamspirit",
+            "text": "The surveys and planning which functionalities finally have to go in, I implemented with my fellow student and friend Christina Klee. She wrote her bachelor thesis on the same topic, except that she implemented the design instead of the technology in the back part of her thesis. However, this design has not yet made it into the application except for a few basic frameworks at the time of submission."
+        },
+        "requirements":{
+            "title": "Requirements",
+            "text": "We worked out the requirements with the help of a qualitative and a quantitative survey. We came up with the following list of functions that should not be missing according to users. Green is what is already implemented."
+        },
+        "compatibility":{
+            "title": "Compatibility",
+            "text": "Since most users who write their songs on the computer already have their software programs and workflows, optimization for mobile devices is sufficient. Of course, as many users as possible should be included at the beginning, but since the market share of Android users is the largest with over 70%, the focus is on this operating system."
+        },
+        "TechnicalStructure":{
+            "title": "Technical Structure",
+            "PWA": {
+                "title": "PWA",
+                "text":[
+                    "The entire application is built as a progressive web app. This has the advantage that any device that has implemented a working browser can use this app. Game consoles and smart TVs are excluded. Thus, the question for which operating system the app should best be developed is irrelevant." ,
+                    "Unfortunately, this can only be relied on to a limited extent, since Apple is reluctant to use this technology. Thus, this variant is also optimized for Android. However, MacOS users can also use the program, albeit with possible restrictions. However, I hope that the PWA will experience its breakthrough in the next few years and that Apple will be forced to support this technology more and more."
+                ]
+            },
+            "Firebase": {
+                "title": "Firebase",
+                "text":[
+                    "In order to deal with the backend as little as possible, I have virtually outsourced this task to Google. With Firebase, Google offers a variety of functionalities, such as hosting, authentication, database systems and much more. In addition, the use of Firebase is free up to a certain data consumption and therefore ideal for the small budget of a student."
+                ]
+            },
+            "Vue": {
+                "title": "Vue.js",
+                "text": [
+                    "For the framework that represents the framework of the project I chose Vue.js. The choice had less technical aspects than personal preference. With its very good documentation and intuitive integration, Vue is currently my number one."
+                ]
+            },
+            "Databases":{
+                "title": "Databases",
+                "text": [
+                    "The data is stored offline in indexedDB and online in Firebase. I developed this mixture for the reason to contain the Firebase usage and to avoid possible costs. Offline, the user can store as many projects as he wants. Since indexedDB is a bit clumsy to use, I used Dexie.js for this."
+                ]
+            },
+            "Audio": {
+                "title": "Audio",
+                "text": [
+                    "The audio functions are implemented using the Web Audio API. I have also already used the new audio worklet technology. This is much more performant than the outdated script processor method, because it is executed off the main thread. This means the audio process can't interfere with the rendering of the page.",
+                    "To display the respective waves, I used canvas."
+                ]
+            }
+        },
+        "result": {
+            "title": "Results",
+            "text": "Below you can see the result of my project work. If you don't focus on the design, but on the functionalities, it looks quite nice."
+        },
+        "navigationCarousel":{
+            "title": "Navigation",
+            "parts": {
+                "signIn": {
+                    "title": "Sign in",
+                    "text": ["The registration can be done via email and password or via Google. Since it is not possible to whitelist Google logins for test groups, this option is currently disabled and only I can register a new user in the backend."],
+                    "img": "@/assets/images/ba/1Anmeldung.png"
+                },
+                "home": {
+                    "title": "Home",
+                    "text": [
+                        "The profile can be viewed on the top left, although there is currently not much to adjust. On the right side there is a messenger and a bell for all other notifications.",
+                        "Already saved projects are sorted by the last edit and displayed in PROJECTS. If there is already audio in it, you can listen to it in a first mix. To create new projects you can click on the big plus above.", 
+                        "QUICKACTIONS contains quick recordings that can be listened to. To create such a file you can click on the big R in the middle below. Projects can be made from all Quickactions in the further course.",
+                        "The Quickactions Text (left) and Photo (right) are not yet implemented."
+                    ]
+                },
+                "contacts": {
+                    "title": "Contacts",
+                    "text": [
+                        "Contacts first displays all friends and pending friend requests. "
+                    ]
+                },
+                "contactsVal": {
+                    "title": "Contacts - Searching \"Val\"",
+                    "text": [
+                        "With the input of \"Val\" first all friends with the suitable string are searched and all others are sorted out. If you now click on Enter, it makes a Firebase request and finds, as in this case, \"valö\", to whom a request can now be sent. The enter is only built in to have less firebase requests and so to minimize the costs."
+                    ]
+                },
+                "chat": {
+                    "title": "Chat",
+                    "text": ["Clicking on an already befriended account in Contacts opens this chat. It is a very rudimentary standard chat."]
+                },
+                "projects": {
+                    "title": "Projects",
+                    "text": ["If you click on \"PROJECTS\" in the home screen, you will be redirected here. The albums can be viewed at the top. And below are the already existing projects, sorted by alphabet. With a click the respective project opens and with drag and drop it can either be deleted (trash can) or sorted into an album."]
+                },
+                "dragProject": {
+                    "title": "Put project in Albums",
+                    "text": ["Here to see how just \"Great Song\" is pulled into the album \"Second Rubato\"."]
+                },
+                "searchProject": {
+                    "title": "Searching \"ne\" in Projects",
+                    "text": ["Here we are searching for all projects that have the string \"ne\" in the title."]
+                },
+                "album": {
+                    "title": "In Album",
+                    "text": ["Here the Second Rubato album has been opened so that its contents can be viewed. "]
+                }
+            }
+        },
+        "DAW":{
+            "title": "DAW",
+            "parts": {
+                "openProject": {
+                    "title": "Open Project  - Audiopart",
+                    "text": [
+                        "Now when the audio part of a project is opened, this digital audio workstation appears. First, all tracks are loaded into it and can then be edited and played.", 
+                        "On the top right you can read the current latency of the program. The value in this example is not very good but on newer devices I could already reach a value between 6ms and 30ms. Of all things, it was an Iphone that shone with 6ms.",
+                        "Below you can see the audio tracks, each of which has a mute and delete button. The plus button below creates a new track.",
+                        "The penultimate row of buttons edits the currently selected wave.",
+                        "The last buttons below control playback. The left one lets you go back to the beginning, and the right one starts the audio. The blue bar shows the volume of the incoming signal and turns red if it clips."
+                    ]
+                },
+                "activateTrack": {
+                    "title": "Activate Track",
+                    "text": [
+                        "Here, a track has now been clicked and thus the microphone has also been focused. The record button will now appear. When this is clicked, it records a new wave into the selected track."
+                    ]
+                },
+                "chosenWave": {
+                    "title": "Chosen Wave",
+                    "text": [
+                        "The selected track is colored and can now be moved by simple drag and drop. If you start at the edge of the wave, you move the end and thus cut away the beginning or end."
+                    ]
+                }
+            }
+        },
+        "textEditor":{
+            "title": "Text-Editor",
+            "parts": {
+                "openProject": {
+                    "title": "Open Project - Textpart",
+                    "text": [
+                        "The text editor has in the first place the key in which the song is written. Then comes the title and then the lines.",
+                        "The lines consist of two parts. One is the chord part (blue) and the text part (white). But both can exist independently, as can be seen in the last two lines. A new line is reached simply by a line break."
+                    ],
+                    "img": "@/assets/images/ba/1Anmeldung.png"
+                },
+                "chordKeyboard": {
+                    "title": "Chordkeyboard",
+                    "text": [
+                        "Clicking on the chord part opens the chord keyboard. This in turn allows chords in the corresponding key to be placed in the place of the previous click."
+                    ]
+                },
+                "choseHarmony": {
+                    "title": "Chose Harmony",
+                    "text": [
+                        "Clicking on the key at the top opens a dropdown where you can select the desired key."
+                    ]
+                },
+                "newHarmony": {
+                    "title": "New Harmony",
+                    "text": [
+                        "When changing the key, not only the selection in the chord keyboard changes but also all chords on the leadsheet."
+                    ]
+                },
+                "moveChord": {
+                    "title": "Move Chord",
+                    "text": [
+                        "The chord can also be easily moved by dragging and dropping both within the line and across lines. If a chord is currently moved, the small trash can at the bottom right is also made visible, with which one could delete the respective chord."
+                    ]
+                },
+                "selectLine": {
+                    "title": "Select Line",
+                    "text": [
+                        "Individual segments can be moved by dragging and dropping. If you move it to the right, it comes into the selection and you get some new options, like deleting it, or if there are more segments in the selection, they can also be grouped. If a group is selected, it can also be copied underneath. Via drag and drop line segments or even whole groups can be moved."
+                    ]
+                }
+            }
+        }
+    }   
+}

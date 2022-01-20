@@ -69,9 +69,9 @@ let draw = ()=>{
         ctx.beginPath();
         ctx.lineCap = 'round';      
         ctx.lineWidth = 2;
-        ctx.strokeStyle='#4BC96A'
+        ctx.strokeStyle='#00FFBC'
         ctx.shadowBlur = 10;
-        ctx.shadowColor = '#399951';
+        ctx.shadowColor = '#21FFFD'//#399951';
         ctx.moveTo(drawpoints[0].pos.x,drawpoints[0].pos.y)
         for (let i = 1; i< drawpoints.length; i++){
             ctx.beginPath();

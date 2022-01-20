@@ -1,13 +1,15 @@
 <template>
   <div class="home">
-    <div class="fixed top-6 right-12 h-12 w-12 hidden tablet:block cursor-pointer z-50" @click="toggleNav()"><img class="h-full w-full" :src="require('@/assets/icons/menu.png')" alt="menu-button"></div>
+    <div class="fixed top-6 right-12 h-12 w-12 hidden tablet:block cursor-pointer" style="z-index: 51" @click="toggleNav()"><img class="h-full w-full" :src="require('@/assets/icons/menu.png')" alt="menu-button"></div>
     <Navbar/>
-    <div class="ml-32 tablet:ml-0 px-16 mobile:px-2 ">
-          <Welcome/>
-          <Skills/>
-          <About/>
-          <Projects/>
-          <Contact/>
+    <div class="desktop:ml-32 tablet:ml-0 home-content mx-auto">
+      <div class="px-16 mobile:px-0">
+        <Welcome class="mobile:px-2"/>
+        <Skills class="mobile:px-2"/>
+        <Projects class="mobile:px-2"/>
+        <About/> 
+      </div>
+        <!-- <myfooter  class="tablet:ml-0 relative z-10"/>   -->
     </div>
   </div>
 </template>
@@ -15,11 +17,11 @@
 <script>
 // @ is an alias to /src
 import Welcome from '@/components/welcome.vue'
-import Contact from '@/components/contact.vue'
 import Projects from '@/components/Projects.vue'
 import About from '@/components/about.vue'
 import Skills from '@/components/skills.vue'
 import Navbar from '@/components/elements/navbar.vue'
+import myfooter from '@/components/footer.vue'
 
 export default {
   name: 'Home',
@@ -29,8 +31,7 @@ export default {
     Navbar,
     About,
     Skills,
-    Contact
-
+    myfooter
   },  
   data(){
     return{
@@ -49,3 +50,10 @@ export default {
   },
 }
 </script>
+
+<style>
+.home-content{
+  max-width: 1300px;
+  margin:0 auto 0 auto;
+}
+</style>

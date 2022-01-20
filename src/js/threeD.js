@@ -81,7 +81,7 @@ let addText = (word, x, y, z)=> {
     const text = new Text();
     text.text = word;
     text.fontSize = 1;
-    text.color = 0xFFFFFF;
+    text.color = 0x00FFBC;
     text.anchorX = 'center'
     text.anchorY = 'middle';
     text.position.x= x;

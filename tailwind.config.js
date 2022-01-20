@@ -5,15 +5,18 @@ module.exports = {
   theme: {
     colors: {
       gray: colors.trueGray,
-      myGreen: '#4BC96A',
+      myGreen: '#00FFBC',//'#4BC96A',
+      red: '#E82F0C',
+      orange: '#FFB001',
       background: '#0D0C0B',   
-      backgroundLight: '#0B1408', 
+      backgroundLight: '#001F16',//'#00402F',//'#0B1408', 
       white: '#FFFFFF'
     },
     borderWidth: {
       DEFAULT: '0.5px',
     },
     screens: {
+      'desktop': {'max': '1350px'},
       'tablet' : {'max': '1110px'},
       'mobile' : {'max': '566px'},
       'slim'   : {'max': '446px'},
@@ -32,6 +35,9 @@ module.exports = {
       width: {
         '128': '32rem',
         '150': '37.5rem'
+      },
+      maxWidth: {
+        'logo': '10rem'     
       }
     },
   },

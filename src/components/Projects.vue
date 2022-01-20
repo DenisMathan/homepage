@@ -1,6 +1,6 @@
 <template>
-  <section ref="content" id="projects" class="min-h-screen">
-    <h2 data-headinganim-4 class="opacity-0">My projects</h2>
+  <section ref="content" id="projects">
+    <h2 data-headinganim-projects class="opacity-0">My projects</h2>
     <carousel class="mb-24" :items="programming" :windowWidth="windowWidth" name="Programming"/> 
     <carousel  :items="film" :windowWidth="windowWidth" name="Filmographie"/> 
   </section>
@@ -9,7 +9,7 @@
 <script>
 import {manipulate} from '@/js/headlineManipulation.js';
 import carousel from '@/components/elements/carousel/carousel';
-import data from '@/assets/json/projects.json'
+// import data from '@/assets/json/projects.json'
 export default {
   components: {
      carousel,
@@ -17,8 +17,18 @@ export default {
   data(){
     return{
       windowWidth: window.innerWidth,
-      it: data["IT-projects"],
+      // it: data["IT-projects"],
       programming: [
+        {
+          name: "Bachelor-Thesis",
+          img: require('@/assets/images/ba/spur.png'),
+          description: [
+            'Conception & realization of a progressive web app to support musicians in their songwriting process by means of developing of a digital audio workstation and a lead sheet creation tool.',
+            ],
+          learnMore:'./bachelor-thesis',
+          position: undefined,
+          size: 'middle',
+        },
         {
           name: "Synthesizer",
           img: require('@/assets/images/synthesizer.png'),
@@ -52,11 +62,11 @@ export default {
           position: undefined
         },
         {
-          name: "IMAGO",
-          img: require('@/assets/images/imago.png'),
-          text: 'dark',
-          goto: "https://www.imago-design.de/de/",
-          description: ["I worked on this project very intensively during my six-month internship at coma. In general, I'm very grateful to the boss I had there, because she kept me busy with a wide variety of assignments during that time and I was able to learn a lot that way. One of the biggest tasks I had, was the website for Imago. For this, I built some individual web pages according to the required design and or implemented various algorithms and animations."],
+          name: "Internship at coma",
+          img: require('@/assets/images/coma.png'),
+          learnMore: 'coma',
+          goto: "https://www.coma.de/",
+          description: ["Coma was not a project in that sense, but it was my first experience in the IT working world, away from university projects. I did my five-month internship for my studies at this company in 2020."],
           size: 'middle',
           position: undefined
         },
@@ -138,7 +148,7 @@ export default {
     methods:{
         onScroll(){
             if(this.$refs.content.getBoundingClientRect().y-500 <= 0){
-                let all_headings = [].slice.call(document.querySelectorAll("[data-headinganim-4]"));
+                let all_headings = [].slice.call(document.querySelectorAll("[data-headinganim-projects]"));
                 manipulate(all_headings);
                 window.removeEventListener("scroll", this.onScroll, true)
             }
