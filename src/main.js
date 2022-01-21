@@ -5,7 +5,6 @@ import './assets/css/tailwind.css';
 import './assets/css/font.css';
 
 Vue.config.productionTip = false
-
 new Vue({
   router,
   render: h => h(App)

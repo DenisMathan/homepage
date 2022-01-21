@@ -26,6 +26,12 @@
 <script>
 import {manipulate} from '@/js/headlineManipulation.js';
 export default {
+  metaInfo: {
+    meta:[{
+      name: 'description',
+      content: 'On this page the developer Denis Mathan can be contacted.'
+    }]
+  },
     mounted(){
       let all_headings = [].slice.call(document.querySelectorAll("[data-headinganim-5]"));
       console.log(all_headings)

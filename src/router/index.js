@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VueMeta from 'vue-meta'
 import Home from '../views/Home.vue'
 import Contact from '../views/Contact.vue'
 import Impressum from '../views/Impressum.vue'
@@ -9,6 +10,7 @@ import FirstApp from '../views/projectpages/FirstApp.vue'
 import BA from '../views/projectpages/BA.vue'
 
 Vue.use(VueRouter)
+Vue.use(VueMeta)
 
 const routes = [
   {
@@ -46,14 +48,14 @@ const routes = [
     name: 'Bacherlor-Thesis',
     component: BA
   },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+  // {
+  //   path: '/about',
+  //   name: 'About',
+  //   // route level code-splitting
+  //   // this generates a separate chunk (about.[hash].js) for this route
+  //   // which is lazy-loaded when the route is visited.
+  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  // }
 ]
 
 const router = new VueRouter({

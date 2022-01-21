@@ -15,6 +15,13 @@
 import carousel from '@/components/elements/carousel/types/justCarousel.vue';
 import {manipulate} from '@/js/headlineManipulation.js';
 export default {
+  name: 'Chess',
+  metaInfo: {
+    meta:[{
+      name: 'description',
+      content: 'This site presents a very rudimentary chess program which the developer Denis Mathan had once started.'
+    }]
+  },
   components:{
     carousel
   },

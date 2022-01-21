@@ -15,6 +15,12 @@
 import carousel from '@/components/elements/carousel/types/justCarousel.vue';
 import {manipulate} from '@/js/headlineManipulation.js';
 export default {
+  metaInfo: {
+    meta:[{
+      name: 'description',
+      content: 'This page describes the time that developer Denis Mathan experienced at coma.'
+    }]
+  },
   components:{
     carousel
   },

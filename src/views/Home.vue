@@ -24,6 +24,13 @@ import myfooter from '@/components/footer.vue'
 
 export default {
   name: 'Home',
+  metaInfo: {
+    title: 'Denis Mathan || Webdeveloper',
+    meta:[{
+      name: 'description',
+      content: 'This page introduces the developer, Denis Mathan. It also contains many other of his projects, apart from programming.'
+    }]
+  },
   components: {
     Projects,
     Welcome,

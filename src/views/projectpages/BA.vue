@@ -87,6 +87,13 @@ import carousel from '@/components/elements/carousel/types/justCarousel.vue';
 import {manipulate} from '@/js/headlineManipulation.js';
 import text from '@/assets/texts/projectpages/ba.json';
 export default {
+  name: 'BA',
+  metaInfo: {
+    meta:[{
+      name: 'description',
+      content: 'This page presents the bachelor thesis of the developer Denis Mathan.'
+    }]
+  },
   components:{
     carousel
   },

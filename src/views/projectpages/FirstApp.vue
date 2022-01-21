@@ -7,7 +7,7 @@
         The project started in the fourth semester during the subject Software Engineering. The task was to develop a simple app. However, since I also like to have a practical benefit from projects and had this idea, I overshot the mark a bit. 
       </p>
       <p class="text-white max-w-4xl m-auto">
-        I had given myself two weeks for this task. It couldn't be much more, because there were still some other tasks for the university on the agenda. Our professor had suggested Cordova for the implementation. With this technology I finally developed a quite decent program for my level at that time. Unfortunately, the usability was too bad for me to ever use it. But I learned a lot and discovered the topic for my bachelor thesis.
+        I had given myself two weeks for this task. It couldn't be much more, because there were still some other tasks for the university on the agenda. Our professor had suggested Cordova for the implementation. With this technology I finally developed a quite decent program for my level at that time. Unfortunately, the usability was too bad for me to ever use it. But I learned a lot and discovered the topic for my <a href="./bachelor-thesis" target=".blanc"> bachelor thesis</a>.
       </p>
       <p class="text-white mb-6 max-w-4xl m-auto">
         If you are interested in the details of the program, feel free to <a href="https://github.com/DenisMathan/SongwritingApp" target="_blanc">visit me on my Github</a>. Be warned though, this was the first app I ever made and the code looks accordingly.
@@ -22,6 +22,13 @@ import carousel from '@/components/elements/carousel/types/justCarousel.vue';
 import {manipulate} from '@/js/headlineManipulation.js';
 import {initCanvas, destroyCanvas} from '@/js/canvasDraw.js';
 export default {
+  name:'Sonwriting-App',
+  metaInfo: {
+    meta:[{
+      name: 'description',
+      content: 'The website describes the beginnings of a program to support musicians that Denis Mathan did in college.'
+    }]
+  },
   components:{
     carousel
   },

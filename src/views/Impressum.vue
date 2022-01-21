@@ -12,3 +12,13 @@
     Impressum vom <a href="https://www.impressum-generator.de">Impressum Generator</a> der <a href="https://www.kanzlei-hasselbach.de/">Kanzlei Hasselbach, Rechtsanwälte für Arbeitsrecht und Familienrecht</a>
  </div>
 </template>
+<script>
+export default {
+  metaInfo: {
+    meta:[{
+      name: 'description',
+      content: 'This is the imprint of the great developer Denis Mathan!'
+    }]
+  },
+}
+</script>
