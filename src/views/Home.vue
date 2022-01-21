@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <div class="fixed top-6 right-12 h-12 w-12 hidden tablet:block cursor-pointer" style="z-index: 51" @click="toggleNav()"><img class="h-full w-full" :src="require('@/assets/icons/menu.png')" alt="menu-button"></div>
     <Navbar/>
     <div class="desktop:ml-32 tablet:ml-0 home-content mx-auto">
       <div class="px-16 mobile:px-0">
@@ -39,14 +38,7 @@ export default {
     }
   },
   methods:{
-    toggleNav(){
-      if(this.navbar){
-        document.querySelector('#navbar').classList.add('tablet:right-full')
-      }else{
-        document.querySelector('#navbar').classList.remove('tablet:right-full')
-      }
-      this.navbar = !this.navbar
-    },
+
   },
 }
 </script>

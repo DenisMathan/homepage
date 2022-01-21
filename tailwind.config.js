@@ -38,6 +38,9 @@ module.exports = {
       },
       maxWidth: {
         'logo': '10rem'     
+      },
+      minWidth: {
+        'nav': '300px'
       }
     },
   },

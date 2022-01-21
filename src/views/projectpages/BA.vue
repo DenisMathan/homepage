@@ -1,7 +1,7 @@
 <template>
-    <div class="relative p-12 overflow-hidden text-white">
+    <div class="relative p-12 tablet:p-6 mobile:p-2 overflow-hidden text-white">
       <h1 data-headinganim-chess class="opacity-0 mb-6">
-          Bachelor-Thesis
+          Bachelor-<br class="hidden mobile:block"/>Thesis
       </h1>
       <h2 data-headinganim-chess class="opacity-0 mb-6">Songwriting-App 0.8</h2>
       <h2>{{text['motivation'].title}}</h2>
@@ -12,8 +12,8 @@
       <p>{{text['team'].text}}</p>
       <h2>{{text['requirements'].title}}</h2>
       <p>{{text['requirements'].text}}</p>
-      <div class="flex justify-center items-center max-w-7xl m-auto">
-        <div class="bg-gray-700 rounded-lg shadow max-w-xs w-1/2">
+      <div class="flex mobile:flex-col justify-center items-center max-w-7xl m-auto">
+        <div class="bg-gray-700 rounded-lg shadow max-w-xs mobile:max-w-full mobile:w-full w-1/2">
           <ul class="divide-y divide-background">
             <li class="p-3 cursor-pointer">
               <a href="#DAW" class="no-underline">
@@ -49,10 +49,10 @@
             </li>
           </ul>
         </div>
-        <div class="text-center w-1/2">
-          <p class="text-center text-myGreen">Fully integrated</p>
-          <p class="text-center text-orange">At least something to work with</p>
-          <p class="text-center text-red">Not even thought about it</p>
+        <div class="mobile:w-full w-1/2">
+          <p class="mobile:text-left text-center text-myGreen">Fully integrated</p>
+          <p class="mobile:text-left text-center text-orange">At least something to work with</p>
+          <p class="mobile:text-left text-center text-red">Not even thought about it</p>
         </div>
       </div>
 

@@ -1,6 +1,6 @@
 <template>
-  <div class="flex tablet:block">
-    <div class="w-1/2 m-auto relative mobile:h-64 h-128 mb-6">
+  <div class="flex tablet:block items-stretch">
+    <div class="w-1/2 tablet:w-full tablet:mb-4 m-auto relative mobile:h-64 h-128">
       <div @click="moveback()" class="text-white cursor-pointer z-40 absolute opacity-50 h-full w-1/2">
         <button class="h-full text-4xl w-8/12 ml-0">&lt;</button>
       </div>
@@ -16,9 +16,11 @@
       </div>
       <div @click="moveforward();" class="absolute opacity-50 h-full w-1/2 text-right right-0 li z-40"><button class="text-white h-full w-8/12 text-4xl">&gt;</button></div>
     </div>
-    <div class="w-1/2 'tablet:w-128 text-white mobile:w-full m-auto" :class="(textwidthLikeImg)?'tablet:w-128':''">
+    <div class="w-1/2 tablet:w-128 text-white mobile:w-full z-50 tablet:relative tablet:mx-auto flex flex-col" :class="(textwidthLikeImg)?'tablet:w-128':''">
+    <div>
       <h3 :key="obj.headline">{{obj.headline}}</h3>
-      <div class="h-32 p-2 border-solid border-myGreen border rounded-md overflow-x-auto mb-12">
+    </div>
+      <div class="h-full tablet:h-32 p-2 border-solid border-myGreen border rounded-md overflow-x-auto">
         <p v-for="(paragraph, index) in obj.p" :key="index" @change="test()" @>{{paragraph}}</p>
         <a v-if="obj.link" :href="obj.link.link" target="_blanc">Go to {{obj.link.name}} </a>
       </div>
