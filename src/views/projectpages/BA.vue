@@ -102,35 +102,35 @@ export default {
           text: text['BA'],
           navigationCarousel:[
               {
-              img: require('@/assets/images/ba/1Anmeldung.png'),
+              img: require('@/assets/images/ba/1Anmeldung.webp'),
               position:1,
               form: 'upright',
               headline: text['BA']['navigationCarousel']['parts']['signIn']['title'],                
               p : text['BA']['navigationCarousel']['parts']['signIn'].text,
               },
               {
-              img: require('@/assets/images/ba/2homescreen.png'),
+              img: require('@/assets/images/ba/2homescreen.webp'),
               position:2,
               form: 'upright',
               headline: text['BA']['navigationCarousel']['parts']['home']['title'],
               p : text['BA']['navigationCarousel']['parts']['home']['text']
               },
               {
-              img: require('@/assets/images/ba/contacts/1contacts.png'),
+              img: require('@/assets/images/ba/contacts/1contacts.webp'),
               position:3,
               form: 'upright',
               headline: text['BA']['navigationCarousel']['parts']['contacts']['title'],
               p : text['BA']['navigationCarousel']['parts']['contacts']['text']
               },
               {
-              img: require('@/assets/images/ba/contacts/2searchContact.png'),
+              img: require('@/assets/images/ba/contacts/2searchContact.webp'),
               position:4,
               form: 'upright',
               headline: text['BA']['navigationCarousel']['parts']['contactsVal']['title'],
               p : text['BA']['navigationCarousel']['parts']['contactsVal']['text']
               },
               {
-              img: require('@/assets/images/ba/contacts/3chat.png'),
+              img: require('@/assets/images/ba/contacts/3chat.webp'),
               position:0,
               form: 'upright',
               headline: text['BA']['navigationCarousel']['parts']['chat']['title'],
@@ -139,21 +139,21 @@ export default {
           ],
           DAW:[
               {
-              img: require('@/assets/images/ba/DAW/1DAW.png'),
+              img: require('@/assets/images/ba/DAW/1DAW.webp'),
               position:1,
               form: 'upright',
               headline: text['BA']['DAW']['parts']['openProject']['title'],                
               p : text['BA']['DAW']['parts']['openProject']['text'],
               },
               {
-              img: require('@/assets/images/ba/DAW/2DAW.png'),
+              img: require('@/assets/images/ba/DAW/2DAW.webp'),
               position:2,
               form: 'upright',
               headline: text['BA']['DAW']['parts']['activateTrack']['title'],
               p : text['BA']['DAW']['parts']['activateTrack']['text']
               },
               {
-              img: require('@/assets/images/ba/DAW/3DAW.png'),
+              img: require('@/assets/images/ba/DAW/3DAW.webp'),
               position:0,
               form: 'upright',
               headline: text['BA']['DAW']['parts']['chosenWave']['title'],
@@ -161,41 +161,41 @@ export default {
               },
           ],
           textEditor:[{
-              img: require('@/assets/images/ba/text/1text.png'),
+              img: require('@/assets/images/ba/text/1text.webp'),
               position:0,
               form: 'upright',
               headline: text['BA']['textEditor']['parts']['openProject']['title'],                
               p : text['BA']['textEditor']['parts']['openProject']['text'],
               },
               {
-              img: require('@/assets/images/ba/text/2text.png'),
+              img: require('@/assets/images/ba/text/2text.webp'),
               position:0,
               form: 'upright',
               headline: text['BA']['textEditor']['parts']['chordKeyboard']['title'],                
               p : text['BA']['textEditor']['parts']['chordKeyboard']['text'],
               },
               {
-              img: require('@/assets/images/ba/text/3changeHarmony.png'),
+              img: require('@/assets/images/ba/text/3changeHarmony.webp'),
               position:0,
               form: 'upright',
               headline: text['BA']['textEditor']['parts']['choseHarmony']['title'],                
               p : text['BA']['textEditor']['parts']['choseHarmony']['text'],
               },
               {
-              img: require('@/assets/images/ba/text/4changedHarmony.png'),
+              img: require('@/assets/images/ba/text/4changedHarmony.webp'),
               position:0,
               form: 'upright',
               headline: text['BA']['textEditor']['parts']['newHarmony']['title'],
               p : text['BA']['textEditor']['parts']['newHarmony']['text']
               },
               {
-              img: require('@/assets/images/ba/text/5moveChord.png'),
+              img: require('@/assets/images/ba/text/5moveChord.webp'),
               position:0,
               form: 'upright',
               headline: text['BA']['textEditor']['parts']['moveChord']['title'],
               p : text['BA']['textEditor']['parts']['moveChord']['text']
               },
-              {img: require('@/assets/images/ba/text/7selectLines.png'),
+              {img: require('@/assets/images/ba/text/7selectLines.webp'),
               position:0,
               form: 'upright',
               headline: text['BA']['textEditor']['parts']['selectLine']['title'],

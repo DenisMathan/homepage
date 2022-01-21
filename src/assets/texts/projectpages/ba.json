@@ -67,7 +67,7 @@
                 "signIn": {
                     "title": "Sign in",
                     "text": ["The registration can be done via email and password or via Google. Since it is not possible to whitelist Google logins for test groups, this option is currently disabled and only I can register a new user in the backend."],
-                    "img": "@/assets/images/ba/1Anmeldung.png"
+                    "img": "@/assets/images/ba/1Anmeldung.webp"
                 },
                 "home": {
                     "title": "Home",
@@ -148,7 +148,7 @@
                         "The text editor has in the first place the key in which the song is written. Then comes the title and then the lines.",
                         "The lines consist of two parts. One is the chord part (blue) and the text part (white). But both can exist independently, as can be seen in the last two lines. A new line is reached simply by a line break."
                     ],
-                    "img": "@/assets/images/ba/1Anmeldung.png"
+                    "img": "@/assets/images/ba/1Anmeldung.webp"
                 },
                 "chordKeyboard": {
                     "title": "Chordkeyboard",

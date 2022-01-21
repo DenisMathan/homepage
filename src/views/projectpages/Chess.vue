@@ -28,55 +28,55 @@ export default {
     data(){
         return{
             images:[{
-                img: require('@/assets/images/Schach/9damenUmwandlung.png'),
+                img: require('@/assets/images/Schach/9damenUmwandlung.webp'),
                 position:0,
                 headline: 'Queen transformation',
                 p : ['This is what freedom must feel like! His hope and ambition were rewarded. The opportunity to develop into a Queen has already been integrated. It would also be quite embarrassing if he now had to stand on the edge of the field as a pawn for the rest of his life. "Phew lucky!" thinks Hector and goes into his well-deserved retirement.']
                 },
                 {
-                img: require('@/assets/images/Schach/1start.png'),
+                img: require('@/assets/images/Schach/1start.webp'),
                 position:1,
                 headline: 'Start',                
                 p : ['Here you can see the field which is spanned with an array tuple. The numbers reflect the array values. With the help of these values the figures can orientate themselves on the field. Currently all figures are implemented except of the king.'],
                 },
                 {
-                img: require('@/assets/images/Schach/2movePawn.png'),
+                img: require('@/assets/images/Schach/2movePawn.webp'),
                 position:2,
                 headline: 'Selected Pawn',
                 p : ['In this picture the pawn is selected, so the program shows the player what possibilities this piece has. In this case we are talking about the E4 pawn, which will also be the protagonist of our little demonstration. Since a hero needs a name, let\'s call him Hector.']
                 },
                 {
-                img: require('@/assets/images/Schach/3moveQueen.png'),
+                img: require('@/assets/images/Schach/3moveQueen.webp'),
                 position:3,
                 headline: 'Selected Queen',
                 p : ['Now that Hector has jumped forward two squares, Black has responded with D5. This is the so-called Scandinavian defense. This gives the white queen more possible squares to move to.']
                 },
                 {
-                img: require('@/assets/images/Schach/4moveKnight.png'),
+                img: require('@/assets/images/Schach/4moveKnight.webp'),
                 position:4,
                 headline: 'Selected Knight',
                 p : ['The knight is only blocked by its own pieces, when they are on its destination.']
                 },
                 {
-                img: require('@/assets/images/Schach/5killPawn.png'),
+                img: require('@/assets/images/Schach/5killPawn.webp'),
                 position:5,
                 headline: 'Selected Pawn',
                 p : ['Hector, on the other hand, now has two options. First, he can capture the opponent\'s pawn or simply move past him.']
                 },
                 {
-                img: require('@/assets/images/Schach/6killedPawn.png'),
+                img: require('@/assets/images/Schach/6killedPawn.webp'),
                 position:6,
                 headline: 'Killed pawn',
                 p : ['Out of a profound dissatisfaction and lack of compassion, he overpowers his opponent and takes his place.']
                 },
                 {
-                img: require('@/assets/images/Schach/7enPassent.png'),
+                img: require('@/assets/images/Schach/7enPassent.webp'),
                 position:7,
                 headline: 'Lack of "En passent"',
                 p : ['Still overwhelmed by his act, Hector overlooks the opponent\'s pawn, which simply threatens to pass him by. On the other hand he may simply be unable to do anything, since his designer has not yet incorporated the "en passent" move.']
                 },
                 {
-                img: require('@/assets/images/Schach/8abwechslung.png'),
+                img: require('@/assets/images/Schach/8abwechslung.webp'),
                 position:8,
                 headline:'Lack of alternate turns',
                 p : ['However, when he realizes that this sacrifice is going to slip through his fingers, Hector gets so enraged that he accidentally takes another step forward and realizes that he doesn\'t even have to wait for his opponent to make a move. He can simply move whenever he wants. ']

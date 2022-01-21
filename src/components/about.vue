@@ -5,7 +5,7 @@
       <div class="flex justify-center flex-row-reverse tablet:flex-row tablet:block relative  overflow-hidden">
             <div class="max-w-lg tablet:max-w-full mobile:h-150 w-1/2 tablet:w-full relative" :style="`min-height:${kidtext}px`">
                 <div class="flex justify-center h-full">
-                    <img class="w-full h-auto mobile:w-auto mobile:h-full" :src="require('@/assets/images/danny_the_kid.png')" alt="">
+                    <img class="w-full h-auto mobile:w-auto mobile:h-full" :src="require('@/assets/images/danny_the_kid.webp')" alt="">
                 </div>
             </div>
             <div ref="kidtext" class="max-w-lg tablet:max-w-full w-1/2 tablet:w-full tablet:px-12 slim:p-2 flex flex-col justify-center tablet:absolute top-0 tablet:bg-gray-800 tablet:bg-opacity-50 pr-6 ">
@@ -17,7 +17,7 @@
       <div class="flex justify-center tablet:flex-row tablet:block relative">
             <div class=" max-w-lg tablet:max-w-full mobile:h-150 w-1/2 tablet:w-full relative" :style="`min-height:${kidtext}px`">
                 <div class="flex justify-center h-full">
-                    <img class="w-full h-auto mobile:w-auto mobile:h-full" :src="require('@/assets/images/danny_the_nerd.png')" alt="">
+                    <img class="w-full h-auto mobile:w-auto mobile:h-full" :src="require('@/assets/images/danny_the_nerd.webp')" alt="">
                 </div>
             </div>
             <div ref="nerdText" class="max-w-lg w-1/2 tablet:max-w-full tablet:w-full tablet:p-12 slim:p-2 flex flex-col tablet:justify-end justify-center tablet:absolute top-0 tablet:h-full tablet:bg-gray-800 tablet:bg-opacity-50 pl-6 ">
