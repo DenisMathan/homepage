@@ -2,12 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueMeta from 'vue-meta'
 import Home from '../views/Home.vue'
-import Contact from '../views/Contact.vue'
-import Impressum from '../views/Impressum.vue'
-import Chess from '../views/projectpages/Chess.vue'
-import Coma from '../views/projectpages/Coma.vue'
-import FirstApp from '../views/projectpages/FirstApp.vue'
-import BA from '../views/projectpages/BA.vue'
 
 Vue.use(VueRouter)
 Vue.use(VueMeta)
@@ -21,32 +15,32 @@ const routes = [
   {
     path: '/impressum',
     name: 'Impressum',
-    component: Impressum
+    component: () => import ('../views/Impressum.vue')
   },
   {
     path: '/contact',
     name: 'Contact',
-    component: Contact
+    component: () => import ('../views/Contact.vue')
   },
   {
     path: '/coma',
     name: 'Coma',
-    component: Coma
+    component: () => import ('../views/projectpages/BA.vue')
   },
   {
     path:'/chess',
     name: 'Chess',
-    component: Chess
+    component: () => import ('../views/projectpages/Chess.vue')
   },
   {
     path:'/firstapp',
     name: 'FirstApp',
-    component: FirstApp
+    component: () => import ('../views/projectpages/FirstApp.vue')
   },
   {
     path:'/bachelor-thesis',
     name: 'Bacherlor-Thesis',
-    component: BA
+    component: () => import ('../views/projectpages/BA.vue')
   },
   // {
   //   path: '/about',
