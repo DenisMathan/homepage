@@ -14,10 +14,15 @@
       </div>
       <div  class="h-full tablet:h-auto flex items-center justify-center tablet:mt-2s flex-1 mobile:w-1/2 tablet:min-w-nav mx-auto">    
       <div class="text-white w-full">
-          <a @click="toggleNav" href="#skills"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Skills </button></a>
-          <a @click="toggleNav" href="#projects"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Projects </button></a>
-          <a @click="toggleNav" href="#about"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-t border-b leading-12">About </button></a>
-          <a @click="toggleNav" rel="noopener" href="./contact" target="_blanc"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Contact </button></a>
+          <a v-show="home" @click="toggleNav" href="#skills"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Skills </button></a>
+          <a v-show="home" @click="toggleNav" href="#projects"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Projects </button></a>
+          <a v-show="home" @click="toggleNav" href="#about"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-t border-b leading-12">About </button></a>
+          <a v-show="home" @click="toggleNav" rel="noopener" href="./contact" target="_blanc"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Contact </button></a>
+          <a v-show="!home" href="./"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Home</button></a>
+          <a v-show="!home" href="./bachelor-thesis"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Bachelor-Thesis</button></a>
+          <a v-show="!home" href="./firstapp"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">First App</button></a>
+          <a v-show="!home" href="./chess"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Chess</button></a>
+          <a v-show="!home" href="./coma"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">coma</button></a>
       </div>
     </div>
   </div>
@@ -28,6 +33,13 @@
 
 <script>
 export default {
+  data(){return{
+    home: false
+  }},
+  created(){
+    if(window.location.pathname === '/') this.home = true;
+  },
+
   methods:{
     toggleNav(){
       if(this.navbar){

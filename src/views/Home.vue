@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <Navbar/>
-    <div class="desktop:ml-32 tablet:ml-0 home-content mx-auto">
+    <div class="home-content mx-auto">
       <div class="px-16 mobile:px-0">
         <Welcome class="mobile:px-2"/>
         <Skills class="mobile:px-2"/>
