@@ -18,10 +18,10 @@
                     <h4 class="text-center mb-8">{{project.name}}</h4>
                     <div class="text-white text-base ">
                       <p v-for="paragraph in project.description" :key="paragraph">{{paragraph}}</p>
-                      <p v-if="project.link">Click <a :href="project.link" target="_blank">here</a> to learn more!</p>
-                      <p v-if="project.learnMore"><a :href="'./'+project.learnMore" target="_blank">Want to see more?</a></p>
-                      <p v-if="project.goto"><a :href="project.goto" target="_blank">Go to {{project.name}}!</a></p>
-                      <p v-if="project.github"><a :href="project.github" target="_blank">Go to code!</a></p>
+                      <p v-if="project.link">Click <a :href="project.link" rel="noopener" target="_blank">here</a> to learn more!</p>
+                      <p v-if="project.learnMore"><a :href="'./'+project.learnMore" rel="noopener" target="_blank">Want to see more?</a></p>
+                      <p v-if="project.goto"><a :href="project.goto" rel="noopener" target="_blank">Go to {{project.name}}!</a></p>
+                      <p v-if="project.github"><a :href="project.github" rel="noopener" target="_blank">Go to code!</a></p>
                       <div  :class="(project.position!==2)?('hidden'):''" v-if="project.vid">
                         <cine :url="project.vid"/>
                       </div>

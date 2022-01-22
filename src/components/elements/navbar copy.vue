@@ -8,7 +8,7 @@
       <a href="#skills"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Skills </button></a>
       <a href="#projects"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Projects </button></a>
       <a href="#about"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-t border-b leading-12">About </button></a>      
-      <a href="./contact" target="_blanc"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Contact </button></a>
+      <a href="./contact" rel="noopener" target="_blanc"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Contact </button></a>
     </div>
   </div>
   </div>

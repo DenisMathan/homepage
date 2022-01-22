@@ -17,7 +17,7 @@
           <a @click="toggleNav" href="#skills"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Skills </button></a>
           <a @click="toggleNav" href="#projects"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Projects </button></a>
           <a @click="toggleNav" href="#about"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-t border-b leading-12">About </button></a>
-          <a @click="toggleNav" href="./contact" target="_blanc"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Contact </button></a>
+          <a @click="toggleNav" rel="noopener" href="./contact" target="_blanc"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Contact </button></a>
       </div>
     </div>
   </div>

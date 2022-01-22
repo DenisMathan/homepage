@@ -5,7 +5,7 @@
     </h1>
     <h2 data-headinganim-welcome class ="opacity-0 break-words">	&lt;Developer with extras (B. Eng.)&gt;</h2>
     <div class="w-full h-12">
-      <a href="./contact" target="_blanc"><button ref="btn" class="btn-1 left w-45 h-full w-44 rounded-md border-myGreen border text-white">Contact me</button></a>
+      <a href="./contact" rel="noopener" target="_blanc"><button ref="btn" class="btn-1 left w-45 h-full w-44 rounded-md border-myGreen border text-white">Contact me</button></a>
     </div>
   </div>
 </template>

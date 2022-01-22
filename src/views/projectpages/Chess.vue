@@ -4,7 +4,7 @@
         Chess
     </h1>
     <p class="text-white mb-6 max-w-3xl m-auto">
-      Welcome to the presentation of my very rudimentary chess program. I have programmed it with Java. First basics are already developed, but it is still a long way to the finished game, which I will probably not go. But it has already fulfilled the purpose of teaching me object-oriented programming and Java. If you are interested in the already existing code, just visit me on <a href="https://github.com/DenisMathan/Schach" target="_blanc">Github</a>.
+      Welcome to the presentation of my very rudimentary chess program. I have programmed it with Java. First basics are already developed, but it is still a long way to the finished game, which I will probably not go. But it has already fulfilled the purpose of teaching me object-oriented programming and Java. If you are interested in the already existing code, just visit me on <a href="https://github.com/DenisMathan/Schach" rel="noopener" target="_blanc">Github</a>.
     </p>
     <h2 data-headinganim-chess class="opacity-0">Hector's Adventure</h2>
     <carousel  :textwidthLikeImg="true" :projects="images"/>
