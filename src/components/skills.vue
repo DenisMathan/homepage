@@ -35,8 +35,8 @@
 
 <script>
 import {manipulate} from '@/js/headlineManipulation.js';
-// import {init, resize} from '@/js/threeD.js';
-const loadThreeD = ()=> import ('@/js/threeD.js')
+import {init, resize} from '@/js/threeD.js';
+// const loadThreeD = ()=> import ('@/js/threeD.js')
 export default {
   data(){
     return{
@@ -59,14 +59,16 @@ export default {
   },
     mounted(){
         window.addEventListener("scroll", this.onScroll, true);
+        window.addEventListener("resize", this.resizing, true);
         this.width= this.$refs.gl.clientWidth;
-        loadThreeD().then(e=>{
-          console.log(e)
-          this.init3D = e.init;
-          this.resize3D = e.resize;
-          this.init3D(this.$refs.gl)
-          window.addEventListener("resize", this.resizing, true);
-        })
+        init(this.$refs.gl)
+        // loadThreeD().then(e=>{
+        //   console.log(e)
+        //   this.init3D = e.init;
+        //   this.resize3D = e.resize;
+        //   this.init3D(this.$refs.gl)
+          
+        // })
         // this.threeinit(this.$refs.gl)
   },
     methods: {
@@ -83,7 +85,7 @@ export default {
           }
       },
       resizing(){
-          this.resize3D(this.$refs.gl)
+          resize(this.$refs.gl)
       }
     },
     beforeDestroy(){
