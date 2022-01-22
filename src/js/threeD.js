@@ -1,4 +1,5 @@
-import * as THREE from 'three';
+// import * as THREE from 'three';
+import { Scene, PerspectiveCamera, WebGLRenderer, Vector3, Object3D } from 'three';
 import {Text} from 'troika-three-text';
 let scene, camera, renderer, group, anim;
 let radius;
@@ -12,9 +13,12 @@ let position = {
 let br = false;
 
 let init = (box)=>{
-    scene = new THREE.Scene();
-    camera = new THREE.PerspectiveCamera( 75, 1, 0.1, 1000 );
-    renderer = new THREE.WebGLRenderer({alpha: true});
+    // scene = new THREE.Scene();
+    // camera = new THREE.PerspectiveCamera( 75, 1, 0.1, 1000 );
+    // renderer = new THREE.WebGLRenderer({alpha: true});
+    scene = new Scene();
+    camera = new PerspectiveCamera( 75, 1, 0.1, 1000 );
+    renderer = new WebGLRenderer({alpha: true});    
     radius = 10;
     renderer.setPixelRatio(4);
     renderer.setSize(box.offsetWidth, box.offsetWidth);
@@ -28,7 +32,7 @@ let init = (box)=>{
     camera.position.y = 0; 
     box.addEventListener('mousemove', direction);
     box.addEventListener('mouseout', breaky);
-    group = new THREE.Object3D();
+    group = new Object3D();
     scene.add(group);
     // addSphere();
     addText('HTML', 0, -radius, 0);
@@ -50,13 +54,13 @@ let init = (box)=>{
     addText('tailwind.css',0, 0, radius);
     addText('react',0, 0, -radius);
     
-    group.rotateOnAxis(new THREE.Vector3(1,0,0), 0.45)
+    group.rotateOnAxis(new Vector3(1,0,0), 0.45)
     animate();
 }
 let animate = ()=>{
     let x = position.x;
     let y = position.y;
-    let axis = new THREE.Vector3(y,x,0)
+    let axis = new Vector3(y,x,0)
     if (br){
         speed *= 0.95;
     }
@@ -88,7 +92,7 @@ let addText = (word, x, y, z)=> {
     text.position.y = y;
     text.position.z = z;
     text.sync();
-    text.rotateOnAxis(new THREE.Vector3(1,0,0), -0.45)
+    text.rotateOnAxis(new Vector3(1,0,0), -0.45)
     group.add(text)
     renderer.render(scene, camera)
 }
