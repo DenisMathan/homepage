@@ -22,7 +22,7 @@
     </div>
       <div class="h-full tablet:h-32 p-2 border-solid border-myGreen border rounded-md overflow-x-auto">
         <p v-for="(paragraph, index) in obj.p" :key="index" @change="test()" @>{{paragraph}}</p>
-        <a v-if="obj.link" :href="obj.link.link" rel="noopener" target="_blanc">Go to {{obj.link.name}} </a>
+        <a v-if="obj.link" :href="obj.link.link" rel="noopener"  target="_blanc">Go to {{obj.link.name}} </a>
       </div>
     </div>
   </div>
