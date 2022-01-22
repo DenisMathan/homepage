@@ -20,7 +20,7 @@ module.exports = {
       DEFAULT: '0.5px',
     },
     screens: {
-      'desktop': {'max': '1350px'},
+      'desktop': {'max': '1514px'},
       'tablet' : {'max': '1110px'},
       'mobile' : {'max': '566px'},
       'slim'   : {'max': '446px'},
