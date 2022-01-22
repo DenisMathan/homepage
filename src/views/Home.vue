@@ -1,14 +1,12 @@
 <template>
   <div class="home">
-    <div class="home-content mx-auto">
-      <div class="px-16 mobile:px-0">
-        <Welcome class="mobile:px-2"/>
-        <Skills class="mobile:px-2"/>
-        <Projects class="mobile:px-2"/>
-        <About/> 
-      </div>
-        <!-- <myfooter  class="tablet:ml-0 relative z-10"/>   -->
+    <div class="px-16 mobile:px-0">
+      <Welcome class="mobile:px-2"/>
+      <Skills class="mobile:px-2"/>
+      <Projects class="mobile:px-2"/>
+      <About/> 
     </div>
+    <!-- <myfooter  class="tablet:ml-0 relative z-10"/>   -->
   </div>
 </template>
 
@@ -17,7 +15,7 @@
 import Welcome from '@/components/welcome.vue'
 import Projects from '@/components/Projects.vue'
 import About from '@/components/about.vue'
-import Skills from '@/components/skills.vue'
+const Skills = ()=> import ('@/components/skills.vue')
 import Navbar from '@/components/elements/navbar.vue'
 import myfooter from '@/components/footer.vue'
 
@@ -48,10 +46,3 @@ export default {
   },
 }
 </script>
-
-<style>
-.home-content{
-  max-width: 1300px;
-  margin:0 auto 0 auto;
-}
-</style>

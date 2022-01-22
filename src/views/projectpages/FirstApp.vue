@@ -20,7 +20,6 @@
 <script>
 import carousel from '@/components/elements/carousel/types/justCarousel.vue';
 import {manipulate} from '@/js/headlineManipulation.js';
-import {initCanvas, destroyCanvas} from '@/js/canvasDraw.js';
 export default {
   name:'Sonwriting-App',
   metaInfo: {

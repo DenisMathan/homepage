@@ -8,7 +8,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
-    <router-view class="desktop:ml-32 tablet:ml-0 home-content mx-auto relative z-10" />
+    <router-view class="page-content desktop:ml-32 tablet:ml-0 home-content mx-auto relative z-10" />
     <myfooter  class="tablet:ml-0 relative z-10"/>
   </div>
 </template>
@@ -32,3 +32,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.page-content{
+  max-width: 1300px;
+}
+</style>
