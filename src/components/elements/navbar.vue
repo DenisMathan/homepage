@@ -17,7 +17,7 @@
           <a v-show="home" @click="toggleNav" href="#skills"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Skills </button></a>
           <a v-show="home" @click="toggleNav" href="#projects"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Projects </button></a>
           <a v-show="home" @click="toggleNav" href="#about"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-t border-b leading-12">About </button></a>
-          <a v-show="home" @click="toggleNav" rel="noopener" href="./contact" target="_blanc"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Contact </button></a>
+          <a v-show="home" @click="toggleNav" href="./contact"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Contact </button></a>
           <a v-show="!home" href="./"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Home</button></a>
           <a v-show="!home" href="./bachelor-thesis"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">Bachelor-Thesis</button></a>
           <a v-show="!home" href="./firstapp"><button class="btn text-white hover:text-myGreen text-center h-12 w-full border-b leading-12">First App</button></a>
