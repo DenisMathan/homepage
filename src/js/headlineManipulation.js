@@ -4,7 +4,7 @@
 let manipulate = async (headings)=>{
     for (let i = 0; i<headings.length; i++){
         const heading = headings[i];
-        const letters = heading.outerText.split("")
+        const letters = heading.innerText.split("")
         heading.innerHTML = ""
         heading.classList.remove('opacity-0')
         for (let x=0; x<letters.length; x++){
