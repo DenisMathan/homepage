@@ -4,15 +4,15 @@
   <div class="flex tablet:flex-col justify-stretch">
     <div class="w-1/2 tablet:w-full pr-12 flex items-center">
     <div class="w-full">
-      <h3>Programming</h3>
-      <div v-for="program in programming" :key="program.name" class="px-6">
+      <h3>Languages</h3>
+      <div v-for="program in languages" :key="program.name" class="px-6">
         <h4>{{program.name}}</h4>
         <div class="bg-gray-600 w-full h-1 rounded-full skill-container" >
           <div class="h-full bg-myGreen rounded-full skill"  :style="'width:'+program.percent+'%'"></div>
         </div>
       </div>
-      <h3 class="mt-4">Creative</h3>
-      <div v-for="program in creative" :key="program.name" class="px-6">
+      <h3 class="mt-4">Frameworks</h3>
+      <div v-for="program in frameworks" :key="program.name" class="px-6">
         <h4>{{program.name}}</h4>
         <div class="bg-gray-600 w-full h-1 rounded-full skill-container" >
           <div class="h-full bg-myGreen rounded-full skill"  :style="'width:'+program.percent+'%'"></div>
@@ -41,16 +41,23 @@ export default {
   data(){
     return{
       width: 0,
-      programming:{
-        frontend: {name:'Frontend',percent:90},
-        backend: {name: 'Backend', percent: 70 },
-        java: {name:'Java',percent:60},
-        python: {name:'Python',percent:40}
+      languages:{
+        javascript: {name: 'Javascript', percent: 95},
+        typescript: {name: 'Typescript', percent: 90},
+        golang: {name:'Golang',percent:85},
+        java: {name: 'Java', percent: 40},
+        python: {name: 'Python', percent: 20}
+      },
+      frameworks: {
+        vue: {name: 'Vue', percent: 80},
+        angular: {name:'Angular',percent:70},
+        react: {name: 'React', percent: 40}
       },
       creative: {
         DsMax: {name:'3D\'s Max',percent:60},
         illustrator: {name:'Illustrator',percent:70},
         photoshp: {name:'Photoshop',percent:60},
+        Ableton: {name: 'Ableton Live', percent:20}
       }
     }
   },

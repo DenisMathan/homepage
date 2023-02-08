@@ -61,6 +61,12 @@ let cleanCanvas = ()=>{
     ctx.fillStyle="#0D0C0B"
     ctx.fillRect(0, 0, canvas.width, canvas.height)
 }
+let emulateDrawpoints = (input)=>{
+    for (let i = 1; i<input.length; i++){
+        let pointBefore = input[i-1]
+        let point = input[i]
+    }
+}
 let draw = ()=>{
     let date = Date.now()
     drawpoints= drawpoints.filter((a)=>{return  date - a.date <= 1000})

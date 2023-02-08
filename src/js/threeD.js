@@ -45,7 +45,7 @@ let init = (box)=>{
     addText('vuejs', 0, -radius/1.4142, -radius/1.4142,);
     addText('firebase', 0, radius/1.4142, radius/1.4142,);
     addText('wordpress', radius/1.4142, 0,-radius/1.4142);
-    addText('Photoshop', -radius/1.4142,0, radius/1.4142);
+    addText('Golang', -radius/1.4142,0, radius/1.4142);
     addText('Python', -radius/1.4142, 0,-radius/1.4142);
     addText('ableton', radius/1.4142,0, radius/1.4142);
     addText('react',radius, 0, 0);
