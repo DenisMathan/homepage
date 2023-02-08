@@ -51,11 +51,7 @@ export default {
 
   },
   methods: {
-    test(){
-      console.log('hihi')
-    },
     switchParagraph(){
-      console.log(this.$props.projects.filter((a)=>{return a.position === 2}))
       this.obj = this.$props.projects.filter((a)=>{return a.position === 1})[0]
     },
     moveforward(){

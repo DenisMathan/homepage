@@ -58,12 +58,10 @@ export default {
         if(pos===this.projects.length) this.projects[i].position = 0;
         else if(pos>this.projects.length) this.projects[i].position = 1;
         else this.projects[i].position = i+2;
-        console.log(this.projects[i].position)
       }
     },
     methods: {
         moveforward(){
-          console.log('forward')
           for(let i = 0; i<this.projects.length; i++){
             const project = this.projects[i];
             if(project.position !== 0){
@@ -72,9 +70,7 @@ export default {
             else{
               project.position = this.projects.length-1;
             }
-            console.log(project.position)
           }
-          console.log(this.projects)
         },
         moveback(){
           for(let i = 0; i<this.projects.length; i++){

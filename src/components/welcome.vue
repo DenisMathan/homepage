@@ -15,7 +15,6 @@ import {manipulate} from '@/js/headlineManipulation.js';
 export default {
     mounted(){
       let all_headings = [].slice.call(document.querySelectorAll("[data-headinganim-welcome]"));
-      console.log(all_headings)
       manipulate(all_headings);
       setTimeout(()=>{
         this.$refs.btn.classList.remove('left')

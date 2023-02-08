@@ -22,10 +22,6 @@ let resize = ()=>{
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
 }
-let test = ()=>{
-    te = te.filter((a)=>{return a.date+31<=100})
-    console.log(te)
-}
 let cancelAnim = ()=>{
     cancelAnimTimeout = setTimeout(()=>{
         window.cancelAnimationFrame(anim);
@@ -82,9 +78,8 @@ let draw = ()=>{
         for (let i = 1; i< drawpoints.length; i++){
             ctx.beginPath();
             let drawpoint = drawpoints[i];
-            let length = 
-            ctx.arc(drawpoint.pos.x, drawpoint.pos.y,size, 0, 2 * Math.PI, true);
             let size = (drawpoints.length-i)*10/drawpoints.length;
+            ctx.arc(drawpoint.pos.x, drawpoint.pos.y,size, 0, 2 * Math.PI, true);            
             ctx.stroke();
             // ctx.lineTo(drawpoint.pos.x,drawpoint.pos.y)
         }

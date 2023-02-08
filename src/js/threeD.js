@@ -11,6 +11,24 @@ let position = {
     distance: 0
 };
 let br = false;
+const points = [
+    {name: 'JS', x:0, y:0, z:0},
+    {name: 'Java', x:0, y:0, z:0},
+    {name: 'Illustrator', x:0, y:0, z:0},
+    {name: '3Ds Max', x:0, y:0, z:0},
+    {name: 'git', x:0, y:0, z:0},
+    {name: 'Threejs', x:0, y:0, z:0},
+    {name: 'Vuejs', x:0, y:0, z:0},
+    {name: 'firebase', x:0, y:0, z:0},
+    {name: 'wordpress', x:0, y:0, z:0},
+    {name: 'Golang', x:0, y:0, z:0},
+    {name: 'Python', x:0, y:0, z:0},
+    {name: 'ableton', x:0, y:0, z:0},
+    {name: 'react', x:0, y:0, z:0},
+    {name: 'gulp', x:0, y:0, z:0},
+    {name: 'nunjucks', x:0, y:0, z:0},
+    {name: 'tailwindCSS', x:0, y:0, z:0}
+]
 
 let init = (box)=>{
     // scene = new THREE.Scene();
@@ -25,8 +43,6 @@ let init = (box)=>{
     renderer.setClearColor(0x000000, 0);
     scene.background = null;
     // scene.background = new THREE.Color(0x0D0C0B)
-    console.log(box.offsetWidth)
-    console.log(box.children.length)
     box.appendChild(renderer.domElement);
     camera.position.z = 20;
     camera.position.y = 0; 
@@ -34,29 +50,33 @@ let init = (box)=>{
     box.addEventListener('mouseout', breaky);
     group = new Object3D();
     scene.add(group);
-    // addSphere();
-    addText('HTML', 0, -radius, 0);
-    addText('JS', -radius/1.4142, -radius/1.4142, 0);
-    addText('Java', radius/1.4142, radius/1.4142, 0);
-    addText('illustrator', radius/1.4142, -radius/1.4142, 0);
-    addText('3Ds Max', -radius/1.4142, radius/1.4142, 0);
-    addText('git', 0, radius/1.4142, -radius/1.4142,);
-    addText('Threejs', 0, -radius/1.4142, radius/1.4142,);
-    addText('vuejs', 0, -radius/1.4142, -radius/1.4142,);
-    addText('firebase', 0, radius/1.4142, radius/1.4142,);
-    addText('wordpress', radius/1.4142, 0,-radius/1.4142);
-    addText('Golang', -radius/1.4142,0, radius/1.4142);
-    addText('Python', -radius/1.4142, 0,-radius/1.4142);
-    addText('ableton', radius/1.4142,0, radius/1.4142);
-    addText('react',radius, 0, 0);
-    addText('gulp',-radius, 0, 0);
-    addText('nunjucks', 0, radius, 0);
-    addText('tailwind.css',0, 0, radius);
-    addText('react',0, 0, -radius);
-    
+    distributePointsOnSphere(radius)
     group.rotateOnAxis(new Vector3(1,0,0), 0.45)
     animate();
 }
+
+function distributePointsOnSphere(radius) {
+    const pointsCount = points.length;
+    for (let i = 0; i < pointsCount; i++) {
+        const point = points[i];
+        const theta = Math.acos(1 - 2 * (i / pointsCount));
+        const phi = (Math.sqrt(pointsCount * Math.PI) * theta) % (2 * Math.PI);
+        point.x = radius * Math.sin(theta) * Math.cos(phi);
+        point.y = radius * Math.sin(theta) * Math.sin(phi);
+        point.z = radius * Math.cos(theta);
+        addText(point.name, point.x, point.y, point.z)
+    }
+   /*  for (let i = 0; i < pointsCount; i++) {
+        const point = points[i];
+        const phi = goldenAngle * i;
+        const theta = 2 * Math.PI * i / Math.sqrt(5);
+        point.x = radius * Math.cos(theta) * Math.sin(phi);
+        point.y = radius * Math.sin(theta) * Math.sin(phi);
+        point.z = radius * Math.cos(phi);
+        addText(point.name, point.x, point.y, point.z)
+    } */
+}
+
 let animate = ()=>{
     let x = position.x;
     let y = position.y;
