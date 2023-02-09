@@ -2,6 +2,7 @@ let canvas, ctx, anim, cancelAnimTimeout, pos;
 let drawpoints = [];
 let te = [{date:100, t:'t'},{date:20, t:'t'},{date:40, t:'t'},{date:200, t:'t'},{date:2500, t:'t'},{date:70, t:'t'}];
 let interval;
+let animationFrame;
 let initCanvas = (element)=>{
     canvas = element;
     canvas.width = element.clientWidth;
@@ -10,7 +11,9 @@ let initCanvas = (element)=>{
     window.addEventListener('mousemove', getPosition);
     window.addEventListener('resize', resize)
     document.addEventListener('mouseleave', cancelAnim);
-    interval = setInterval(updateSmoke, 16);
+    updateSmoke()
+    //interval = requestAnimationFrame(updateSmoke)
+
 };
 
 let smoke = [];
@@ -56,6 +59,7 @@ const updateSmoke = () => {
     while (particles.length > maxParticles) {
       particles.shift();
     }
+    animationFrame = requestAnimationFrame(updateSmoke)
   };
 
   const addParticles = (x, y) => {
@@ -123,7 +127,7 @@ let destroyCanvas = ()=>{
     window.removeEventListener('mousemove', getPosition)
     window.removeEventListener('resize', resize)
     document.removeEventListener('mouseleave', cancelAnim)
-    window.clearInterval(interval)
+    window.cancelAnimationFrame(animationFrame);
     anim = undefined;
 }
 let animateCanvas = ()=>{
