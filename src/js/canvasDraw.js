@@ -9,7 +9,7 @@ let initCanvas = (element)=>{
     window.addEventListener('mousemove', getPosition);
     window.addEventListener('resize', resize)
     document.addEventListener('mouseleave', cancelAnim);
-
+    setInterval(updateSmoke, 16);
     // ctx.beginPath();
     // let grd = ctx.createRadialGradient(50,50,10,50,50,50);
     // grd.addColorStop(0, "rgba(75,201,106,1)");
@@ -18,6 +18,87 @@ let initCanvas = (element)=>{
     // ctx.arc(50, 50,50, 0, 2 * Math.PI, true);
     // ctx.fill()
 };
+
+let smoke = [];
+let maxSmoke = 50;
+
+let particles = [];
+let particleCount = 20;
+let maxParticles = 10000;
+
+const update = () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let i = 0; i < smoke.length; i++) {
+    smoke[i].x += smoke[i].dx;
+    smoke[i].y += smoke[i].dy;
+    smoke[i].radius *= 0.96;
+    smoke[i].alpha *= 0.96;
+
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(255, 255, 255, ${smoke[i].alpha})`;
+    ctx.arc(smoke[i].x, smoke[i].y, smoke[i].radius, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  while (smoke.length > maxSmoke) {
+    smoke.shift();
+  }
+};
+const updateSmoke = () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < particles.length; i++) {
+      particles[i].x -= particles[i].dx;
+      particles[i].y -= particles[i].dy;
+      particles[i].dx *= 0.96;
+      particles[i].dy *= 0.96;
+      particles[i].alpha *= 0.96;
+  
+      ctx.beginPath();
+      ctx.fillStyle = `rgba(0, 255, 188, ${particles[i].alpha})`;
+      ctx.arc(particles[i].x, particles[i].y, particles[i].radius, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  
+    while (particles.length > maxParticles) {
+      particles.shift();
+    }
+  };
+
+  const addParticles = (x, y) => {
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: x,
+        y: y,
+        dx: (Math.random() - 0.5) * 2,
+        dy: (Math.random() - 0.5) * 2,
+        radius: Math.random() * 1,
+        alpha: 1,
+      });
+    }
+  };
+/* const addSmoke = (x, y) => {
+    smoke.push({
+      x: x,
+      y: y,
+      dx: (Math.random() - 0.5) * 10,
+      dy: (Math.random() - 0.5) * 10,
+      radius: 30,
+      alpha: 1,
+    });
+  }; */
+
+  const addSmoke = (x, y) => {
+    smoke.push({
+      x: x,
+      y: y,
+      dx: (Math.random() - 0.5) * 10,
+      dy: (Math.random() - 0.5) * 10,
+      radius: 30 + Math.random() * 50,
+      alpha: 1,
+    });
+  };
+
+  
 let resize = ()=>{
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
@@ -36,7 +117,8 @@ let getPosition = (e)=>{
     pos = {x: e.pageX , y: e.pageY - window.scrollY}
     setDrawing(pos)
     if(!anim){
-        animateCanvas()
+        /* animateCanvas() */
+        addParticles(pos.x, pos.y)
     }
 }
 let setDrawing = (pos)=>{
