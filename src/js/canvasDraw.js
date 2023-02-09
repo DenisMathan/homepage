@@ -1,6 +1,7 @@
 let canvas, ctx, anim, cancelAnimTimeout, pos; 
 let drawpoints = [];
 let te = [{date:100, t:'t'},{date:20, t:'t'},{date:40, t:'t'},{date:200, t:'t'},{date:2500, t:'t'},{date:70, t:'t'}];
+let interval;
 let initCanvas = (element)=>{
     canvas = element;
     canvas.width = element.clientWidth;
@@ -9,14 +10,7 @@ let initCanvas = (element)=>{
     window.addEventListener('mousemove', getPosition);
     window.addEventListener('resize', resize)
     document.addEventListener('mouseleave', cancelAnim);
-    setInterval(updateSmoke, 16);
-    // ctx.beginPath();
-    // let grd = ctx.createRadialGradient(50,50,10,50,50,50);
-    // grd.addColorStop(0, "rgba(75,201,106,1)");
-    // grd.addColorStop(1, "rgba(237,237,237,1)");
-    // ctx.fillStyle = grd;
-    // ctx.arc(50, 50,50, 0, 2 * Math.PI, true);
-    // ctx.fill()
+    interval = setInterval(updateSmoke, 16);
 };
 
 let smoke = [];
@@ -129,6 +123,7 @@ let destroyCanvas = ()=>{
     window.removeEventListener('mousemove', getPosition)
     window.removeEventListener('resize', resize)
     document.removeEventListener('mouseleave', cancelAnim)
+    window.clearInterval(interval)
     anim = undefined;
 }
 let animateCanvas = ()=>{
