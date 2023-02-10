@@ -30,9 +30,8 @@ const update = () => {
     smoke[i].y += smoke[i].dy;
     smoke[i].radius *= 0.96;
     smoke[i].alpha *= 0.96;
-
     ctx.beginPath();
-    ctx.fillStyle = `rgba(255, 255, 255, ${smoke[i].alpha})`;
+    ctx.fillStyle = `rgba(255, 255, 255, 1)`// ${smoke[i].alpha})`;
     ctx.arc(smoke[i].x, smoke[i].y, smoke[i].radius, 0, Math.PI * 2);
     ctx.fill();
   }
@@ -43,15 +42,20 @@ const update = () => {
 };
 const updateSmoke = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for (let i = 0; i < particles.length; i++) {
+    console.log(particles)
+    for (let i = particles.length -1; i >= 0; i--) {
       particles[i].x -= particles[i].dx;
       particles[i].y -= particles[i].dy;
       particles[i].dx *= 0.96;
       particles[i].dy *= 0.96;
       particles[i].alpha *= 0.96;
-  
+      
+    if(particles[i].alpha < 0.1) {
+        particles.splice(0, i + 1);
+        break;
+    }
       ctx.beginPath();
-      ctx.fillStyle = `rgba(0, 255, 188, ${particles[i].alpha})`;
+      ctx.fillStyle = `rgba(0, 255, 188,  ${particles[i].alpha})`;
       ctx.arc(particles[i].x, particles[i].y, particles[i].radius, 0, Math.PI * 2);
       ctx.fill();
     }
