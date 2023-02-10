@@ -42,7 +42,6 @@ const update = () => {
 };
 const updateSmoke = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    console.log(particles)
     for (let i = particles.length -1; i >= 0; i--) {
       particles[i].x -= particles[i].dx;
       particles[i].y -= particles[i].dy;
