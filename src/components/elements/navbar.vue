@@ -22,7 +22,7 @@
             </div>
           </div>
           <a @click="toggleNav" :href="path==='/contact'?'javascript:void(0);':'./contact'"><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="path==='/contact'?'text-myGreen':'text-white'">Contact </button></a>
-
+          <a @click="toggleNav" :href="path==='/video-player'?'javascript:void(0);':'./video-player'"><button class="btn hover:text-myGreen text-center h-12 w-full leading-12" :class="path==='/video-player'?'text-myGreen':'text-white'">Youtube-Player</button></a>
       </div>
     </div>
   </div>
@@ -39,7 +39,8 @@ export default {
   }},
   created(){
     this.path = window.location.pathname;
-    if(this.path !== '/contact' && this.path!=='/')this.folder="projects"
+    if (this.path === '/bachelor-thesis' || this.path === '/firstapp' || this.path === '/chess') this.folder="projects"
+    else this.folder = ""
   },
 
   methods:{

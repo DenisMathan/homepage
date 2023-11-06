@@ -118,6 +118,11 @@ p{
     overflow-y: auto;
   }
 
+.desktop\:ml-32 {
+    margin-left: 8rem;
+    width: calc(100vw - 8rem)
+}
+
 @media screen and (max-width: 1111px) {
     .menu-on{
         transition: opacity 1s ease-in;

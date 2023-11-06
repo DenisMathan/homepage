@@ -41,6 +41,11 @@ const routes = [
     name: 'Bacherlor-Thesis',
     component: () => import ('../views/projectpages/BA.vue')
   },
+  {
+    path:'/video-player',
+    name: 'Video-Player',
+    component: () => import ('../views/VideoPlayer.vue')
+  },
   // {
   //   path: '/about',
   //   name: 'About',
