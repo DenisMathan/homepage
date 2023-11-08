@@ -1,7 +1,7 @@
 <template lang="" style="position:relative">
     <div class="flex flex-column" style="display:flex; align-items: center;flex-direction:column; height:calc(100vh - 8rem); width: calc(100vw - 8rem); margin: auto">
         <div style="height:90%; width:100%">
-            <iframe :src="embeddedUrl" frameborder="0" style="width:100%; height: 100%" allowfullscreen></iframe>
+            <iframe :src="embeddedUrl" frameborder="0" style="width:100%; height: 100%" allowfullscreen data-cookieconsent="marketing"></iframe>
         </div>
         <div style="height:10%; width: 100%">
             <input class="in" style="" :value="videoURL" placeholder=" Youtube-Link (and feel free to use your add-blocker ;)" @input="updateURL" v-on:keyup.enter="btnClick">
