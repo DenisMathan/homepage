@@ -6,7 +6,7 @@
         <button class="h-full text-4xl">&lt;</button>
       </div>
       <div class="absolute w-full z-20">
-        <div class="custom-h w-full relative">
+        <div class="custom-h w-full relative viewContainer">
           <div v-for="(project, index) in projects" :key="project.name" data-project class="project z-10" :class="(project.position<4 && project.position>0)?'project-'+ project.position:'hidden'"  :title="(project.position==2)?project.name:''">
             <div :class="(project.position===2)?'flip-card':''">
               <div :id="name+'-'+index" :class="(project.position===2)?'flip-card-inner':''" @click="(e)=>{flip(name+'-'+index,e)}">
@@ -94,6 +94,10 @@ export default {
 }
 </script>
 <style scoped>
+
+.viewContainer{
+  overflow: hidden
+}
 .buttonContainer button {
   --tw-bg-opacity: 0;
   /* text-shadow: -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue; */

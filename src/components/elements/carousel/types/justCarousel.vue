@@ -1,11 +1,11 @@
 <template>
   <div class="flex tablet:block items-stretch">
     <div class="w-1/2 tablet:w-full tablet:mb-4 m-auto relative mobile:h-64 h-128">
-      <div @click="moveback()" class="text-white cursor-pointer z-40 absolute opacity-50 h-full w-1/2">
+      <div @click="moveback()" class="cursor-pointer z-40 absolute h-full w-1/2 text-background buttonContainer">
         <button class="h-full text-4xl w-8/12 ml-0">&lt;</button>
       </div>
       <div class="absolute w-full mobile:h-64 h-128 z-20">
-        <div class=" h-full w-full relative">
+        <div class=" h-full w-full relative viewContainer">
           <div v-for="(project) in projects" :key="project.headline" data-project class="project z-10 flex justify-center items-center" :class="(project.position<3)?'project-'+ project.position:'hidden'"  :title="(project.position===1)?project.name:''">
             <div class="mobile:h-64 mobile:w-64 h-128 w-128 flex justify-center items-center">
               <img v-if="project.img" :class="(project.form==='upright')?'h-full w-auto':'w-full h-auto'"  :src="project.img" alt="">
@@ -14,14 +14,14 @@
           </div>
         </div>
       </div>
-      <div @click="moveforward();" class="absolute opacity-50 h-full w-1/2 text-right right-0 li z-40"><button class="text-white h-full w-8/12 text-4xl">&gt;</button></div>
+      <div @click="moveforward();" class="absolute h-full w-1/2 text-right right-0 li z-40 text-background buttonContainer"><button class=" h-full w-8/12 text-4xl">&gt;</button></div>
     </div>
     <div class="w-1/2 tablet:w-128 text-white mobile:w-full z-50 tablet:relative tablet:mx-auto flex flex-col" :class="(textwidthLikeImg)?'tablet:w-128':''">
     <div>
       <h3 :key="obj.headline">{{obj.headline}}</h3>
     </div>
       <div class="h-full tablet:h-32 p-2 border-solid border-myGreen border rounded-md overflow-x-auto">
-        <p v-for="(paragraph, index) in obj.p" :key="index" @change="test()" @>{{paragraph}}</p>
+        <p v-for="(paragraph, index) in obj.p" :key="index" @change="test()">{{paragraph}}</p>
         <a v-if="obj.link" :href="obj.link.link">Go to {{obj.link.name}} </a>
       </div>
     </div>
@@ -82,6 +82,18 @@ export default {
 }
 </script>
 <style scoped>
+
+.viewContainer{
+  overflow: hidden
+}
+.buttonContainer button {
+  --tw-bg-opacity: 0;
+  /* text-shadow: -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue; */
+  -webkit-text-stroke: 1px #00694e; 
+}
+.buttonContainer:hover button{
+  transform: scale(1.3);
+}
 .custom-h{
     height: 30rem
 }
@@ -98,7 +110,7 @@ export default {
 }
 .project-0{
   left: -100%;
-  transform: perspective(50cm) rotate3d(0,1,0, 45deg) scale(1.35) ;
+  /* transform: perspective(50cm) rotate3d(0,1,0, 45deg) scale(1.35) ; */
 }
 .project-1{
   left: 0;
@@ -107,6 +119,6 @@ export default {
 }
 .project-2{
   left: 100%;
-  transform: perspective(50cm) rotate3d(0,1,0, -45deg)  scale(0.9);
+  /* transform: perspective(50cm) rotate3d(0,1,0, -45deg)  scale(0.9); */
 }
 </style>
