@@ -22,3 +22,10 @@ export default {
   },
 }
 </script>
+
+<style>
+.impressum {
+  min-height: calc(100vh - 8rem);
+  padding: 2rem;
+}
+</style>

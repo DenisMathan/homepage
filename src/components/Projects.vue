@@ -1,6 +1,8 @@
 <template>
   <section ref="content" id="projects">
-    <h2 data-headinganim-projects class="opacity-0">My projects</h2>
+    <h2 data-headinganim-projects class="opacity-0">&lt;Experience&gt;</h2>
+    <kacheln class="mb-24" :projects="experience" :windowWidth="windowWidth" name="Experience"/> 
+    <h2 data-headinganim-projects class="opacity-0">&lt;Projects&gt;</h2>
     <kacheln class="mb-24" :projects="programming" :windowWidth="windowWidth" name="Programming"/> 
     <carousel  :items="film" :windowWidth="windowWidth" name="Filmographie"/> 
   </section>
@@ -19,6 +21,26 @@ export default {
   data(){
     return{
       windowWidth: window.innerWidth,
+      experience: [
+      {
+          name: "Valueminer",
+          img: require('@/assets/images/kacheln/valueminer.jpeg'),
+          text: 'dark',
+          goto: "https://valueminer.eu/",
+          description: ["Valueminer is a small company settled in munich which provides an application on a lowcode-base. That means every client is able to build up their very own configuration to use Valueminers system in the for them most efficient way."],
+          size: 'middle',
+          position: undefined
+        },
+        {
+          name: "Internship Coma",
+          img: require('@/assets/images/coma.webp'),
+          learnMore: 'coma',
+          goto: "https://www.coma.de/",
+          description: ["Coma was my first experience in the IT working world, away from university projects. I did my five-month internship for my studies at this company in 2020."],
+          size: 'middle',
+          position: undefined
+        },
+      ],
       // it: data["IT-projects"],
       programming: [
         {
@@ -63,12 +85,14 @@ export default {
           position: undefined
         },
         {
-          name: "Internship at coma",
-          img: require('@/assets/images/coma.webp'),
-          learnMore: 'coma',
-          goto: "https://www.coma.de/",
-          description: ["Coma was not a project in that sense, but it was my first experience in the IT working world, away from university projects. I did my five-month internship for my studies at this company in 2020."],
-          size: 'middle',
+          name: "Chess",
+          img: require('@/assets/images/kacheln/chess.webp'),
+          learnMore: 'chess',
+          text: 'dark',
+          description:[
+            'This was a project with which I wanted to teach myself Java and object-oriented programming. ',
+            'In the current state all pieces are implemented except the king. The pieces can hit each other and may only move as allowed by the rules. It is very unlikely that this project will ever be finished because it has already fulfilled its original purpose.'
+          ],
           position: undefined
         },
         {
@@ -82,17 +106,6 @@ export default {
           ],
           position: undefined
         },
-        {
-          name: "Chess",
-          img: require('@/assets/images/kacheln/chess.webp'),
-          learnMore: 'chess',
-          text: 'dark',
-          description:[
-            'This was a project with which I wanted to teach myself Java and object-oriented programming. ',
-            'In the current state all pieces are implemented except the king. The pieces can hit each other and may only move as allowed by the rules. It is very unlikely that this project will ever be finished because it has already fulfilled its original purpose.'
-          ],
-          position: undefined
-        }
       ],
       film:[
         {

@@ -1,6 +1,6 @@
 <template>
 <section id="skills" ref= "content" class="about">
-  <h2 data-headinganim-skills class="opacity-0">&lt;My Skills&gt;</h2>
+  <h2 data-headinganim-skills class="opacity-0">&lt;Skills&gt;</h2>
   <div class="flex tablet:flex-col justify-stretch">
     <div class="w-1/2 tablet:w-full pr-12 flex items-center">
     <div class="w-full">

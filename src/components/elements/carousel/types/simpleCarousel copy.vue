@@ -2,7 +2,7 @@
   <div class="">
     <h3 class=" mb-6">{{name}}</h3>
     <div class="relative custom-h  max-w-4xl m-auto">
-      <div @click="moveback()" class="text-background cursor-pointer z-40 absolute h-full w-12 text-center buttonContainer">
+      <div @click="moveback()" class="text-white cursor-pointer z-40 absolute opacity-50 h-full w-12 text-center">
         <button class="h-full text-4xl">&lt;</button>
       </div>
       <div class="absolute w-full z-20">
@@ -33,8 +33,8 @@
           </div>
         </div>
       </div>
-      <div @click="moveforward();" class="absolute bg-opacity-0 h-full w-12 text-center right-0 li z-40 buttonContainer">
-        <button class="text-background h-full text-4xl">&gt;</button>
+      <div @click="moveforward();" class="absolute opacity-50 h-full w-12 text-center right-0 li z-40">
+        <button class="text-white h-full text-4xl">&gt;</button>
       </div>
     </div>
   </div>
@@ -94,14 +94,6 @@ export default {
 }
 </script>
 <style scoped>
-.buttonContainer button {
-  --tw-bg-opacity: 0;
-  /* text-shadow: -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue; */
-  -webkit-text-stroke: 0.5px #00694e; 
-}
-.buttonContainer:hover button{
-  transform: scale(1.3);
-}
 .custom-h{
     height: 30rem
 }
@@ -116,12 +108,9 @@ export default {
 .project:hover{
   z-index: 60;
 }
-/* .project-1{
-  left: -100%;
-  transform: perspective(50cm) rotate3d(0,1,0, 45deg) scale(1.35) ;
-} */
 .project-1{
   left: -100%;
+  transform: perspective(50cm) rotate3d(0,1,0, 45deg) scale(1.35) ;
 }
 .project-2{
   left: 0;
@@ -130,6 +119,7 @@ export default {
 }
 .project-3{
   left: 100%;
+  transform: perspective(50cm) rotate3d(0,1,0, -45deg)  scale(0.9);
 }
 .flip{
     transform: rotateY(180deg) scale(1);

@@ -17,6 +17,11 @@ const routes = [
     component: () => import ('../views/Impressum.vue')
   },
   {
+    path: '/datenschutz',
+    name: 'datenschutz',
+    component: () => import ('../views/Datenschutz.vue')
+  },
+  {
     path: '/contact',
     name: 'Contact',
     component: () => import ('../views/Contact.vue')
@@ -24,7 +29,7 @@ const routes = [
   {
     path: '/coma',
     name: 'Coma',
-    component: () => import ('../views/projectpages/BA.vue')
+    component: () => import ('../views/projectpages/Coma.vue')
   },
   {
     path:'/chess',

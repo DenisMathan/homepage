@@ -18,7 +18,7 @@
       <div class="text-white w-full">
           <a :href="path==='/'?'javascript:void(0);':'./'"><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="path==='/'?'text-myGreen':'text-white'">Home</button></a>
           <div>
-            <div class="link-container tablet:px-12 hover:text-myGreen text-center w-full border-b leading-12" :class="folder==='projects'?'text-myGreen':'text-white'">Projects
+            <div class="link-container tablet:px-12 hover:text-myGreen text-center w-full border-b leading-12" :class="folder==='projects'?'text-myGreen':'text-white'" @click="toggleProjects">Projects
               <ul class="link-content">
                 <li><a :href="path==='/bachelor-thesis'?'javascript:void(0);':'./bachelor-thesis'"><button class="btn hover:text-myGreen text-center h-12 w-full border-b border-t leading-12" :class="path==='/bachelor-thesis'?'text-myGreen':'text-white'">Bachelor-Thesis</button></a></li>
                 <li><a :href="path==='/firstapp'?'javascript:void(0);':'./firstapp'"><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="path==='/firstapp'?'text-myGreen':'text-white'">First App</button></a></li>
@@ -50,6 +50,7 @@ export default {
 
   methods:{
     toggleNav(){
+      if(e.target)
       if(this.navbar){
         this.$refs.navbar.classList.add('tablet:right-full')
       }else{
@@ -57,6 +58,13 @@ export default {
       }
       this.navbar = !this.navbar
     },
+    toggleProjects(e){
+      if(e.target.classList.contains('open')) {
+        e.target.classList.remove('open')
+      } else {
+        e.target.classList.add('open')
+      }
+    }
   }
 }
 </script>
@@ -73,10 +81,13 @@ export default {
   transform-origin:top;
   height: 3rem;
 }
-.link-container:hover{
+/* .link-container:hover{
+  height: 12rem
+} */
+.link-container.open {
   height: 12rem
 }
-.link-container:hover .link-content{
+.link-container.open .link-content{
   transform:scaleY(100%)
 }
 .link-content{
