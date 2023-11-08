@@ -1,7 +1,7 @@
 <template>
   <section ref="content" id="projects">
     <h2 data-headinganim-projects class="opacity-0">My projects</h2>
-    <carousel class="mb-24" :items="programming" :windowWidth="windowWidth" name="Programming"/> 
+    <kacheln class="mb-24" :projects="programming" :windowWidth="windowWidth" name="Programming"/> 
     <carousel  :items="film" :windowWidth="windowWidth" name="Filmographie"/> 
   </section>
 </template>
@@ -9,10 +9,12 @@
 <script>
 import {manipulate} from '@/js/headlineManipulation.js';
 import carousel from '@/components/elements/carousel/carousel';
+import kacheln from './elements/kachel/kacheln.vue';
 // import data from '@/assets/json/projects.json'
 export default {
   components: {
      carousel,
+     kacheln,
   },
   data(){
     return{
@@ -21,7 +23,7 @@ export default {
       programming: [
         {
           name: "Bachelor-Thesis",
-          img: require('@/assets/images/ba/spur.webp'),
+          img: require('@/assets/images/kacheln/baKachel.webp'),
           description: [
             'Conception & realization of a progressive web app to support musicians in their songwriting process by means of developing of a digital audio workstation and a lead sheet creation tool.',
             ],
@@ -31,7 +33,7 @@ export default {
         },
         {
           name: "Synthesizer",
-          img: require('@/assets/images/synthesizer.webp'),
+          img: require('@/assets/images/kacheln/synthi.webp'),
           description: [
             'I programmed the synthesizer during the fourth semester for fun, because I wanted to get a bit more into React and Typescript. It\'s very rudimentary and the sound isn\'t the best either, but at least you can play simple ditties with it.',
             'The basic code I was able to work my way into was given to me at the time by my lecturers from the subject "Internet Applications". Unfortunately, I could only find the finished build of what I made out of it. For this reason, I can only present the result and not my code. The code in my Github, is the one that the lecturers had given me at that time.'
@@ -42,9 +44,8 @@ export default {
         },
         {
           name: "Rocket-Simulation",
-          text: 'dark',
           link: 'https://codepen.io/Gnomath/pen/gOaeYzR',
-          img: require('@/assets/images/rocketShip.webp'),
+          img: require('@/assets/images/kacheln/rocketship.webp'),
           description:['To be honest this has nothing to do with a simulation. It was just a little afternoon project to get to know vue.js a little better. It was a weekly assignment from codepen. I can\'t remember its exact wording. If you want to take a closer look, check out my codepen.'],
           size: 'middle',
           position: undefined
@@ -52,9 +53,9 @@ export default {
 
         {
           name: "Song-Writing-App 0.1",
-          text: 'dark',
+          // text: 'dark',
           learnMore: 'firstApp',
-          img: require('@/assets/images/songwritingApp_1_0/recordwindow.webp'),
+          img: require('@/assets/images/kacheln/songwritingApp0_1Kachel.webp'),
           description: [
             'The songwriting app began as an ambitious project in the fourth semester. At the time, it was only supposed to be able to capture various ideas both lyrically and acoustically. The creation of this program required two intensive weeks in which I had created a pretty decent program for a beginner. The most difficult part for me at the time was the recording, although the features here don\'t begin to compare to those of the bachelor thesis I tackled a year later.'
           ],
@@ -83,7 +84,7 @@ export default {
         },
         {
           name: "Chess",
-          img: require('@/assets/images/Schach/1start.webp'),
+          img: require('@/assets/images/kacheln/chess.webp'),
           learnMore: 'chess',
           text: 'dark',
           description:[

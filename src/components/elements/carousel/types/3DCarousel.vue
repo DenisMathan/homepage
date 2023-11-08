@@ -104,11 +104,6 @@ export default {
 }
 </style>
 <style scoped>
-/* .test{
-    left:50%;
-    top: 50%;
-    transform: translate(-50%, -50%)
-} */
 h4{
   right: 0.25rem;
 }

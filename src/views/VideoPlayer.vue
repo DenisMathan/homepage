@@ -32,9 +32,12 @@ export default {
                     console.log("something went wrong!")
                 }
             }).then(info => {
-                res = /(?<=src=").*?(?=")/gm.exec(info.html)
-                this.embeddedUrl = res[0]
-                this.videoURL = ""
+                if (info != undefined) {
+                    res = /(?<=src=").*?(?=")/gm.exec(info.html)
+                    this.embeddedUrl = res[0]
+                    this.videoURL = ""
+                }
+
             })
         }
     }

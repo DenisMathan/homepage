@@ -6,7 +6,12 @@
     <div ref="navbar" id="navbar" class="navbar h-screen fixed w-32 bg-backgroundLight tablet:z-50 tablet:fixed tablet:w-screen tablet:h-screen tablet:border-none tablet:right-0 tablet:right-full tablet:bg-background tropacity">  
       <div class="absolute tablet:relative tablet:w-1/2 tablet:min-w-nav m-auto mb-12">
         <div class="p-2 max-w-logo m-auto tablet:mt-32 ">
-          <img class="w-full h-full" :src="require('@/assets/logo.webp')" alt="">
+          <a :href="path==='/'?'javascript:void(0);':'./'" aria-label="Go back Home">
+            <button class="w-full h-full logoshadow" title="Back to Home">
+            <img class="w-full h-full" :src="require('@/assets/logo.webp')" alt="">
+          </button>
+        </a>
+
         </div>
       </div>
       <div  class="h-full tablet:h-auto flex items-center justify-center tablet:mt-2s flex-1 mobile:w-1/2 tablet:min-w-nav mx-auto">    
@@ -79,4 +84,14 @@ export default {
   transform-origin:top;
   transition: 0.3s ease-in;
 }
+
+.logoshadow {
+  box-shadow: 10px 10px 30px #010009;
+  cursor: pointer;
+}
+.logoshadow:active:hover{
+  box-shadow: 0 0 0 #010009;
+  transform: scale(0.95)
+}
+
 </style>
