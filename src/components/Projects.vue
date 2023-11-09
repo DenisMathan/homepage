@@ -88,7 +88,6 @@ export default {
           name: "Chess",
           img: require('@/assets/images/kacheln/chess.webp'),
           learnMore: 'chess',
-          text: 'dark',
           description:[
             'This was a project with which I wanted to teach myself Java and object-oriented programming. ',
             'In the current state all pieces are implemented except the king. The pieces can hit each other and may only move as allowed by the rules. It is very unlikely that this project will ever be finished because it has already fulfilled its original purpose.'
