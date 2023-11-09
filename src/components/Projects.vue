@@ -97,7 +97,7 @@ export default {
         },
         {
           name: 'Hemp-for-future',
-          img: require('@/assets/images/hemp-for-future.webp'),
+          img: require('@/assets/images/kacheln/hempKachel.webp'),
           goto: 'https://hemp-for-future.web.app/',
           github: 'https://github.com/DenisMathan/hemp_for_future',
           description:[

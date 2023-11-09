@@ -141,6 +141,12 @@ h4{
     -webkit-font-smoothing: subpixel-antialiased;
     transform: rotateY(180deg) scale(1);
 }
+@media screen and (max-width: 1111px) {
+
+.project {
+    opacity: 1;
+}
+}
 
 @media screen and (max-width: 590px) {
     .flip-card-inner:hover {
