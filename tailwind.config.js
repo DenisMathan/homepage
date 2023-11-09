@@ -13,7 +13,7 @@ module.exports = {
       myGreen: '#00FFBC',//'#4BC96A',
       red: '#E82F0C',
       orange: '#FFB001',
-      background: '#010009',   
+      background: '#000025',   
       backgroundLight: '#00694e',//'#00402F',//'#0B1408', 
       white: '#FFFFFF'
     },

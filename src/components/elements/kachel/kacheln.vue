@@ -1,9 +1,9 @@
 <template>
     <div>
         <h3 class="test mb-6">{{name}}</h3>
-            <div class="flex flex-wrap">
-        <div v-for="(project, index) in projects" :key="project.name" data-project class="project w-64 h-64 m-4">
-            <div class='flip-card' >
+        <div class="grid-container ">
+            <div v-for="(project, index) in projects" :key="project.name" data-project class="project w-64 h-64 m-4">
+                <div class='flip-card' >
                   <div :id="name+'-'+index" class='flip-card-inner'  @click="(e)=>{flip(name+'-'+index,e, project.position)}">
                     <div class="front bg-center bg-cover cursor-pointer bg-background kachelFront" :style="'background-image: url('+project.img+')'">
                       <h4 class="absolute bottom-0 z-20" :class="(project.text==='dark')?'text-background':''" >{{project.name}}</h4>
@@ -27,11 +27,10 @@
                     </div>
                   </div>
                   </div>
-        </div>
+                </div>
         
-    </div>
-    </div>
-    
+            </div>
+        </div>
 </template>
 <script>
 import cine from '@/components/elements/video/video.vue';
@@ -60,6 +59,17 @@ export default {
                     flipped.querySelector('.flip').classList.remove('flip')
                 }
               flipcard.classList.add('flip');
+
+              setTimeout(()=>{
+                let backContent = flipcard.querySelector('.back-content');
+                let rect = backContent.getBoundingClientRect()
+                if (rect.x < 0) {
+                    backContent.classList.add('fix-left')
+                } else if (rect.x + rect.width > window.innerWidth) {
+                    backContent.classList.add('fix-right')
+                }
+              },600)
+   
               e.target.parentElement.parentElement.parentElement.classList.add('flipped')
             }
           }
@@ -73,6 +83,15 @@ export default {
     }
 </style>
 <style scoped>
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, max-content));
+    grid-gap: 16px;
+    justify-content: center;
+    padding: initial;
+}
 h4{
   right: 0.25rem;
 }
@@ -95,6 +114,7 @@ h4{
   left: 50%;
   top: 50%;
   max-height: 90vh;
+  max-width: 90vw;
   width: 30rem;
   height: 30rem;
 }
@@ -120,5 +140,17 @@ h4{
 .flip, .flip.flip-card-inner:hover{
     -webkit-font-smoothing: subpixel-antialiased;
     transform: rotateY(180deg) scale(1);
+}
+
+@media screen and (max-width: 590px) {
+    .flip-card-inner:hover {
+        transform: scale(1.1);
+    }
+}
+.fix-left {
+    transform: translate(-25%, -50%) !important;
+}
+.fix-right {
+    transform: translate(-75%, -50%) !important;
 }
 </style>

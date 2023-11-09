@@ -131,7 +131,14 @@ p{
     }
     .tablet\:translate-reverse{
         transform: translate(0, 0)
-    }   
+    }  
+    .desktop\:ml-32 {
+        margin-left: 0rem;
+        width: 100%
+    } 
+    #skills div div{
+        padding-right: 0;
+    }
 }
 @media screen and (max-width: 935px) {
 

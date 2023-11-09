@@ -8,7 +8,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
-    <div class="page-content desktop:ml-32 tablet:ml-0 home-content mx-auto relative z-10">
+    <div class="page-content desktop:ml-32 tablet:ml-0 home-content mx-auto relative z-10  w-full">
       <router-view class="w-full" />
     </div>
     <!-- <router-view class="page-content desktop:ml-32 tablet:ml-0 home-content mx-auto relative z-10" /> -->

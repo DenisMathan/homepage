@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- button -->
-    <div class="fixed top-6 right-12 h-12 w-12 hidden tablet:block cursor-pointer" style="z-index: 51" @click="toggleNav()"><img class="h-full w-full" :src="require('@/assets/icons/menu.webp')" alt="menu-button"></div>
+    <div class="fixed top-6 right-12 h-12 w-12 hidden tablet:block cursor-pointer" style="z-index: 51" @click="toggleNav"><img class="h-full w-full" :src="require('@/assets/icons/menu.webp')" alt="menu-button"></div>
     <!-- navigation -->
     <div ref="navbar" id="navbar" class="navbar h-screen fixed w-32 bg-backgroundLight tablet:z-50 tablet:fixed tablet:w-screen tablet:h-screen tablet:border-none tablet:right-0 tablet:right-full tablet:bg-background tropacity">  
       <div class="absolute tablet:relative tablet:w-1/2 tablet:min-w-nav m-auto mb-12">
@@ -50,7 +50,7 @@ export default {
 
   methods:{
     toggleNav(){
-      if(e.target)
+      console.log('test')
       if(this.navbar){
         this.$refs.navbar.classList.add('tablet:right-full')
       }else{
