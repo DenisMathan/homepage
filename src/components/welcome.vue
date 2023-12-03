@@ -1,9 +1,9 @@
 <template>
   <div class=" min-h-screen flex flex-col justify-center z-30">
     <h1 data-headinganim-welcome class="opacity-0">
-      Hi, <br>I'm Denis, <br> Webdeveloper
+      Hi, <br>I'm Denis, <br> Software-Engineer
     </h1>
-    <h2 data-headinganim-welcome class ="opacity-0 break-words">	&lt;Developer with extras (B. Eng.)&gt;</h2>
+    <h2 data-headinganim-welcome class ="opacity-0 break-words">	&lt;B. Eng.&gt;</h2>
     <div class="w-full h-12">
       <a href="./contact"><button ref="btn" class="btn-1 left w-45 h-full w-44 bg-background rounded-md border-myGreen border text-white">Contact me</button></a>
     </div>
