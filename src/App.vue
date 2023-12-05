@@ -3,7 +3,7 @@
     <div class="fixed h-full w-full z-0">
       <canvas width="150" height="600" ref="can" class="w-full h-full"></canvas>
     </div>
-    <Navbar/>
+    <Navbar :position="position" />
     <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -27,11 +27,52 @@ export default {
   },
   mounted(){
     document.title = "Denis Mathan || Webdeveloper"
-    window.addEventListener('scroll',this.test)
+    window.addEventListener('scroll',this.onScroll)
+    this.windowHeight = window.innerHeight
     initCanvas(this.$refs.can);
+  },
+  data(){
+    return {
+      windowHeight: undefined,
+      skills: undefined,
+      skillsTop: undefined,
+      projects: undefined,
+      projectsTop: undefined,
+      about: undefined,
+      aboutTop: undefined,
+      position: ""
+    }
+  },
+  methods: {
+    onScroll() {  
+      this.getPositions();
+      let startPoint = this.windowHeight/2
+      this.position = ''
+      if (this.skillsTop < startPoint) {
+        this.position = 'skills'
+      }
+      if (this.projectsTop < startPoint) {this.position = 'projects'}
+      if (this.aboutTop < startPoint) {this.position = 'about'}
+    },
+    getPositions() {
+      if (this.skills == undefined) {
+        this.skills = document.querySelector('#skills')
+      }
+      this.skillsTop = this.skills?.getBoundingClientRect().top
+      if (this.projects == undefined) {
+        this.projects = document.querySelector('#projects')
+      }
+      this.projectsTop = this.projects?.getBoundingClientRect().top
+      if (this.about == undefined) {
+        this.about = document.querySelector('#about')
+      }
+      this.aboutTop = this.about?.getBoundingClientRect().top
+    }
   },
   beforeDestroy(){
     destroyCanvas()
+    window.addEventListener('scroll',this.onScroll)
+    
   }
 }
 </script>

@@ -42,9 +42,6 @@ export default {
         projects: Array,
         name: String
     },
-    mounted() {
-        console.log(this.$props.projects)
-    },
     methods: {
         flip(id,e){
           if(e.target.dataset.vid===undefined && e.target.localName !== 'a'){

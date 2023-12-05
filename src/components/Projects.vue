@@ -1,7 +1,7 @@
 <template>
   <section ref="content" id="projects">
-    <h2 data-headinganim-projects class="opacity-0">&lt;Experience&gt;</h2>
-    <kacheln class="mb-24" :projects="experience" :windowWidth="windowWidth" name="Experience"/> 
+    <h2 data-headinganim-projects class="opacity-0">&lt;Real Work-Experience&gt;</h2>
+    <kacheln class="mb-24" :projects="experience" :windowWidth="windowWidth" name="Companies"/> 
     <h2 data-headinganim-projects class="opacity-0">&lt;Projects&gt;</h2>
     <kacheln class="mb-24" :projects="programming" :windowWidth="windowWidth" name="Programming"/> 
     <carousel  :items="film" :windowWidth="windowWidth" name="Filmographie"/> 
@@ -26,6 +26,7 @@ export default {
           name: "Valueminer",
           img: require('@/assets/images/kacheln/valueminer.jpeg'),
           text: 'dark',
+          learnMore: 'valueminer',
           goto: "https://valueminer.eu/",
           description: ["Valueminer is a small company settled in munich which provides an application on a lowcode-base. That means every client is able to build up their very own configuration to use Valueminers system in the for them most efficient way."],
           size: 'middle',

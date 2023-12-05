@@ -1,5 +1,6 @@
 <template>
   <div>
+    
     <!-- button -->
     <div class="fixed top-6 right-12 h-12 w-12 hidden tablet:block cursor-pointer" style="z-index: 51" @click="toggleNav"><img class="h-full w-full" :src="require('@/assets/icons/menu.webp')" alt="menu-button"></div>
     <!-- navigation -->
@@ -16,8 +17,7 @@
       </div>
       <div  class="h-full tablet:h-auto flex items-center justify-center tablet:mt-2s flex-1 mobile:w-1/2 tablet:min-w-nav mx-auto">    
       <div class="text-white w-full">
-          <a :href="path==='/'?'javascript:void(0);':'./'"><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="path==='/'?'text-myGreen':'text-white'">Home</button></a>
-          <div>
+          <!-- <div>
             <div class="link-container tablet:px-12 hover:text-myGreen text-center w-full border-b leading-12" :class="folder==='projects'?'text-myGreen':'text-white'" @click="toggleProjects">Projects
               <ul class="link-content">
                 <li><a :href="path==='/bachelor-thesis'?'javascript:void(0);':'./bachelor-thesis'"><button class="btn hover:text-myGreen text-center h-12 w-full border-b border-t leading-12" :class="path==='/bachelor-thesis'?'text-myGreen':'text-white'">Bachelor-Thesis</button></a></li>
@@ -25,8 +25,18 @@
                 <li><a :href="path==='/chess'?'javascript:void(0);':'./chess'"><button class="btn hover:text-myGreen text-center h-12 w-full leading-12" :class="path==='/chess'?'text-myGreen':'text-white'">Chess</button></a></li>
               </ul>
             </div>
+          </div> -->
+          <div v-if="path==='/'">
+            <a href='#skills'><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="position==='skills'?'text-myGreen':'text-white'">Skills</button></a>
+            <a @click="toggleNav" href='#projects'><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="position === 'projects'?'text-myGreen':'text-white'">Experience</button></a>
+            <a href="#about"><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="position === 'about'?'text-myGreen':'text-white'">About me</button></a>
           </div>
-          <a @click="toggleNav" :href="path==='/contact'?'javascript:void(0);':'./contact'"><button class="btn hover:text-myGreen text-center h-12 w-full leading-12" :class="path==='/contact'?'text-myGreen':'text-white'">Contact </button></a>
+          <div v-else>
+            <a :href="path==='/'?'javascript:void(0);':'./'"><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="path==='/'?'text-myGreen':'text-white'">Home</button></a>
+          </div>
+         
+
+          <a @click="toggleNav" :href="path==='/contact'?'javascript:void(0);':'./contact'"><button class="btn hover:text-myGreen text-center h-12 w-full leading-12" :class="path==='/contact'?'text-myGreen':'text-white'">Contact</button></a>
           <!-- <a @click="toggleNav" :href="path==='/video-player'?'javascript:void(0);':'./video-player'"><button class="btn hover:text-myGreen text-center h-12 w-full leading-12" :class="path==='/video-player'?'text-myGreen':'text-white'">Youtube-Player</button></a> -->
       </div>
     </div>
@@ -38,19 +48,21 @@
 
 <script>
 export default {
+  props: {
+    position: String
+  },
   data(){return{
     folder: '',
-    path: ""
+    path: "",
+    window: undefined
   }},
   created(){
     this.path = window.location.pathname;
     if (this.path === '/bachelor-thesis' || this.path === '/firstapp' || this.path === '/chess') this.folder="projects"
     else this.folder = ""
   },
-
   methods:{
     toggleNav(){
-      console.log('test')
       if(this.navbar){
         this.$refs.navbar.classList.add('tablet:right-full')
       }else{

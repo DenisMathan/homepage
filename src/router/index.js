@@ -32,6 +32,11 @@ const routes = [
     component: () => import ('../views/projectpages/Coma.vue')
   },
   {
+    path: '/valueminer',
+    name: 'Valueminer',
+    component: () => import ('../views/projectpages/Valueminer.vue')
+  },
+  {
     path:'/chess',
     name: 'Chess',
     component: () => import ('../views/projectpages/Chess.vue')
