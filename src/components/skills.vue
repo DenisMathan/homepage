@@ -45,8 +45,8 @@ export default {
         javascript: {name: 'Javascript', percent: 95},
         typescript: {name: 'Typescript', percent: 90},
         golang: {name:'Golang',percent:85},
-        java: {name: 'Java', percent: 40},
-        python: {name: 'Python', percent: 20}
+        java: {name: 'Java', percent: 20},
+        python: {name: 'Python', percent: 50}
       },
       frameworks: {
         vue: {name: 'Vue', percent: 80},
@@ -54,8 +54,8 @@ export default {
         react: {name: 'React', percent: 40}
       },
       creative: {
-        DsMax: {name:'3D\'s Max',percent:60},
-        illustrator: {name:'Illustrator',percent:70},
+        DsMax: {name:'3D\'s Max',percent:20},
+        illustrator: {name:'Illustrator',percent:60},
         photoshp: {name:'Photoshop',percent:60},
         Ableton: {name: 'Ableton Live', percent:20}
       }

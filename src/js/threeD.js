@@ -27,7 +27,11 @@ const points = [
     {name: 'react', x:0, y:0, z:0},
     {name: 'gulp', x:0, y:0, z:0},
     {name: 'nunjucks', x:0, y:0, z:0},
-    {name: 'tailwindCSS', x:0, y:0, z:0}
+    {name: 'tailwindCSS', x:0, y:0, z:0},
+    {name: 'AWS', x:0, y:0, z:0},
+    {name: 'Angular', x:0, y:0, z:0},
+    {name: 'Docker', x:0, y:0, z:0},
+    {name: 'ChromaDB', x:0, y:0, z:0},
 ]
 
 let init = (box)=>{
