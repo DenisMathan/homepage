@@ -49,8 +49,8 @@ export default {
         python: {name: 'Python', percent: 50}
       },
       frameworks: {
-        vue: {name: 'Vue', percent: 80},
-        angular: {name:'Angular',percent:70},
+        angular: {name:'Angular',percent:90},
+        vue: {name: 'Vue', percent: 70},
         react: {name: 'React', percent: 40}
       },
       creative: {
@@ -69,14 +69,6 @@ export default {
         window.addEventListener("resize", this.resizing, true);
         this.width= this.$refs.gl.clientWidth;
         init(this.$refs.gl)
-        // loadThreeD().then(e=>{
-        //   console.log(e)
-        //   this.init3D = e.init;
-        //   this.resize3D = e.resize;
-        //   this.init3D(this.$refs.gl)
-          
-        // })
-        // this.threeinit(this.$refs.gl)
   },
     methods: {
       onScroll(){
