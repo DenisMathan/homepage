@@ -17,15 +17,6 @@
       </div>
       <div  class="h-full tablet:h-auto flex items-center justify-center tablet:mt-2s flex-1 mobile:w-1/2 tablet:min-w-nav mx-auto">    
       <div class="text-white w-full">
-          <!-- <div>
-            <div class="link-container tablet:px-12 hover:text-myGreen text-center w-full border-b leading-12" :class="folder==='projects'?'text-myGreen':'text-white'" @click="toggleProjects">Projects
-              <ul class="link-content">
-                <li><a :href="path==='/bachelor-thesis'?'javascript:void(0);':'./bachelor-thesis'"><button class="btn hover:text-myGreen text-center h-12 w-full border-b border-t leading-12" :class="path==='/bachelor-thesis'?'text-myGreen':'text-white'">Bachelor-Thesis</button></a></li>
-                <li><a :href="path==='/firstapp'?'javascript:void(0);':'./firstapp'"><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="path==='/firstapp'?'text-myGreen':'text-white'">First App</button></a></li>
-                <li><a :href="path==='/chess'?'javascript:void(0);':'./chess'"><button class="btn hover:text-myGreen text-center h-12 w-full leading-12" :class="path==='/chess'?'text-myGreen':'text-white'">Chess</button></a></li>
-              </ul>
-            </div>
-          </div> -->
           <div v-if="path==='/'">
             <a href='#skills'><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="position==='skills'?'text-myGreen':'text-white'">Skills</button></a>
             <a @click="toggleNav" href='#projects'><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="position === 'projects'?'text-myGreen':'text-white'">Experience</button></a>
@@ -116,5 +107,27 @@ export default {
   box-shadow: 0 0 0 #010009;
   transform: scale(0.95)
 }
+@media screen and (min-width: 1111px) {
+    .menu-on{
+        transition: opacity 1s ease-in;
+        opacity: 1;
+    }
+    .tablet\:translate-reverse{
+        transform: translate(0, 0)
+    }  
+    .desktop\:ml-32 {
+        margin-left: 0rem;
+        width: 100%
+    } 
+    #skills div div{
+        padding-right: 0;
+    }
+    .navbar {
+      background-color: rgb(0 60 105 / 50%);
+      /* background-color: blue; */
+      --tw-bg-opacity: 0.5;
+    }
+}
+
 
 </style>

@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     colors: {
       gray: colors.trueGray,
-      myGreen: '#00FFBC',//'#4BC96A',
+      myGreen: 'rgb(19 104 137)',//'#4BC96A',
       red: '#E82F0C',
       orange: '#FFB001',
       background: '#000025',   

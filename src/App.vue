@@ -78,6 +78,12 @@ export default {
 </script>
 
 <style>
+
+#app {
+  background-image: url('./assets/images/background/bg.jpeg');
+  background-size: cover;
+  --tw-bg-opacity: 0.5;
+}
 .page-content{
   max-width: 1300px;
 }
