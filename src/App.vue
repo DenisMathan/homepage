@@ -80,7 +80,7 @@ export default {
 <style>
 
 #app {
-  background-image: url('./assets/images/background/bg.jpeg');
+  background-image: url('./assets/images/background/bg2.webp');
   background-size: cover;
   --tw-bg-opacity: 0.5;
 }
