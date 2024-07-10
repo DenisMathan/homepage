@@ -1,5 +1,5 @@
 <template>
-  <div class=" min-h-screen flex flex-col justify-center z-30">
+  <section class=" min-h-screen flex flex-col justify-center z-30" id="welcome">
     <h1 data-headinganim-welcome class="opacity-0">
       Hi, <br>I'm Denis, <br> Software-Engineer
     </h1>
@@ -7,7 +7,7 @@
     <div class="w-full h-12">
       <a href="./contact"><button ref="btn" class="btn-1 left w-45 h-full w-44 bg-background rounded-md border-myGreen border text-white">Contact me</button></a>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
