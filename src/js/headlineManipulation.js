@@ -1,7 +1,20 @@
 
 
 
+const fontLoaded = ()=>{
+    return new Promise(res=> {
+        if (document.fonts.status !== 'loading') {
+            res();
+        } else {
+            document.fonts.ready.then(() => {
+                res()
+            })
+        }
+    })
+}
+
 let manipulate = async (headings)=>{
+    await fontLoaded();
     for (let i = 0; i<headings.length; i++){
         const heading = headings[i];
         const letters = heading.innerText.split("")
@@ -33,5 +46,7 @@ let manipulate = async (headings)=>{
         }
     }
 }
+
+
 
 export {manipulate}
