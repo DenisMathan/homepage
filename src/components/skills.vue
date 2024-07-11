@@ -24,7 +24,7 @@
     <div class="w-1/2 tablet:w-full">
     <h3 class="text-center tablet:text-left">Technologies I have worked with</h3>
       <div class="h-full flex justify-center">
-        <div ref="gl" :style="'height:' +width + 'px'" class="threeDContainer w-full"></div>
+        <div ref="gl" :style="'height:' +width + 'px'" class="threeDContainer w-full" @mouseenter="()=>startAnim()"></div>
       </div>
     </div>
   </div>
@@ -35,7 +35,7 @@
 
 <script>
 import {manipulate} from '@/js/headlineManipulation.js';
-import {init, resize} from '@/js/threeD.js';
+import {init, resize, startAnimation} from '@/js/threeD.js';
 // const loadThreeD = ()=> import ('@/js/threeD.js')
 export default {
   data(){
@@ -85,6 +85,9 @@ export default {
       },
       resizing(){
           resize(this.$refs.gl)
+      },
+      startAnim(){
+        startAnimation();
       }
     },
     beforeDestroy(){

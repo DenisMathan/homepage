@@ -4,7 +4,7 @@ import {Text} from 'troika-three-text';
 let scene, camera, renderer, group, anim;
 let radius;
 let maxSpeed = 0.015;
-let speed = maxSpeed;
+let speed = 0;
 let position = {
     x: 0,
     y: 0,
@@ -56,7 +56,8 @@ let init = (box)=>{
     scene.add(group);
     distributePointsOnSphere(radius)
     group.rotateOnAxis(new Vector3(1,0,0), 0.45)
-    animate();
+    setTimeout(animate, 200)
+    // animate();
 }
 
 function distributePointsOnSphere(radius) {
@@ -70,15 +71,6 @@ function distributePointsOnSphere(radius) {
         point.z = radius * Math.cos(theta);
         addText(point.name, point.x, point.y, point.z)
     }
-   /*  for (let i = 0; i < pointsCount; i++) {
-        const point = points[i];
-        const phi = goldenAngle * i;
-        const theta = 2 * Math.PI * i / Math.sqrt(5);
-        point.x = radius * Math.cos(theta) * Math.sin(phi);
-        point.y = radius * Math.sin(theta) * Math.sin(phi);
-        point.z = radius * Math.cos(phi);
-        addText(point.name, point.x, point.y, point.z)
-    } */
 }
 
 let animate = ()=>{
@@ -94,16 +86,24 @@ let animate = ()=>{
         element.rotateOnAxis(axis, -speed * position.distance);
     }
     renderer.render(scene, camera)
-    anim = requestAnimationFrame(animate);
+    if(speed > 0.000001) {
+        anim = requestAnimationFrame(animate);
+    } else {
+        stopAnimation()
+    }
 }
 let stopAnimation= ()=>{
     window.cancelAnimationFrame(anim);
+    speed = 0;
+}
+let startAnimation = () => {
+    if(speed === 0) {
+        speed = maxSpeed;
+        animate()
+    }
 }
 let resize = (box)=>{
     renderer.setSize(box.offsetWidth, box.offsetWidth)
-    // stopAnimation();
-    // box.removeChild();
-    // scene,camera, renderer, group, anim = undefined;
 }
 let addText = (word, x, y, z)=> {
     const text = new Text();
@@ -122,7 +122,6 @@ let addText = (word, x, y, z)=> {
 }
 let breaky = ()=>{
     br = true;
-    
 }
 let direction = (e)=>{
     let norm
@@ -144,4 +143,4 @@ let sqr = (x,pot)=>{
     }
     return val;
   }
-export {init, resize}
+export {init, resize, startAnimation}
