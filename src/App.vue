@@ -4,10 +4,6 @@
       <canvas width="150" height="600" ref="can" class="w-full h-full"></canvas>
     </div>
     <Navbar :position="position" />
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
     <div class="page-content desktop:ml-32 tablet:ml-0 home-content mx-auto relative z-10  w-full">
       <router-view class="w-full" />
     </div>
