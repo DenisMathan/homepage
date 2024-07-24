@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "dotenv": "^16.4.5",
     "three": "^0.134.0",
     "troika-three-text": "^0.43.1-alpha.0",
     "vue": "^2.6.11",

@@ -1,12 +1,12 @@
 <template>
   <section id="Chat" ref="content" class="contact min-h-screen flex flex-col justify-center mb-0 px-12">
     <div class = "chat">
-      <div class="chat-window relative">
+      <div ref="chatWindow" class="chat-window relative">
         <div v-for="(message, index) in messages" :key="index" class="message" :class="message.from">
           {{ message.message }}
         </div>
       </div>
-      <textarea ref="area" @keyup.enter="sendMessage" type="text" name="chatInput" id="" placeholder="Input your message here!" v-model="input"> </textarea>
+      <textarea ref="area" @keyup.enter="sendMessage" type="text" name="chatInput" id="" placeholder="Ask whatever you want here!" v-model="input"> </textarea>
       <div class="loading" v-if="loading">
         <div class ="loader"></div>
       </div>
@@ -18,6 +18,7 @@
 
 <script>
 import {manipulate} from '@/js/headlineManipulation.js';
+import {request} from '@/js/requests.js'
 export default {
   metaInfo: {
     meta:[{
@@ -33,14 +34,33 @@ export default {
     }
   },
   methods: {
-    sendMessage(e){
+    async sendMessage(e){
       if(e.shiftKey) {
         return
       }
       this.messages.push({from: "user", message: this.input})
-      this.input = ''
       this.loading = true;
       this.$refs.area.blur()
+      let response = '';
+      try {
+        response = await request(this.input);
+      } catch (error) {
+        console.log(error)
+        response = "sorry something went wrong with your request :(";
+      }
+      this.input = ''
+      this.receiveResponse(response)
+    },
+    receiveResponse(response) {
+      this.addMessage({from: "chat-bot", message: response})
+      this.loading = false
+      this.$refs.area.focus()
+    },
+    addMessage(newMessage) {
+      this.messages.push(newMessage)
+      this.$nextTick(() => {
+        this.$refs.chatWindow.scrollTop = this.$refs.chatWindow.scrollHeight
+      });
     }
   }
 }
@@ -96,6 +116,7 @@ label{
   margin-bottom: 0.3rem;
   color:white;
   white-space: pre-line;
+  overflow: auto;
 }
 .message {
   position: relative;
