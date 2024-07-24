@@ -42,7 +42,6 @@
 </template>
 
 <script>
-import {manipulate} from '@/js/headlineManipulation.js';
 import {request} from '@/js/requests.js'
 export default {
   metaInfo: {
@@ -93,6 +92,10 @@ export default {
 </script>
 
 <style>
+
+a {
+  color: #062d20;
+}
 .loading {
   position: absolute;
   display: flex;
