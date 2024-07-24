@@ -1,9 +1,9 @@
 const alfredHost = '[2a00:1f:601:5f01:7066:e0c7:e6c7:e7e]:3333'
-
+// const alfredHost = "hihi"
 let request = (input)=> {
     return new Promise((res, rej)=> {
 
-        console.log(input)
+        console.log(input, alfredHost)
         fetch('http://' + alfredHost + '/api/chat', {
             method: 'POST',
             headers: {
