@@ -45,6 +45,16 @@ export default {
       // it: data["IT-projects"],
       programming: [
         {
+          name: "Chatbot",
+          img: require('@/assets/images/kacheln/chatbot.webp'),
+          description: [
+            'A chatbot with my personal Knowledge. Developed in Python by using the 7b mistral llm!',
+            ],
+          learnMore:'./chatbot',
+          position: undefined,
+          size: 'middle',
+        },
+        {
           name: "Bachelor-Thesis",
           img: require('@/assets/images/kacheln/baKachel.webp'),
           description: [
