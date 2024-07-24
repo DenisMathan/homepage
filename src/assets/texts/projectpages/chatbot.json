@@ -1,0 +1,36 @@
+{
+    "BA":{
+        "motivation": {   
+            "title": "Goal",
+            "text": "A chatbot which runs locally and answers with provided information"
+            
+        },
+        "TechnicalStructure":{
+            "title": "Python",
+            "PWA": {
+                "title": "Langchain + llama.cpp",
+                "text":[
+                    "After a short research I decided to use langchain in combination with llama.cpp to run the llms locally." ,
+                    "llama.cpp allows only the gguf format which allows us to use only the CPU for the llm instead of the gpu"
+                ]
+            },
+            "Firebase": {
+                "title": "ChromaDB",
+                "text":[
+                    "To store the knowledge which is provided by the bot, I used the chromaDB. This is a database which creates vectors out of phrases. So onse the user inserts something into chat it generates a vector and searches for similar entries insde chroma.",
+                    "Once it finds those similarities it can provide the correct phrases which we can use in our prompt to generate an answer based on the provided information"
+                ]
+            },
+            "Vue": {
+                "title": "Flask",
+                "text": [
+                    "I used Flask to create access to the chatbot and provide it as an HTTP service."
+                ]
+            }
+        },
+        "result": {
+            "title": "Results",
+            "text": "Below you can see the result of my project work. If you don't focus on the design, but on the functionalities, it looks quite nice."
+        }
+    }   
+}

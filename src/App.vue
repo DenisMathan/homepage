@@ -1,5 +1,7 @@
 <template>
   <div id="app" class="bg-background min-h-screen overflow-x-hidden">
+    <div class="background"></div>
+    <div class="background-overlay"></div>
     <div class="fixed h-full w-full z-0">
       <canvas width="150" height="600" ref="can" class="w-full h-full"></canvas>
     </div>
@@ -74,11 +76,19 @@ export default {
 </script>
 
 <style>
-
-#app {
+.background {
+  position: fixed;
+  height:100%;
+  width:100%;
   background-image: url('./assets/images/background/bg2.webp');
   background-size: cover;
   --tw-bg-opacity: 0.5;
+}
+.background-overlay {
+  position: fixed;
+  height:100%;
+  width:100%;
+  background-color: rgb(0, 0, 0, 0.75);
 }
 .page-content{
   max-width: 1300px;

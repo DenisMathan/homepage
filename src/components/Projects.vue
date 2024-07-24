@@ -52,6 +52,7 @@ export default {
             ],
           learnMore:'./chatbot',
           position: undefined,
+          github: 'https://github.com/DenisMathan/Alfred',
           size: 'middle',
         },
         {
