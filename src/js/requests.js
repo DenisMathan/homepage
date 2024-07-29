@@ -1,4 +1,5 @@
-const alfredHost = '[2a00:1f:601:5f01:157a:ae37:703c:2dd6]:3333'
+const alfredHost = 'pi.denis-mathan.com:3333'
+// const alfredHost = '192.168.178.88'
 // const alfredHost = "hihi"
 let request = (input)=> {
     return new Promise((res, rej)=> {
