@@ -1,6 +1,4 @@
-const alfredHost = 'pi.denis-mathan.com:3333'
-// const alfredHost = '192.168.178.88'
-// const alfredHost = "hihi"
+const alfredHost = 'pi.denis-mathan.com'
 let request = (input)=> {
     return new Promise((res, rej)=> {
 
