@@ -1,60 +1,25 @@
-{
-    "IT-projects":[
-        {
-          "name": "Synthesizer",
-          "img": "synthesizer.png",
-          "description": [
-            "I programmed the synthesizer during the fourth semester for fun, because I wanted to get a bit more into React and Typescript. It's very rudimentary and the sound isn't the best either, but at least you can play simple ditties with it.",
-            "The basic code I was able to work my way into was given to me at the time by my lecturers from the subject \"Internet Applications\". Unfortunately, I could only find the finished build of what I made out of it. For this reason, I can only present the result and not my code. The code in my Github, is the one that the lecturers had given me at that time."
-            ],
-          "goto": "https://synthesizer-4db56.web.app/",
-          "github":"TODO"
-        },
-        {
-          "name": "Rocket-Simulation",
-          "text": "dark",
-          "link": "https://codepen.io/Gnomath/pen/gOaeYzR",
-          "img": "rocketShip.png",
-          "description":["To be honest this has nothing to do with a simulation. It was just a little afternoon project to get to know vue.js a little better. It was a weekly assignment from codepen. I can't remember its exact wording. If you want to take a closer look, check out my codepen."],
-          "size": "middle"
-        },
-        {
-          "name": "Song-Writing-App 0.1",
-          "text": "dark",
-          "learnMore": "firstApp",
-          "img": "songwritingApp_1_0/recordwindow.png",
-          "description": [
-            "The songwriting app began as an ambitious project in the fourth semester. At the time, it was only supposed to be able to capture various ideas both lyrically and acoustically. The creation of this program required two intensive weeks in which I had created a pretty decent program for a beginner. The most difficult part for me at the time was the recording, although the features here don't begin to compare to those of the bachelor thesis I tackled a year later."
-          ],
-          "size": "middle"
-        },
-        {
-          "name": "IMAGO",
-          "img": "imago.png",
-          "text": "dark",
-          "goto": "https://www.imago-design.de/de/",
-          "description": ["I worked on this project very intensively during my six-month internship at coma. In general, I'm very grateful to the boss I had there, because she kept me busy with a wide variety of assignments during that time and I was able to learn a lot that way. One of the biggest tasks I had, was the website for Imago. For this, I built some individual web pages according to the required design and or implemented various algorithms and animations."],
-          "size": "middle"
-        },
-        {
-          "name": "Hemp-for-future",
-          "img": "hemp-for-future.png",
-          "goto": "/HempForFuture/index.html",
-          "github": "https://github.com/DenisMathan/hemp_for_future",
-          "description":[
-            "This was my first \"larger\" project, which I developed in the fourth semester as part of the subject design with three other fellow students. While I did the programming, the others took care of the design and project management. The title is based on the \"Fridays for future\" movement and is meant to illustrate that the blanket demonization of cannabis has promoted more environmentally harmful substances.",
-            "This site is mainly designed for desktop devices and not recommended for the usage with mobile devices."
-          ]
-        },
-        {
-          "name": "Chess",
-          "img": "Schach/1start.png",
-          "learnMore": "chess",
-          "text": "dark",
-          "description":[
-            "This was a project with which I wanted to teach myself Java and object-oriented programming.",
-            "In the current state all pieces are implemented except the king. The pieces can hit each other and may only move as allowed by the rules. It is very unlikely that this project will ever be finished because it has already fulfilled its original purpose."
-          ]
-        }
-    ]
-}
+[
+  {
+    "title": "<Real Work-Experience>",
+    "content":[    
+      {
+        "name": "Valueminer",
+        "img": "require('@/assets/images/kacheln/valueminer.jpeg')",
+        "text": "dark",
+        "learnMore": "valueminer",
+        "goto": "https://valueminer.eu/",
+        "description": ["Valueminer is a small company settled in munich which provides an application on a lowcode-base. That means every client is able to build up their very own configuration to use Valueminers system in the for them most efficient way."],
+        "size": "middle",
+        "position": "undefined"
+      },
+      {
+        "name": "Internship Coma",
+        "img": "require('@/assets/images/coma.webp')",
+        "learnMore": "coma",
+        "goto": "https://www.coma.de/",
+        "description": ["Coma was my first experience in the IT working world, away from university projects. I did my five-month internship for my studies at this company in 2020."],
+        "size": "middle",
+        "position": "undefined"
+      }]
+  }
+]

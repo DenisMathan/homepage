@@ -1,5 +1,7 @@
 <template>
   <section ref="content" id="projects">
+    <Content data-headinganim-projects v-for="date in content" :cont=date></Content>
+
     <h2 data-headinganim-projects class="opacity-0">&lt;Real Work-Experience&gt;</h2>
     <kacheln class="mb-24" :projects="experience" :windowWidth="windowWidth" name="Companies"/> 
     <h2 data-headinganim-projects class="opacity-0">&lt;Projects&gt;</h2>
@@ -10,17 +12,20 @@
 
 <script>
 import {manipulate} from '@/js/headlineManipulation.js';
+import Content from '@/components/content.vue'
 import carousel from '@/components/elements/carousel/carousel';
 import kacheln from './elements/kachel/kacheln.vue';
-// import data from '@/assets/json/projects.json'
+import data from '@/assets/texts/projects.json'
 export default {
   components: {
+     Content,
      carousel,
      kacheln,
   },
   data(){
     return{
       windowWidth: window.innerWidth,
+      content: [],
       experience: [
       {
           name: "Valueminer",
@@ -162,9 +167,14 @@ export default {
       ]
     }
   },
+    created() {
+      this.content = data
+    },
     mounted(){
       window.addEventListener("scroll", this.onScroll, true);
       window.addEventListener("resize", this.updateWindowSize, true);
+      // console.log(data[0]?.title)
+      // this._data = data
     },
     beforeDestroy(){
         window.removeEventListener("scroll", this.onScroll, true);
