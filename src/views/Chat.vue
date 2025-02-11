@@ -16,6 +16,7 @@
     </div>    
   </section>
   <section id="currentKnowledge" class="knowledge">
+    <dynContent :title="'Knowledge'" :knowledge="this.knowledge"></dynContent>
     <h2>Knowledge</h2>
     <div >
       <p>I am Denis. I'm a Softwareengeneer with a degree in mediatechnology. </p> 
@@ -42,7 +43,8 @@
 </template>
 
 <script>
-import {request} from '@/js/requests.js'
+import {request, getKnowledge} from '@/js/requests.js'
+import dynContent from '../components/dynContent.vue';
 export default {
   metaInfo: {
     meta:[{
@@ -50,14 +52,24 @@ export default {
       content: 'On this page you can communicate with a chatbot who interacts as Denis Mathan'
     }]
   },
+  components:{
+    dynContent
+  },
   data() {
     return {
       messages: [],
       input: "",
-      loading: false
+      loading: false,
+      knowledge: []
     }
   },
+  mounted() {
+    this.requestKnowledge();
+  },
   methods: {
+    async requestKnowledge(){
+      this.knowledge = await getKnowledge();
+    },
     async sendMessage(e){
       if(e.shiftKey) {
         return
@@ -70,8 +82,8 @@ export default {
         let answer = await request(this.input);
         response = {message: answer}
       } catch (error) {
-        console.log(error)
-        response = {message: "I'm really sorry but this service seems to be offline currently :/ \nFor more information about me go to", link: window.location + "bot"};
+        console.log(error.type)
+        response = {message: "I'm really sorry something went wrong :/ \nEither the server is offline currently, or your networks nameserver didn't find the proper address. \nFor more information about me go to", link: window.location + "bot"};
       }
       this.input = ''
       this.receiveResponse(response)
