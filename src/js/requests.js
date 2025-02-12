@@ -1,8 +1,8 @@
-// const alfredHost = 'https://pi.denis-mathan.com'
-const alfredHost = 'http://localhost:3333'
+const alfredHost = 'https://pi.denis-mathan.com'
+// const alfredHost = 'http://localhost:3333'
 let request = (input)=> {
     return new Promise((res, rej)=> {
-        fetch('https://' + alfredHost + '/api/chat', {
+        fetch(alfredHost + '/api/chat', {
           method: 'POST',
           headers: {
               'Accept': 'application/json',
@@ -17,7 +17,6 @@ let request = (input)=> {
           return response.json();
         })
         .then(data => {
-          console.log(data);
           res(data)
         })
         .catch(error => {
@@ -44,7 +43,7 @@ const getKnowledge = () => {
       res(data)
     }).catch(error => {
       console.error('There was a problem with the server:', error);
-      rej(error)
+      res(['Sorry this bot is currently not reachable! :('])
     });
   })
 }

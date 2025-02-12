@@ -3,41 +3,20 @@
     <section id="Chat" ref="content" class="contact min-h-screen flex flex-col justify-center mb-0 px-12">
     <div class = "chat">
       <div ref="chatWindow" class="chat-window relative">
-        <div v-for="(message, index) in messages" :key="index" class="message" :class="message.from">
-          {{ message.message }}
+        <div v-for="(message, index) in messages" :key="index" class="message" :class="message.role">
+          {{ message.content }}
           <div v-if="message.link !== undefined" ><a :href="message.link">{{ message.link }}</a></div>
         </div>
       </div>
       <textarea ref="area" @keyup.enter="sendMessage" type="text" name="chatInput" id="" placeholder="Ask whatever you want here!" v-model="input"> </textarea>
       <div class="loading" v-if="loading">
         <div class ="loader"></div>
-        <div> The bot typically responds within 15 seconds...</div>
+        <div> The bot typically responds within 3 seconds...</div>
       </div>
     </div>    
   </section>
   <section id="currentKnowledge" class="knowledge">
-    <dynContent :title="'Knowledge'" :knowledge="this.knowledge"></dynContent>
-    <h2>Knowledge</h2>
-    <div >
-      <p>I am Denis. I'm a Softwareengeneer with a degree in mediatechnology. </p> 
-      <p>My name is Denis Mathan </p> 
-      <p>I was born on July 2, 1994 </p> 
-      <p>I played soccer / football for the first time when I learned to walk </p> 
-      <p>At the age of 6, I started playing soccer at the Fc Neuhadern club </p> 
-      <p>At the age of 12, I started playing guitar </p> 
-      <p>I'm playing Tennis since I was a teenager </p> 
-      <p>I completed my Abitur at the Max-Planck-Gymnasium in Munich! </p> 
-      <p>My Abitur was moderately successful with an average grade of 3.1 </p> 
-      <p>My first attempt to study was the Environmental Engineering program at TU Munich. I dropped out after 2 semesters! </p> 
-      <p>My second attempt to study was Secondary School Teaching with the subjects Mathematics and Sports </p> 
-      <p>My last and successfull attempt to study was mediatechnology at the Technische Hochschule Deggendorf </p> 
-      <p>I completed a Bachelor of Engineering at the Deggendorf Institute of Technology with an average grade of 1.9 </p> 
-      <p>My bachelor's thesis was about a songwriting app that allowed users to both record lyrics and collaborate with their bandmates </p> 
-      <p>My enthusiasm for programming developed during my studies in Media Technology at THD </p> 
-      <p>I have very diverse hobbies! On the one hand, I really enjoy playing sports games like soccer, tennis, and volleyball. But I am also very passionate about music. I play guitar and sing, which I have tried with several bands! </p> 
-      <p>My favourite bands are the White Stripes, Bukahara and most of the old rockbands </p> 
-      <p>When I was younger I loved to read books, I mean I still like it but I'm not reading that often anymore </p> 
-    </div>
+    <dynContent :title="'Knowledge'" :phrases="this.knowledge"></dynContent>
   </section>
   </div>
 </template>
@@ -57,9 +36,11 @@ export default {
   },
   data() {
     return {
+      // messages: [{role:'user', content: 'hi'}, {role:'assistant', content: 'Hi,\nhowcan I assist you today?'}],
       messages: [],
       input: "",
       loading: false,
+      title: "Knowledge",
       knowledge: []
     }
   },
@@ -74,12 +55,12 @@ export default {
       if(e.shiftKey) {
         return
       }
-      this.messages.push({from: "user", message: this.input})
+      this.messages.push({role: "user", content: this.input})
       this.loading = true;
       this.$refs.area.blur()
       let response = {};
       try {
-        let answer = await request(this.input);
+        let answer = await request(this.messages);
         response = {message: answer}
       } catch (error) {
         console.log(error.type)
@@ -89,7 +70,7 @@ export default {
       this.receiveResponse(response)
     },
     receiveResponse(response) {
-      this.addMessage({from: "chat-bot", message: response.message, link: response.link})
+      this.addMessage({role: "assistant", content: response.message, link: response.link})
       this.loading = false
       this.$refs.area.focus()
     },
@@ -193,7 +174,7 @@ label{
   margin-left: auto;
   margin-right: 0.5;
 }
-.chat-bot::after {
+.assistant::after {
  transform: scaleX(-1);
   left: -0.1rem;
 }
