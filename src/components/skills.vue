@@ -45,8 +45,9 @@ export default {
         javascript: {name: 'Javascript', percent: 95},
         typescript: {name: 'Typescript', percent: 90},
         golang: {name:'Golang',percent:85},
-        java: {name: 'Java', percent: 20},
-        python: {name: 'Python', percent: 50}
+        java: {name: 'Java', percent: 40},
+        python: {name: 'Python', percent: 70},
+        c: {name: 'C', percent: 20}
       },
       frameworks: {
         angular: {name:'Angular',percent:90},

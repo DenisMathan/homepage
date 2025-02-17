@@ -1,6 +1,6 @@
 <template>
   <section ref="content" id="projects">
-    <h2 data-headinganim-projects class="opacity-0">&lt;Real Work-Experience&gt;</h2>
+    <h2 data-headinganim-projects class="opacity-0">&lt;Company-Experience&gt;</h2>
     <kacheln class="mb-24" :projects="experience" :windowWidth="windowWidth" name="Companies"/> 
     <h2 data-headinganim-projects class="opacity-0">&lt;Projects&gt;</h2>
     <kacheln class="mb-24" :projects="programming" :windowWidth="windowWidth" name="Programming"/> 
@@ -65,25 +65,25 @@ export default {
           position: undefined,
           size: 'middle',
         },
-        {
-          name: "Synthesizer",
-          img: require('@/assets/images/kacheln/synthi.webp'),
-          description: [
-            'I programmed the synthesizer during the fourth semester for fun, because I wanted to get a bit more into React and Typescript. It\'s very rudimentary and the sound isn\'t the best either, but at least you can play simple ditties with it.',
-            'The basic code I was able to work my way into was given to me at the time by my lecturers from the subject "Internet Applications". Unfortunately, I could only find the finished build of what I made out of it. For this reason, I can only present the result and not my code. The code in my Github, is the one that the lecturers had given me at that time.'
-            ],
-          goto: 'https://synthesizer-4db56.web.app/',
-          github:'TODO',
-          position: undefined
-        },
-        {
-          name: "Rocket-Simulation",
-          link: 'https://codepen.io/Gnomath/pen/gOaeYzR',
-          img: require('@/assets/images/kacheln/rocketship.webp'),
-          description:['To be honest this has nothing to do with a simulation. It was just a little afternoon project to get to know vue.js a little better. It was a weekly assignment from codepen. I can\'t remember its exact wording. If you want to take a closer look, check out my codepen.'],
-          size: 'middle',
-          position: undefined
-        },
+        // {
+        //   name: "Synthesizer",
+        //   img: require('@/assets/images/kacheln/synthi.webp'),
+        //   description: [
+        //     'I programmed the synthesizer during the fourth semester for fun, because I wanted to get a bit more into React and Typescript. It\'s very rudimentary and the sound isn\'t the best either, but at least you can play simple ditties with it.',
+        //     'The basic code I was able to work my way into was given to me at the time by my lecturers from the subject "Internet Applications". Unfortunately, I could only find the finished build of what I made out of it. For this reason, I can only present the result and not my code. The code in my Github, is the one that the lecturers had given me at that time.'
+        //     ],
+        //   goto: 'https://synthesizer-4db56.web.app/',
+        //   github:'TODO',
+        //   position: undefined
+        // },
+        // {
+        //   name: "Rocket-Simulation",
+        //   link: 'https://codepen.io/Gnomath/pen/gOaeYzR',
+        //   img: require('@/assets/images/kacheln/rocketship.webp'),
+        //   description:['To be honest this has nothing to do with a simulation. It was just a little afternoon project to get to know vue.js a little better. It was a weekly assignment from codepen. I can\'t remember its exact wording. If you want to take a closer look, check out my codepen.'],
+        //   size: 'middle',
+        //   position: undefined
+        // },
 
         {
           name: "Song-Writing-App 0.1",
@@ -106,17 +106,17 @@ export default {
           ],
           position: undefined
         },
-        {
-          name: 'Hemp-for-future',
-          img: require('@/assets/images/kacheln/hempKachel.webp'),
-          goto: 'https://hemp-for-future.web.app/',
-          github: 'https://github.com/DenisMathan/hemp_for_future',
-          description:[
-            'This was my first "larger" project, which I developed in the fourth semester as part of the subject design with three other fellow students. While I did the programming, the others took care of the design and project management. The title is based on the "Fridays for future" movement and is meant to illustrate that the blanket demonization of cannabis has promoted more environmentally harmful substances.',
-            'This site is mainly designed for desktop devices and not recommended for the usage with mobile devices.'
-          ],
-          position: undefined
-        },
+        // {
+        //   name: 'Hemp-for-future',
+        //   img: require('@/assets/images/kacheln/hempKachel.webp'),
+        //   goto: 'https://hemp-for-future.web.app/',
+        //   github: 'https://github.com/DenisMathan/hemp_for_future',
+        //   description:[
+        //     'This was my first "larger" project, which I developed in the fourth semester as part of the subject design with three other fellow students. While I did the programming, the others took care of the design and project management. The title is based on the "Fridays for future" movement and is meant to illustrate that the blanket demonization of cannabis has promoted more environmentally harmful substances.',
+        //     'This site is mainly designed for desktop devices and not recommended for the usage with mobile devices.'
+        //   ],
+        //   position: undefined
+        // },
       ],
       film:[
         {

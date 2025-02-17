@@ -8,10 +8,11 @@
           <div v-if="message.link !== undefined" ><a :href="message.link">{{ message.link }}</a></div>
         </div>
       </div>
-      <textarea ref="area" @keyup.enter="sendMessage" type="text" name="chatInput" id="" placeholder="Ask whatever you want here!" v-model="input"> </textarea>
-      <div class="loading" v-if="loading">
-        <div class ="loader"></div>
-        <div> The bot typically responds within 3 seconds...</div>
+      <textarea ref="area" @keyup.enter="sendMessage" type="text" name="chatInput" id="" placeholder="Type here!" v-model="input"> </textarea>
+      <div class="loading" v-if="loading || notavailable">
+        <div v-if="loading" class ="loader"></div>
+        <div v-if="loading"> The bot typically responds within 3 seconds...</div>
+        <div v-if="notavailable">Sorry, the service is not available :(</div>
       </div>
     </div>    
   </section>
@@ -40,8 +41,9 @@ export default {
       messages: [],
       input: "",
       loading: false,
+      notavailable: false,
       title: "Knowledge",
-      knowledge: []
+      knowledge: [],
     }
   },
   mounted() {
@@ -50,6 +52,7 @@ export default {
   methods: {
     async requestKnowledge(){
       this.knowledge = await getKnowledge();
+      this.notavailable = this.knowledge.length === 1;
     },
     async sendMessage(e){
       if(e.shiftKey) {

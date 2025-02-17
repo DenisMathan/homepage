@@ -32,12 +32,10 @@ const points = [
     {name: 'Angular', x:0, y:0, z:0},
     {name: 'Docker', x:0, y:0, z:0},
     {name: 'ChromaDB', x:0, y:0, z:0},
+    {name: 'C', x:0, y:0, z:0},
 ]
 
 let init = (box)=>{
-    // scene = new THREE.Scene();
-    // camera = new THREE.PerspectiveCamera( 75, 1, 0.1, 1000 );
-    // renderer = new THREE.WebGLRenderer({alpha: true});
     scene = new Scene();
     camera = new PerspectiveCamera( 75, 1, 0.1, 1000 );
     renderer = new WebGLRenderer({alpha: true});    
@@ -46,7 +44,6 @@ let init = (box)=>{
     renderer.setSize(box.offsetWidth, box.offsetWidth);
     renderer.setClearColor(0x000000, 0);
     scene.background = null;
-    // scene.background = new THREE.Color(0x0D0C0B)
     box.appendChild(renderer.domElement);
     camera.position.z = 20;
     camera.position.y = 0; 
@@ -120,6 +117,11 @@ let addText = (word, x, y, z)=> {
     group.add(text)
     renderer.render(scene, camera)
 }
+
+let test = ()=>{
+    position.x = 0;
+    position.y = 0;
+}
 let breaky = ()=>{
     br = true;
 }
@@ -129,6 +131,9 @@ let direction = (e)=>{
     position.y = -1 + e.offsetY/(e.target.offsetHeight/2);
     position.distance = Math.sqrt(sqr(position.x,2) + sqr(position.y,2))
     norm = Math.sqrt(sqr(position.x,2)+sqr(position.y,2))
+    if(norm == 0) {
+        norm = 0.0001
+    }
     position.x = position.x/norm;
     position.y = position.y/norm;
     if(br){
