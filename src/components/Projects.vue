@@ -48,7 +48,10 @@ export default {
           name: "Chatbot",
           img: require('@/assets/images/kacheln/chatbot.webp'),
           description: [
-            'A chatbot with my personal Knowledge. Developed in Python by using the 7b mistral llm!',
+            'A chatbot with my personal Knowledge developed in Python.', 
+            'The personal knowledge realized with chromaDB.',
+            'Version 0: Using the 7b mistral llm in the local network.',
+            'Version 1: Using the API of le Chat.'
             ],
           learnMore:'./chatbot',
           position: undefined,
