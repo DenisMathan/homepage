@@ -3,7 +3,7 @@
     <!-- button -->
     <div class="fixed top-6 right-12 h-12 w-12 hidden tablet:block cursor-pointer" style="z-index: 51" @click="toggleNav"><img class="h-full w-full" :src="require('@/assets/icons/menu.webp')" alt="menu-button"></div>
     <!-- navigation -->
-    <div ref="navbar" id="navbar" class="navbar h-screen fixed w-32 bg-backgroundLight tablet:z-50 tablet:fixed tablet:w-screen tablet:h-screen tablet:border-none tablet:right-0 tablet:right-full tablet:bg-background tropacity">  
+    <div ref="navbar" id="navbar" class="navbar h-screen fixed w-32 bg-backgroundLight tablet:z-50 tablet:fixed tablet:w-screen tablet:h-screen tablet:border-none tablet:right-full tablet:bg-background tropacity">  
       <div class="absolute tablet:relative tablet:w-1/2 tablet:min-w-nav m-auto mb-12">
         <div class="p-2 max-w-logo m-auto tablet:mt-32 ">
           <a :href="path==='/'?'#welcome':'./'" aria-label="Go back Home">
@@ -24,6 +24,8 @@
           <div v-else>
             <a :href="path==='/'?'javascript:void(0);':'./'"><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="path==='/'?'text-myGreen':'text-white'">Home</button></a>
           </div>
+
+          <a @click="toggleNav" :href="path==='/techview'?'javascript:void(0);':'./techview'"><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="path==='/techview'?'text-myGreen':'text-white'">Techview</button></a>
          
 
           <!-- <a @click="toggleNav" :href="path==='/contact'?'javascript:void(0);':'./contact'"><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="path==='/contact'?'text-myGreen':'text-white'">Contact</button></a> -->
