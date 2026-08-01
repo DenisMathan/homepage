@@ -1,12 +1,12 @@
 <template>
   <div class="p-12 overflow-hidden">
     <h1 data-headinganim-chess class="opacity-0 mb-6">
-        Internship at Coma
+          {{ page.title }}
     </h1>
-    <p class="text-white mb-6 max-w-3xl m-auto">
-      All in all, it was a very nice time there, I had nice colleagues, a pleasant working atmosphere and I got very good work assignments right from the start. I'm very grateful to my boss at the time, especially for this last aspect. She not only challenged me, but also encouraged me. For example, in addition to my tasks, I had to give a presentation on any IT topic for the team meeting every month. Most of the time, I couldn't tell the team anything new, but I learned a lot in the process.
-    </p>
-    <h2 data-headinganim-chess class="opacity-0">My Experiences</h2>
+      <p v-for="paragraph in page.intro" :key="paragraph" class="text-white mb-6 max-w-3xl m-auto">
+        {{ paragraph }}
+      </p>
+    <h2 data-headinganim-chess class="opacity-0">{{ page.sectionTitle }}</h2>
     <carousel  :textwidthLikeImg="true" :projects="images"/>
   </div>
 </template>
@@ -14,11 +14,12 @@
 <script>
 import carousel from '@/components/elements/carousel/types/justCarousel.vue';
 import {manipulate} from '@/js/headlineManipulation.js';
+import catalog from '@/assets/texts/projects.json'
 export default {
   metaInfo: {
     meta:[{
       name: 'description',
-      content: 'This page describes the time that developer Denis Mathan experienced at coma.'
+      content: catalog.experience[1].page.metaDescription 
     }]
   },
   components:{
@@ -26,6 +27,7 @@ export default {
   },
     data(){
         return{
+        page: catalog.experience[1].page,
             images:[{
                 position:0,
                 headline: 'CMS-Systems',

@@ -1,19 +1,19 @@
 <template>
     <div class="test relative p-12 tablet:p-6 mobile:p-2 overflow-hidden text-white">
       <h1 data-headinganim-chess class="opacity-0 mb-6">
-          Chatbot
+      {{ page.title }}
       </h1>
       <div class="versions">
-       <span :class="(version===0)?'selected':''" @click="()=>this.switch(0)"> Version 0 </span>  | <span :class="(version===1)?'selected':''" @click="()=>this.switch(1)">Version 1</span>
+     <span :class="(version===0)?'selected':''" @click="()=>this.switch(0)"> {{ page.versions[0].label }} </span>  | <span :class="(version===1)?'selected':''" @click="()=>this.switch(1)">{{ page.versions[1].label }}</span>
       </div>
       <dynContent v-for="passage in texts" :title="passage.title" :phrases="passage.text"></dynContent>
 
       <h2>Used model</h2>
       <div v-if="version===0">
-        <p>capybarahermes-2.5-mistral-7b.Q3_K_M.gguf</p>
-        <p><a href="https://huggingface.co/TheBloke/CapybaraHermes-2.5-Mistral-7B-GGUF">You can get it here!</a></p>
+        <p>{{ page.versions[0].usedModel[0] }}</p>
+        <p><a :href="page.versions[0].usedModel[1]">You can get it here!</a></p>
       </div>
-      <p v-if="version===1">mistral-large-latest <br>Le Chat API</p>
+      <p v-if="version===1">{{ page.versions[1].usedModel[0] }} <br>{{ page.versions[1].usedModel[1] }}</p>
       <!-- <p><a href="https://huggingface.co/TheBloke/CapybaraHermes-2.5-Mistral-7B-GGUF">You can get it here!</a></p> -->
 
       <h2>Prompt</h2>
@@ -47,10 +47,10 @@
       <dynContent :title="'Current knowledge'" :phrases="this.knowledge"></dynContent>
       <h2>Result</h2>
       <div v-if="version === 0">
-        <p>It is a functional chatbot capable of answering questions in a basic manner. Its performance could be significantly improved by utilizing a more advanced model, which would also require superior hardware.</p>
+        <p>{{ page.versions[0].result }}</p>
       </div>
       <div v-if="version === 1">
-        <p>It is a functional chatbot capable of answering questions in a basic manner. It is much faster than its previous Version which used to run locally in my Network.</p>
+        <p>{{ page.versions[1].result }}</p>
         <a href="./chat">You can try it here :)</a>
       </div>
 
@@ -64,12 +64,13 @@ import text0 from '@/assets/texts/projectpages/chatbot_0.json';
 import text1 from '@/assets/texts/projectpages/chatbot_1.json';
 import dynContent from '../../components/dynContent.vue';
 import { getKnowledge } from '../../js/requests';
+import catalog from '@/assets/texts/projects.json'
 export default {
   name: 'BA',
   metaInfo: {
     meta:[{
       name: 'description',
-      content: 'This page presents a chatbot which I Denis Mathan developed as a sideproject'
+      content: catalog.programming[0].metaDescription
     }]
   },
   components:{
@@ -78,6 +79,7 @@ export default {
   },
     data(){
         return{
+          page: catalog.programming[0].page,
           texts: text1['parts'],
           version: 1,
           knowledge: []

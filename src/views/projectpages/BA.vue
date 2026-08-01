@@ -1,9 +1,12 @@
 <template>
     <div class="relative p-12 tablet:p-6 mobile:p-2 overflow-hidden text-white">
       <h1 data-headinganim-chess class="opacity-0 mb-6">
-          Bachelor-<br class="hidden mobile:block"/>Thesis
+          {{ page.title }}
       </h1>
-      <h2 data-headinganim-chess class="opacity-0 mb-6">Songwriting-App 0.8</h2>
+      <h2 data-headinganim-chess class="opacity-0 mb-6">{{ page.sectionTitle }}</h2>
+      <p v-for="paragraph in page.intro" :key="paragraph" class="text-white mb-6 max-w-4xl m-auto">
+        {{ paragraph }}
+      </p>
       <h2>{{text['motivation'].title}}</h2>
       <p>{{text['motivation'].text}}</p>
       <h2>{{text['problem'].title}}</h2>
@@ -86,12 +89,13 @@
 import carousel from '@/components/elements/carousel/types/justCarousel.vue';
 import {manipulate} from '@/js/headlineManipulation.js';
 import text from '@/assets/texts/projectpages/ba.json';
+import catalog from '@/assets/texts/projects.json'
 export default {
   name: 'BA',
   metaInfo: {
     meta:[{
       name: 'description',
-      content: 'This page presents the bachelor thesis of the developer Denis Mathan.'
+      content: catalog.programming[1].page,
     }]
   },
   components:{
@@ -99,6 +103,7 @@ export default {
   },
     data(){
         return{
+          page: catalog.programming[1].page,
           text: text['BA'],
           navigationCarousel:[
               {

@@ -1,12 +1,12 @@
 <template>
   <div class="p-12 overflow-hidden">
     <h1 data-headinganim-chess class="opacity-0 mb-6">
-        Chess
+        {{ page.title }}
     </h1>
-    <p class="text-white mb-6 max-w-3xl m-auto">
-      Welcome to the presentation of my very rudimentary chess program. I have programmed it with Java. First basics are already developed, but it is still a long way to the finished game, which I will probably not go. But it has already fulfilled the purpose of teaching me object-oriented programming and Java. If you are interested in the already existing code, just visit me on <a href="https://github.com/DenisMathan/Schach">Github</a>.
+    <p v-for="paragraph in page.intro" :key="paragraph" class="text-white mb-6 max-w-3xl m-auto">
+      {{ paragraph }}
     </p>
-    <h2 data-headinganim-chess class="opacity-0">Hector's Adventure</h2>
+    <h2 data-headinganim-chess class="opacity-0">{{ page.sectionTitle }}</h2>
     <carousel  :textwidthLikeImg="true" :projects="images"/>
   </div>
 </template>
@@ -14,12 +14,13 @@
 <script>
 import carousel from '@/components/elements/carousel/types/justCarousel.vue';
 import {manipulate} from '@/js/headlineManipulation.js';
+import catalog from '@/assets/texts/projects.json'
 export default {
   name: 'Chess',
   metaInfo: {
     meta:[{
       name: 'description',
-      content: 'This site presents a very rudimentary chess program which the developer Denis Mathan had once started.'
+      content: catalog.programming[3].metaDescription
     }]
   },
   components:{
@@ -27,6 +28,7 @@ export default {
   },
     data(){
         return{
+        page: catalog.programming[3].page,
             images:[{
                 img: require('@/assets/images/Schach/9damenUmwandlung.webp'),
                 position:0,
