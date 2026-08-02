@@ -66,6 +66,59 @@ const routes = [
     name: 'Chatbot',
     component: () => import ('../views/projectpages/Chatbot.vue')
   },
+  {
+    path:'/quantum-computing',
+    name: 'QuantumComputing',
+    component: () => import ('../views/projectpages/QuantumComputing.vue')
+  },
+  {
+    path:'/arcade-game',
+    name: 'ArcadeGame',
+    component: () => import ('../views/projectpages/GenericProject.vue'),
+    props: { projectSlug: 'arcade-game' }
+  },
+  {
+    path:'/tutor-app',
+    name: 'TutorApp',
+    component: () => import ('../views/projectpages/GenericProject.vue'),
+    props: { projectSlug: 'tutor-app' }
+  },
+  {
+    path:'/placemark-app',
+    name: 'PlacemarkApp',
+    component: () => import ('../views/projectpages/GenericProject.vue'),
+    props: { projectSlug: 'placemark-app' }
+  },
+  {
+    path:'/hits-and-history',
+    name: 'HitsAndHistory',
+    component: () => import ('../views/projectpages/GenericProject.vue'),
+    props: { projectSlug: 'hits-and-history' }
+  },
+  {
+    path:'/ml-diabetes-prediction',
+    name: 'MlDiabetesPrediction',
+    component: () => import ('../views/projectpages/GenericProject.vue'),
+    props: { projectSlug: 'ml-diabetes-prediction' }
+  },
+  {
+    path:'/grimlang',
+    name: 'Grimlang',
+    component: () => import ('../views/projectpages/GenericProject.vue'),
+    props: { projectSlug: 'grimlang' }
+  },
+  {
+    path:'/aumovio',
+    name: 'Aumovio',
+    component: () => import ('../views/projectpages/GenericProject.vue'),
+    props: { projectSlug: 'aumovio' }
+  },
+  {
+    path:'/vector',
+    name: 'Vector',
+    component: () => import ('../views/projectpages/GenericProject.vue'),
+    props: { projectSlug: 'vector' }
+  }
   // {
   //   path:'/video-player',
   //   name: 'Video-Player',

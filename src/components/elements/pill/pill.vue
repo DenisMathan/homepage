@@ -19,8 +19,9 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 0.75rem;
-    min-width: 6rem;
-  min-height: 1.5rem;
+  min-width: 6rem;
+  flex-shrink: 0;
+  height: 1.5rem;
   padding: 0.1rem 0.2rem;
   border-radius: 999px;
   border: 1px solid rgba(0, 255, 188, 0.35);

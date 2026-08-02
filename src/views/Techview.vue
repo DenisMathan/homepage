@@ -30,8 +30,8 @@
               :rel="project.gotoExternal ? 'noreferrer' : null" class="inline-flex mt-5 text-sm text-myGreen">
               {{ project.gotoLabel }}
             </a>
-            <a v-if="project.learnMore" :href="project.learnMore" target="_blank"
-              :rel="project.learnMoreExternal ? 'noreferrer' : null" class="inline-flex mt-5 text-sm text-myGreen">
+            <a v-if="project.learnMore" :href="project.learnMore"
+              class="inline-flex mt-5 text-sm text-myGreen" target="_self">
               {{ project.learnMoreLabel }}
             </a>
             <a v-if="project.github" :href="project.github" target="_blank"
@@ -62,8 +62,7 @@
             class="inline-flex mt-5 text-sm text-myGreen">
             {{ project.gotoLabel }}
           </a>
-          <a v-if="project.learnMore" :href="project.learnMore" target="_blank"
-            :rel="project.learnMoreExternal ? 'noreferrer' : null" class="inline-flex mt-5 text-sm text-myGreen">
+          <a v-if="project.learnMore" :href="project.learnMore" target="_self" class="inline-flex mt-5 text-sm text-myGreen">
             {{ project.learnMoreLabel }}
           </a>
           <a v-if="project.github" :href="project.github" target="_blank"
@@ -97,7 +96,7 @@ function resolveCatalogReference(reference) {
   for (const part of parts) {
     console.log("part:", part, "current:", current)
     if (current == null) return null
-    current = Array.isArray(current) ? current.filter((item) => item.name === part)[0] : current[part]
+    current = Array.isArray(current) ? current.filter((item) => item.name === part || item.id === part)[0] : current[part]
   }
   console.log('Resolved catalog reference:', reference, 'to:', current)
   return current
@@ -187,7 +186,7 @@ p {
 .pill-container {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   gap: 0.5rem;
   overflow-x: auto;
   scrollbar-width: none;
