@@ -10,7 +10,7 @@
       <router-view class="w-full" />
     </div>
     <!-- <router-view class="page-content desktop:ml-32 tablet:ml-0 home-content mx-auto relative z-10" /> -->
-    <myfooter  class="tablet:ml-0 relative z-10"/>
+    <myfooter  class="footer tablet:ml-0 relative z-10"/>
   </div>
 </template>
 
@@ -92,5 +92,9 @@ export default {
 }
 .page-content{
   max-width: 1300px;
+  min-height: calc(100vh - 4rem);
+}
+.footer{
+  height: 64px;
 }
 </style>

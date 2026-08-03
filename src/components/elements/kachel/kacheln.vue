@@ -15,7 +15,7 @@
                             <div class="text-white">
                               <p v-for="paragraph in project.description" :key="paragraph">{{paragraph}}</p>
                               <p v-if="project.link">Click <a :href="project.link" target="_blank">here</a> to learn more!</p>
-                              <p v-if="project.learnMore"><a :href="'./'+project.learnMore" target="_blank">Want to see more?</a></p>
+                              <p v-if="project.learnMore"><a :href="'./'+project.learnMore" target="_blank">{{ project.learnMore_label || 'Learn more' }}</a></p>
                               <p v-if="project.goto"><a :href="project.goto" target="_blank">Go to {{project.name}}!</a></p>
                               <p v-if="project.github"><a :href="project.github" target="_blank">Go to code!</a></p>
                               <div :class="(project.position!==2)?('hidden'):''" v-if="project.vid" >

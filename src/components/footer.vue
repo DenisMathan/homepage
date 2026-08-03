@@ -1,5 +1,5 @@
 <template>
-  <div id="footer" class=" bg-gray-900 h-32 flex items-center justify-center text-white w-full">
+  <div id="footer" class=" bg-gray-900 h-16 flex items-center justify-center text-white w-full">
       <div>
         <a class="px-3" href="./impressum">Imprint</a>
         <a class="px-3" href="./datenschutz">Datenschutz</a>

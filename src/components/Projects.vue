@@ -25,11 +25,11 @@ export default {
       experience: catalog.experience.map(project => ({
         ...project,
         img: resolveProjectImage(project.img),
-      })),
+      })).sort((a, b) => (a.position || 100) - (b.position || 100)),
       programming: catalog.programming.map(project => ({
         ...project,
         img: resolveProjectImage(project.img),
-      })),
+      })).sort((a, b) => (a.position || 100) - ( b.position || 100)),
       film: catalog.film.map(project => ({
         ...project,
         img: resolveProjectImage(project.img),

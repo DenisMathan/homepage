@@ -2,6 +2,7 @@
   "experience": [
     {
       "id": "vector",
+      "position": 1,
       "name": "Vector Informatik GmbH",
       "img": "kacheln/vector.png",
       "goto": "https://www.vector.com/",
@@ -34,6 +35,7 @@
     },
     {
       "id": "aumovio",
+      "position": 2,
       "name": "Aumovio (former Continental)",
       "img": "kacheln/aumovio.png",
       "goto": "https://aumovio.com/",
@@ -65,6 +67,7 @@
     },
     {
       "name": "Valueminer",
+      "position": 3,
       "img": "kacheln/valueminer.jpeg",
       "text": "dark",
       "learnMore": "valueminer",
@@ -99,6 +102,7 @@
     },
     {
       "name": "Internship Coma",
+      "position": null,
       "img": "praktikum-coma/imago.webp",
       "learnMore": "coma",
       "goto": "https://www.coma.de/",
@@ -129,6 +133,7 @@
   "programming": [
     {
       "id": "chatbot",
+      "position": 1,
       "name": "My digital clone",
       "img": "kacheln/chatbot.webp",
       "description": [
@@ -137,7 +142,6 @@
         "The Second Version does only the Vector search and uses the Le Chat API which is way faster and more powerful than the local model."
       ],
       "learnMore": "chatbot",
-      "position": null,
       "github": "https://github.com/DenisMathan/Alfred",
       "size": "middle",
       "techstack": [
@@ -173,13 +177,13 @@
     },
     {
       "name": "Bachelor-Thesis",
+      "position": 10,
       "img": "kacheln/baKachel.webp",
       "description": [
         "A progressive web app that supports musicians during the songwriting process.",
         "Combines a digital audio workstation with a lead-sheet creation tool."
       ],
       "learnMore": "bachelor-thesis",
-      "position": null,
       "size": "middle",
       "techstack": [
         "JavaScript",
@@ -206,7 +210,6 @@
         "Started as a simple idea-capture app before growing into a more ambitious project."
       ],
       "learnMore": "firstApp",
-      "position": null,
       "techstack": [
         "Cordova"
       ],
@@ -223,13 +226,13 @@
     },
     {
       "name": "Chess",
+      "position": 99,
       "img": "kacheln/chess.webp",
       "learnMore": "chess",
       "description": [
         "A Java project for learning object-oriented programming.",
         "The current state implements the core rules — except for the king."
       ],
-      "position": null,
       "techstack": [
         "Java"
       ],
@@ -244,14 +247,15 @@
     },
     {
       "id": "arcade-game",
+      "position": 1,
       "name": "Arcade Game",
-      "img": null,
+      "img": "kacheln/arcade.jpg",
+      "text": "dark",
       "learnMore": "arcade-game",
       "description": [
         "A small 2D platformer with dynamically generated levels.",
         "Runs on custom-built physics and collision detection — reach the target platform to win, fall into the depths and it's game over."
       ],
-      "position": null,
       "techstack": [
         "C",
         "GTK",
@@ -271,14 +275,15 @@
     },
     {
       "id": "tutor-app",
+      "position": 90,
       "name": "Tutor App",
-      "img": null,
+      "img": "kacheln/tutor.jpg",
+      "text": "dark",
       "learnMore": "tutor-app",
       "description": [
         "A platform where students can register for paid tutoring sessions.",
         "Built as a team project with role-based access for admins, tutors, and students."
       ],
-      "position": null,
       "techstack": [
         "Java",
         "Spring Boot",
@@ -299,14 +304,14 @@
     },
     {
       "id": "placemark-app",
+      "position": 30,
       "name": "Placemark App",
-      "img": null,
+      "img": "kacheln/placemark.jpg",
       "learnMore": "placemark-app",
       "description": [
         "A full-stack app for marking and sharing special places on a map.",
         "Places can be created with a simple click on the map, searched by location, and marked private or public."
       ],
-      "position": null,
       "techstack": [
         "Node.js",
         "Hapi.js",
@@ -327,14 +332,15 @@
     },
     {
       "id": "hits-and-history",
+      "position": 20,
       "name": "Hits & History",
-      "img": null,
+      "img": "kacheln/dw.jpg",
+      "text": "dark",
       "learnMore": "hits-and-history",
       "description": [
         "A data warehousing project exploring how world events correlate with music charts.",
         "Combines crisis and conflict data with German, British, and American chart histories."
       ],
-      "position": null,
       "techstack": [
         "Exasol",
         "Python",
@@ -354,15 +360,16 @@
     },
     {
       "id": "quantum-computing-fundamentals",
+      "position": 20,
       "name": "Quantum Computing Fundamentals",
-      "img": null,
+      "img": "kacheln/quantum.jpg",
+      "text": "dark",
       "learnMore": "quantum-computing",
       "learnMore_label": "read the paper",
       "description": [
         "A scientific paper on the potential of quantum computing for classical computational problems.",
         "Covers Grover's and Shor's algorithms and where they sit within complexity theory."
       ],
-      "position": null,
       "techstack": [
         "LaTeX"
       ],
@@ -378,14 +385,15 @@
     },
     {
       "id": "ml-diabetes-prediction",
+      "position": 30,
       "name": "ML Diabetes Prediction",
-      "img": null,
+      "img": "kacheln/diabetes.jpg",
+      "text": "dark",
       "learnMore": "ml-diabetes-prediction",
       "description": [
         "A scientific paper comparing machine learning models for detecting diabetes.",
         "Applies several models across four different datasets to see which perform best."
       ],
-      "position": null,
       "techstack": [
         "LaTeX",
         "Python",
@@ -406,14 +414,14 @@
     },
     {
       "id": "grimlang",
+      "position": 15,
       "name": "Grimlang",
-      "img": null,
+      "img": "kacheln/grimlang.jpg",
       "learnMore": "grimlang",
       "description": [
         "An interpreter for a self-designed programming language whose syntax reads like a fairy tale.",
         "Parses the fairytale-style syntax into an AST and executes it."
       ],
-      "position": null,
       "techstack": [
         "C",
         "Make",
