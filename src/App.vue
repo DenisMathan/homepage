@@ -94,7 +94,4 @@ export default {
   max-width: 1300px;
   min-height: calc(100vh - 4rem);
 }
-.footer{
-  height: 64px;
-}
 </style>

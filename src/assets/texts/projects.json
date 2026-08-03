@@ -6,7 +6,7 @@
       "name": "Vector Informatik GmbH",
       "img": "kacheln/vector.png",
       "goto": "https://www.vector.com/",
-      "goto_label": "go to vector.com",
+      "goto_label": "Company Website",
       "description": [
         "As a working student in software development, I was building a SharePoint web part for visualizing an organization's structure.",
         "Added new graph and table views, plus a built-in editor with conflict handling to make updates faster and safer.",
@@ -39,7 +39,7 @@
       "name": "Aumovio (former Continental)",
       "img": "kacheln/aumovio.png",
       "goto": "https://aumovio.com/",
-      "goto_label": "go to aumovio.com",
+      "goto_label": "Company Website",
       "description": [
         "As a working student in DevOps I was adapting and automating a live product demo.",
         "Built a lot of scripts as for example the autostart script which started AWS EC2 instances which then needed to be connected to each other and connect the Device to the service.",
@@ -73,7 +73,7 @@
       "learnMore": "valueminer",
       "learnMore_label": "more Details",
       "goto": "https://valueminer.eu/",
-      "goto_label": "go to valueminer.eu",
+      "goto_label": "Company Website",
       "description": [
         "Built new dashboard widgets (charts, heatmaps, a machine-transfer widget, and more) and a CO2 calculator with an AI integration.",
         "Also built the Firebird-to-Valueminer data converter from scratch, added a persistence layer for the app, and handled ongoing bugfixing."
@@ -106,7 +106,7 @@
       "img": "praktikum-coma/imago.webp",
       "learnMore": "coma",
       "goto": "https://www.coma.de/",
-      "goto_label": "go to coma.de",
+      "goto_label": "Company Website",
       "description": [
         "My first taste of the IT working world outside university projects.",
         "A five-month internship that gave me my first real company context."
@@ -251,7 +251,6 @@
       "name": "Arcade Game",
       "img": "kacheln/arcade.jpg",
       "text": "dark",
-      "learnMore": "arcade-game",
       "description": [
         "A small 2D platformer with dynamically generated levels.",
         "Runs on custom-built physics and collision detection — reach the target platform to win, fall into the depths and it's game over."
@@ -279,7 +278,6 @@
       "name": "Tutor App",
       "img": "kacheln/tutor.jpg",
       "text": "dark",
-      "learnMore": "tutor-app",
       "description": [
         "A platform where students can register for paid tutoring sessions.",
         "Built as a team project with role-based access for admins, tutors, and students."
@@ -307,6 +305,8 @@
       "position": 30,
       "name": "Placemark App",
       "img": "kacheln/placemark.jpg",
+      "github": "https://github.com/DenisMathan/placemark-application",
+      "github_label": "go to project",
       "learnMore": "placemark-app",
       "description": [
         "A full-stack app for marking and sharing special places on a map.",
@@ -390,6 +390,7 @@
       "img": "kacheln/diabetes.jpg",
       "text": "dark",
       "learnMore": "ml-diabetes-prediction",
+      "pdfLink": "pdfs/ML_Diabetes.pdf",
       "description": [
         "A scientific paper comparing machine learning models for detecting diabetes.",
         "Applies several models across four different datasets to see which perform best."
@@ -409,7 +410,8 @@
           "A scientific paper examining how well different machine learning models can detect diabetes, applying each of them to four different datasets.",
           "The models compared were Linear Regression, Logistic Regression, Support Vector Machines, K-Nearest Neighbors, and neural networks — with the central question being which of these models perform well on which kind of dataset."
         ],
-        "sectionTitle": null
+        "sectionTitle": null,
+        "pdfLink": "pdfs/ML_Diabetes.pdf"
       }
     },
     {

@@ -69,7 +69,8 @@ const routes = [
   {
     path:'/quantum-computing',
     name: 'QuantumComputing',
-    component: () => import ('../views/projectpages/QuantumComputing.vue')
+    component: () => import ('../views/projectpages/GenericProject.vue'),
+    props: { projectSlug: 'quantum-computing' }
   },
   {
     path:'/arcade-game',

@@ -2,14 +2,13 @@
   <div class="techview px-12 tablet:px-6 mobile:px-4 py-12 text-white">
     <section class="hero max-w-6xl mx-auto mb-8">
       <h1 data-headinganim-techview class="opacity-0 mb-6">
-        Techview
+        Portfolio
       </h1>
       <p class="eyebrow mb-4">Denis Mathan B. Sc. / B. Eng.</p>
       <div class="text-lg text-gray-200">
         <p class="text-sm">
-          A structured software-focused portfolio with selected work. This view is designed to provide a clear overview
-          of my technical expertise and project experience, making it easier for potential employers or collaborators to
-          assess my skills and contributions.
+          Full Stack Developer with experience in enterprise software, cloud infrastructure and modern web technologies.<br>
+          Building enterprise applications with TypeScript, Go, React and cloud technologies.
         </p>
       </div>
     </section>

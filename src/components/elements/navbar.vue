@@ -25,7 +25,7 @@
             <a :href="path==='/'?'javascript:void(0);':'./'"><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="path==='/'?'text-myGreen':'text-white'">Home</button></a>
           </div>
 
-          <a @click="toggleNav" :href="path==='/techview'?'javascript:void(0);':'./techview'"><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="path==='/techview'?'text-myGreen':'text-white'">Techview</button></a>
+          <a @click="toggleNav" :href="path==='/techview'?'javascript:void(0);':'./techview'"><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="path==='/techview'?'text-myGreen':'text-white'">Portfolio</button></a>
          
 
           <!-- <a @click="toggleNav" :href="path==='/contact'?'javascript:void(0);':'./contact'"><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="path==='/contact'?'text-myGreen':'text-white'">Contact</button></a> -->
