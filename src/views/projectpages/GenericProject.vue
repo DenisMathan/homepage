@@ -52,25 +52,30 @@
     </div>
 
     <div v-if="currentPage.pdfLink" class="w-full max-w-4xl mx-auto mt-8">
-      <div v-if="showPdfDownloadLink" class="mb-3 flex flex-wrap items-center justify-between gap-2">
-        <p class="text-sm text-gray-300">Your browser could not display the PDF inline. You can download it here instead.</p>
-        <a
-          :href="currentPage.pdfLink"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center rounded-full border border-myGreen/40 bg-myGreen/10 px-3 py-1.5 text-sm font-medium text-myGreen transition hover:bg-myGreen/20"
-        >
-          Download PDF
-        </a>
-      </div>
-      <div class="rounded-lg overflow-hidden border border-gray-700 shadow-2xl" style="aspect-ratio: 210 / 297;">
-        <iframe
-          class="w-full h-full"
-          :src="currentPage.pdfLink"
-          title="PDF preview"
-          loading="lazy"
-          @error="showPdfDownloadLink = true"
-        ></iframe>
+      <div class="rounded-2xl border border-gray-700 bg-gray-900/70 p-5 shadow-lg">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p class="font-semibold text-white">PDF available</p>
+            <p class="text-sm text-gray-400">Open it directly in a new tab or download it to your device.</p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <a
+              :href="currentPage.pdfLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-full border border-myGreen/40 bg-myGreen/10 px-4 py-2 text-sm font-medium text-myGreen transition hover:bg-myGreen/20"
+            >
+              Open PDF
+            </a>
+            <a
+              :href="currentPage.pdfLink"
+              download
+              class="inline-flex items-center justify-center rounded-full border border-gray-600 bg-gray-800 px-4 py-2 text-sm font-medium text-gray-200 transition hover:border-myGreen hover:text-myGreen"
+            >
+              Download PDF
+            </a>
+          </div>
+        </div>
       </div>
     </div>
     <div v-if="currentPage.TODO" class="max-w-4xl mx-auto mt-8">
@@ -101,8 +106,7 @@ export default {
   },
   data() {
     return {
-      selectedVersion: 0,
-      showPdfDownloadLink: false
+      selectedVersion: 0
     };
   },
   computed: {
