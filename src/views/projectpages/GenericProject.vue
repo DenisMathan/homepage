@@ -56,6 +56,17 @@
         <p class="text-white p-4">Ihr Browser kann dieses PDF nicht anzeigen.</p>
       </object>
     </div>
+    <div v-if="currentPage.TODO" class="max-w-4xl mx-auto mt-8">
+      <div class="rounded-2xl border border-yellow-400/40 bg-yellow-500/10 px-6 py-5 shadow-lg shadow-yellow-500/10">
+        <div class="flex items-start gap-3">
+          <span class="text-2xl leading-none">🚧</span>
+          <div>
+            <p class="font-semibold text-yellow-300">Work in progress</p>
+            <p class="mt-1 text-sm text-yellow-100/80">This project page is still being prepared and will be expanded soon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -93,7 +104,7 @@ export default {
     },
     selectedVersionData() {
       return this.currentPage.versions?.[this.selectedVersion] || null;
-    }
+    },
   },
   metaInfo() {
     return {

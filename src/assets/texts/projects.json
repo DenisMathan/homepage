@@ -30,7 +30,7 @@
           "I built a new diagram view of the organization using ReactFlow, alongside a table-based view, both dynamically driven by data configured in SharePoint.",
           "A big part of the work went into an editor for the underlying data. Before it existed, updating the displayed structure meant going through a lengthy git-merge process, and the same information was often duplicated redundantly across separate JSON files for different organizations. The editor addresses this: it writes directly into the JSON files stored in a SharePoint folder, using a checkout/check-in mechanism to avoid conflicts — and if a conflict does happen anyway, the user can choose which change to keep. It also supports undo/redo, and shows a live preview of how unpushed changes would look in the other views. Migration scripts consolidate the old, per-organization JSON files into a single global data file."
         ],
-        "sectionTitle": "PLACEHOLDER"
+        "sectionTitle": null
       }
     },
     {
@@ -62,7 +62,7 @@
           "As a working student in DevOps at Aumovio, I adapted the frontend of a product demo and automated it for presentation at the IAA (Internationale Automobil-Ausstellung).",
           "Part of the work involved simulating an NXP S32N55 automotive chip on a Raspberry Pi, so the demo could run on accessible hardware."
         ],
-        "sectionTitle": "PLACEHOLDER"
+        "sectionTitle": null
       }
     },
     {
@@ -269,7 +269,8 @@
           "Levels are generated dynamically from JSON files, and the game runs on custom-built physics and collision detection.",
           "The goal is simple: reach the target platform to win — fall into the depths, and it's game over."
         ],
-        "sectionTitle": null
+        "sectionTitle": null,
+        "TODO": true
       }
     },
     {
@@ -327,7 +328,8 @@
           "Placemark is an application for marking and sharing special places on an interactive map, built with Node.js, Hapi.js, TypeScript, and MongoDB, deployed on Render.",
           "Users can create a placemark simply by clicking on the map (powered by Leaflet), search for locations, upload images, and choose whether a place is private or public. Accounts are protected with OAuth login and BCrypt password hashing."
         ],
-        "sectionTitle": null
+        "sectionTitle": null,
+        "TODO": true
       }
     },
     {
@@ -355,7 +357,8 @@
           "A fair share of the work went into data cleaning — for example, the British chart data had a recurring encoding bug that stripped every 're' from song titles. Every song across all charts was then enriched via the MusicBrainz API, at a rate of about one request per second — roughly a week of runtime in total.",
           "In the end, no clear causal relationship between world events and chart performance emerged — but the project produced some genuinely nice visualizations in Power BI."
         ],
-        "sectionTitle": null
+        "sectionTitle": null,
+        "TODO": true
       }
     },
     {
@@ -439,7 +442,8 @@
           "Here's what a small Grimlang program looks like:",
           "<pre><code>Kapitel UmpaLumpa.\n las \"In Funktion2 passiert nicht viel...\", \"\\n\".\n Gib alles!\n Ende!\n\n Kapitel Schlacht\n handelt von Held namens A und Held namens B.\n las \"In Funktion: A: \", A,\" B: \", B, \" test\", \"\\n\".\n Ende!\n\n Kapitel fakultät\n handelt von Held namens A.\n Gib alles 3!\n Wenn A anders als 1 ist, gilt:\n //Gib alles 1!\n Es gab einen Helden namens B.\n B war so stark wie A und -1 zusammen.\n las \"Test: \", A, \"\\n\".\n Gib alles A mal In Kapitel fakultät mehr Abenteuer von B zu finden!\n Ansonsten: Gib alles 1!\n Verstanden?\n Ende!</code></pre>"
         ],
-        "sectionTitle": null
+        "sectionTitle": null,
+        "TODO": true
       }
     }
   ],
