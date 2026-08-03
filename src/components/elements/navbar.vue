@@ -19,7 +19,7 @@
           <div v-if="path==='/'">
             <a @click="toggleNav" href='#skills'><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="position==='skills'?'text-myGreen':'text-white'">Skills</button></a>
             <a @click="toggleNav" href='#projects'><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="position === 'projects'?'text-myGreen':'text-white'">Experience</button></a>
-            <a @click="toggleNav" href="#about"><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="position === 'about'?'text-myGreen':'text-white'">About me</button></a>
+            <!-- <a @click="toggleNav" href="#about"><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="position === 'about'?'text-myGreen':'text-white'">About me</button></a> -->
           </div>
           <div v-else>
             <a :href="path==='/'?'javascript:void(0);':'./'"><button class="btn hover:text-myGreen text-center h-12 w-full border-b leading-12" :class="path==='/'?'text-myGreen':'text-white'">Home</button></a>

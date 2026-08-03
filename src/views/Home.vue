@@ -4,7 +4,7 @@
       <Welcome class="mobile:px-2"/>
       <Skills class="mobile:px-2"/>
       <Projects class="mobile:px-2"/>
-      <About /> 
+      <!-- <About />  -->
     </div>
     <!-- <myfooter  class="tablet:ml-0 relative z-10"/>   -->
   </div>
