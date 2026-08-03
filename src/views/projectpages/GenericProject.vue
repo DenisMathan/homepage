@@ -53,7 +53,16 @@
 
     <div v-if="pdfSource" class="w-full max-w-4xl mx-auto mt-8 rounded-lg overflow-hidden border border-gray-700 shadow-2xl" style="aspect-ratio: 210 / 297;">
       <object class="w-full h-full" :data="pdfSource" type="application/pdf">
-        <p class="text-white p-4">Ihr Browser kann dieses PDF nicht anzeigen.</p>
+        <div class="flex h-full flex-col items-center justify-center gap-4 bg-gray-900 p-4 text-center">
+          <p class="text-white">Ihr Browser kann dieses PDF nicht anzeigen.</p>
+          <a
+            class="rounded-full border border-myGreen px-5 py-2 text-myGreen transition hover:bg-myGreen hover:text-gray-900"
+            :href="pdfSource"
+            :download="pdfDownloadName"
+          >
+            PDF herunterladen
+          </a>
+        </div>
       </object>
     </div>
     <div v-if="currentPage.TODO" class="max-w-4xl mx-auto mt-8 text-yellow-400">
@@ -109,6 +118,15 @@ export default {
       }
 
       return `${process.env.BASE_URL}${pdfLink.replace(/^\/+/, '')}`;
+    },
+    pdfDownloadName() {
+      const pdfLink = this.currentPage.pdfLink;
+
+      if (!pdfLink) {
+        return 'download.pdf';
+      }
+
+      return pdfLink.split('/').pop() || 'download.pdf';
     }
   },
   metaInfo() {
