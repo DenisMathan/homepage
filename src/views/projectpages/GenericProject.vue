@@ -51,12 +51,11 @@
       </div>
     </div>
 
-    <div v-if="currentPage.pdfLink" class="w-full max-w-4xl mx-auto mt-8 rounded-lg overflow-hidden border border-gray-700 shadow-2xl" style="aspect-ratio: 210 / 297;">
-      <object class="w-full h-full" :data="currentPage.pdfLink" type="application/pdf">
+    <div v-if="pdfSource" class="w-full max-w-4xl mx-auto mt-8 rounded-lg overflow-hidden border border-gray-700 shadow-2xl" style="aspect-ratio: 210 / 297;">
+      <object class="w-full h-full" :data="pdfSource" type="application/pdf">
         <p class="text-white p-4">Ihr Browser kann dieses PDF nicht anzeigen.</p>
       </object>
     </div>
-    test
     <div v-if="currentPage.TODO" class="max-w-4xl mx-auto mt-8 text-yellow-400">
       <p>TODO: {{ currentPage.TODO }}</p>
     </div>
@@ -97,6 +96,19 @@ export default {
     },
     selectedVersionData() {
       return this.currentPage.versions?.[this.selectedVersion] || null;
+    },
+    pdfSource() {
+      const pdfLink = this.currentPage.pdfLink;
+
+      if (!pdfLink) {
+        return '';
+      }
+
+      if (/^(https?:)?\/\//.test(pdfLink) || pdfLink.startsWith('data:')) {
+        return pdfLink;
+      }
+
+      return `${process.env.BASE_URL}${pdfLink.replace(/^\/+/, '')}`;
     }
   },
   metaInfo() {
