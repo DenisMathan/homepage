@@ -51,43 +51,14 @@
       </div>
     </div>
 
-    <div v-if="currentPage.pdfLink" class="w-full max-w-4xl mx-auto mt-8">
-      <div class="rounded-2xl border border-gray-700 bg-gray-900/70 p-5 shadow-lg">
-        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <p class="font-semibold text-white">PDF available</p>
-            <p class="text-sm text-gray-400">Open it directly in a new tab or download it to your device.</p>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            <a
-              :href="currentPage.pdfLink"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center rounded-full border border-myGreen/40 bg-myGreen/10 px-4 py-2 text-sm font-medium text-myGreen transition hover:bg-myGreen/20"
-            >
-              Open PDF
-            </a>
-            <a
-              :href="currentPage.pdfLink"
-              download
-              class="inline-flex items-center justify-center rounded-full border border-gray-600 bg-gray-800 px-4 py-2 text-sm font-medium text-gray-200 transition hover:border-myGreen hover:text-myGreen"
-            >
-              Download PDF
-            </a>
-          </div>
-        </div>
-      </div>
+    <div v-if="currentPage.pdfLink" class="w-full max-w-4xl mx-auto mt-8 rounded-lg overflow-hidden border border-gray-700 shadow-2xl" style="aspect-ratio: 210 / 297;">
+      <object class="w-full h-full" :data="currentPage.pdfLink" type="application/pdf">
+        <p class="text-white p-4">Ihr Browser kann dieses PDF nicht anzeigen.</p>
+      </object>
     </div>
-    <div v-if="currentPage.TODO" class="max-w-4xl mx-auto mt-8">
-      <div class="rounded-2xl border border-yellow-400/40 bg-yellow-500/10 px-6 py-5 shadow-lg shadow-yellow-500/10">
-        <div class="flex items-start gap-3">
-          <span class="text-2xl leading-none">🚧</span>
-          <div>
-            <p class="font-semibold text-yellow-300">Work in progress</p>
-            <p class="mt-1 text-sm text-yellow-100/80">This project page is still being prepared and will be expanded soon.</p>
-          </div>
-        </div>
-      </div>
+    test
+    <div v-if="currentPage.TODO" class="max-w-4xl mx-auto mt-8 text-yellow-400">
+      <p>TODO: {{ currentPage.TODO }}</p>
     </div>
   </div>
 </template>
@@ -126,7 +97,7 @@ export default {
     },
     selectedVersionData() {
       return this.currentPage.versions?.[this.selectedVersion] || null;
-    },
+    }
   },
   metaInfo() {
     return {
