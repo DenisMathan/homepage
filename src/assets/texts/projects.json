@@ -1,6 +1,69 @@
 {
   "experience": [
     {
+      "id": "vector",
+      "name": "Vector Informatik GmbH",
+      "img": "kacheln/vector.png",
+      "goto": "https://www.vector.com/",
+      "goto_label": "go to vector.com",
+      "description": [
+        "As a working student in software development, I was building a SharePoint web part for visualizing an organization's structure.",
+        "Added new graph and table views, plus a built-in editor with conflict handling to make updates faster and safer.",
+        "My editor solution I provided by my own initiative was way more efficient than the previous process, which required a lengthy git-merge and often involved redundant data across multiple JSON files."
+      ],
+      "techstack": [
+        "React",
+        "TypeScript",
+        "Cytoscape",
+        "ReactFlow",
+        "SharePoint",
+        "SPFx",
+        "Test-Driven Development"
+      ],
+      "size": "middle",
+      "page": {
+        "title": "Working Student at Vector",
+        "metaDescription": "This page describes the working student position developer Denis Mathan held at Vector, in software development.",
+        "intro": [
+          "As a working student in software development at Vector, I worked on a SharePoint web part that visualizes an organization's structure.",
+          "I built a new diagram view of the organization using ReactFlow, alongside a table-based view, both dynamically driven by data configured in SharePoint.",
+          "A big part of the work went into an editor for the underlying data. Before it existed, updating the displayed structure meant going through a lengthy git-merge process, and the same information was often duplicated redundantly across separate JSON files for different organizations. The editor addresses this: it writes directly into the JSON files stored in a SharePoint folder, using a checkout/check-in mechanism to avoid conflicts — and if a conflict does happen anyway, the user can choose which change to keep. It also supports undo/redo, and shows a live preview of how unpushed changes would look in the other views. Migration scripts consolidate the old, per-organization JSON files into a single global data file."
+        ],
+        "sectionTitle": "PLACEHOLDER"
+      }
+    },
+    {
+      "id": "aumovio",
+      "name": "Aumovio (former Continental)",
+      "img": "kacheln/aumovio.png",
+      "goto": "https://aumovio.com/",
+      "goto_label": "go to aumovio.com",
+      "description": [
+        "As a working student in DevOps I was adapting and automating a live product demo.",
+        "Built a lot of scripts as for example the autostart script which started AWS EC2 instances which then needed to be connected to each other and connect the Device to the service.",
+        "Simulated an automotive processor (NXP S32N55) on a Raspberry Pi"
+      ],
+      "techstack": [
+        "Bash",
+        "Shell Scripting",
+        "AWS",
+        "AWS CLI",
+        "Virtualization",
+        "Linux",
+        "Yocto"
+      ],
+      "size": "middle",
+      "page": {
+        "title": "Working Student at Aumovio",
+        "metaDescription": "This page describes the working student position developer Denis Mathan held at Aumovio, in DevOps.",
+        "intro": [
+          "As a working student in DevOps at Aumovio, I adapted the frontend of a product demo and automated it for presentation at the IAA (Internationale Automobil-Ausstellung).",
+          "Part of the work involved simulating an NXP S32N55 automotive chip on a Raspberry Pi, so the demo could run on accessible hardware."
+        ],
+        "sectionTitle": "PLACEHOLDER"
+      }
+    },
+    {
       "name": "Valueminer",
       "img": "kacheln/valueminer.jpeg",
       "text": "dark",
@@ -60,69 +123,6 @@
           "All in all, it was a very nice time there — great colleagues, a pleasant working atmosphere, and good assignments right from the start. I'm especially grateful to my boss at the time, who not only challenged me but also encouraged me. For example, on top of my regular tasks, I had to give a short presentation on an IT topic of my choice at every team meeting. Most of the time I couldn't tell the team anything new, but I learned a lot in the process."
         ],
         "sectionTitle": "My Experiences"
-      }
-    },
-    {
-      "id": "aumovio",
-      "name": "Aumovio (former Continental)",
-      "img": null,
-      "goto": "https://aumovio.com/",
-      "goto_label": "go to aumovio.com",
-      "description": [
-        "As a working student in DevOps I was adapting and automating a live product demo.",
-        "Built a lot of scripts as for example the autostart script which started AWS EC2 instances which then needed to be connected to each other and connect the Device to the service.",
-        "Simulated an automotive processor (NXP S32N55) on a Raspberry Pi"
-      ],
-      "techstack": [
-        "Bash",
-        "Shell Scripting",
-        "AWS",
-        "AWS CLI",
-        "Virtualization",
-        "Linux",
-        "Yocto"
-      ],
-      "size": "middle",
-      "page": {
-        "title": "Working Student at Aumovio",
-        "metaDescription": "This page describes the working student position developer Denis Mathan held at Aumovio, in DevOps.",
-        "intro": [
-          "As a working student in DevOps at Aumovio, I adapted the frontend of a product demo and automated it for presentation at the IAA (Internationale Automobil-Ausstellung).",
-          "Part of the work involved simulating an NXP S32N55 automotive chip on a Raspberry Pi, so the demo could run on accessible hardware."
-        ],
-        "sectionTitle": "PLACEHOLDER"
-      }
-    },
-    {
-      "id": "vector",
-      "name": "Vector Informatik GmbH",
-      "img": null,
-      "goto": "https://www.vector.com/",
-      "goto_label": "go to vector.com",
-      "description": [
-        "As a working student in software development, I was building a SharePoint web part for visualizing an organization's structure.",
-        "Added new graph and table views, plus a built-in editor with conflict handling to make updates faster and safer.",
-        "My editor solution I provided by my own initiative was way more efficient than the previous process, which required a lengthy git-merge and often involved redundant data across multiple JSON files."
-      ],
-      "techstack": [
-        "React",
-        "TypeScript",
-        "Cytoscape",
-        "ReactFlow",
-        "SharePoint",
-        "SPFx",
-        "Test-Driven Development"
-      ],
-      "size": "middle",
-      "page": {
-        "title": "Working Student at Vector",
-        "metaDescription": "This page describes the working student position developer Denis Mathan held at Vector, in software development.",
-        "intro": [
-          "As a working student in software development at Vector, I worked on a SharePoint web part that visualizes an organization's structure.",
-          "I built a new diagram view of the organization using ReactFlow, alongside a table-based view, both dynamically driven by data configured in SharePoint.",
-          "A big part of the work went into an editor for the underlying data. Before it existed, updating the displayed structure meant going through a lengthy git-merge process, and the same information was often duplicated redundantly across separate JSON files for different organizations. The editor addresses this: it writes directly into the JSON files stored in a SharePoint folder, using a checkout/check-in mechanism to avoid conflicts — and if a conflict does happen anyway, the user can choose which change to keep. It also supports undo/redo, and shows a live preview of how unpushed changes would look in the other views. Migration scripts consolidate the old, per-organization JSON files into a single global data file."
-        ],
-        "sectionTitle": "PLACEHOLDER"
       }
     }
   ],

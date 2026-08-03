@@ -19,7 +19,7 @@ export default {
   metaInfo: {
     meta:[{
       name: 'description',
-      content: catalog.experience[0].page.metaDescription
+      content: catalog.experience[2].page.metaDescription
     }]
   },
   components:{
@@ -27,7 +27,7 @@ export default {
   },
     data(){
         return{
-        page: catalog.experience[0].page,
+        page: catalog.experience[2].page,
             images:[{
                 position:0,
                 headline: 'History & Notification',

@@ -4,7 +4,7 @@
       <h1 data-headinganim-techview class="opacity-0 mb-6">
         Techview
       </h1>
-      <p class="eyebrow mb-4">Denis Mathan B. Sc, B. Eng.</p>
+      <p class="eyebrow mb-4">Denis Mathan B. Sc. / B. Eng.</p>
       <div class="text-lg text-gray-200">
         <p class="text-sm">
           A structured software-focused portfolio with selected work. This view is designed to provide a clear overview
