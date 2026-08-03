@@ -68,8 +68,13 @@ export default {
     mounted(){
         window.addEventListener("scroll", this.onScroll, true);
         window.addEventListener("resize", this.resizing, true);
-        this.width= this.$refs.gl.clientWidth;
-        init(this.$refs.gl)
+
+        this.width = this.$refs.gl?.clientWidth || 0;
+        setTimeout(() => {
+          if (this.$refs.gl) {
+            init(this.$refs.gl);
+          }
+        }, 50);
   },
     methods: {
       onScroll(){

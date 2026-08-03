@@ -100,6 +100,7 @@ let startAnimation = () => {
     }
 }
 let resize = (box)=>{
+    if (!renderer || !box) return;
     renderer.setSize(box.offsetWidth, box.offsetWidth)
 }
 let addText = (word, x, y, z)=> {
