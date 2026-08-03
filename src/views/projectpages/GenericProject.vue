@@ -51,10 +51,27 @@
       </div>
     </div>
 
-    <div v-if="currentPage.pdfLink" class="w-full max-w-4xl mx-auto mt-8 rounded-lg overflow-hidden border border-gray-700 shadow-2xl" style="aspect-ratio: 210 / 297;">
-      <object class="w-full h-full" :data="currentPage.pdfLink" type="application/pdf">
-        <p class="text-white p-4">Ihr Browser kann dieses PDF nicht anzeigen.</p>
-      </object>
+    <div v-if="currentPage.pdfLink" class="w-full max-w-4xl mx-auto mt-8">
+      <div v-if="showPdfDownloadLink" class="mb-3 flex flex-wrap items-center justify-between gap-2">
+        <p class="text-sm text-gray-300">Your browser could not display the PDF inline. You can download it here instead.</p>
+        <a
+          :href="currentPage.pdfLink"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center rounded-full border border-myGreen/40 bg-myGreen/10 px-3 py-1.5 text-sm font-medium text-myGreen transition hover:bg-myGreen/20"
+        >
+          Download PDF
+        </a>
+      </div>
+      <div class="rounded-lg overflow-hidden border border-gray-700 shadow-2xl" style="aspect-ratio: 210 / 297;">
+        <iframe
+          class="w-full h-full"
+          :src="currentPage.pdfLink"
+          title="PDF preview"
+          loading="lazy"
+          @error="showPdfDownloadLink = true"
+        ></iframe>
+      </div>
     </div>
     <div v-if="currentPage.TODO" class="max-w-4xl mx-auto mt-8">
       <div class="rounded-2xl border border-yellow-400/40 bg-yellow-500/10 px-6 py-5 shadow-lg shadow-yellow-500/10">
@@ -84,7 +101,8 @@ export default {
   },
   data() {
     return {
-      selectedVersion: 0
+      selectedVersion: 0,
+      showPdfDownloadLink: false
     };
   },
   computed: {

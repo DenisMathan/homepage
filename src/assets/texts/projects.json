@@ -383,7 +383,7 @@
           "A scientific paper, written in LaTeX, examining what quantum computing can offer for classical computational problems — centered on Grover's and Shor's algorithms and the complexity classes P, NP, BPP, and BQP.",
           "The result: Grover's algorithm gives a quadratic speedup, while Shor's algorithm (via the Quantum Fourier Transform) gives an exponential one. However, integer factorization is not known to be NP-complete — so this doesn't shake the boundaries of classical complexity theory."
         ],
-        "pdfLink": "pdfs/QuantumComputingFundamentals_DenisMathan.pdf"
+        "pdfLink": "/pdfs/QuantumComputingFundamentals_DenisMathan.pdf"
       }
     },
     {
@@ -393,7 +393,7 @@
       "img": "kacheln/diabetes.jpg",
       "text": "dark",
       "learnMore": "ml-diabetes-prediction",
-      "pdfLink": "pdfs/ML_Diabetes.pdf",
+      "pdfLink": "/pdfs/ML_Diabetes.pdf",
       "description": [
         "A scientific paper comparing machine learning models for detecting diabetes.",
         "Applies several models across four different datasets to see which perform best."
@@ -414,7 +414,7 @@
           "The models compared were Linear Regression, Logistic Regression, Support Vector Machines, K-Nearest Neighbors, and neural networks — with the central question being which of these models perform well on which kind of dataset."
         ],
         "sectionTitle": null,
-        "pdfLink": "pdfs/ML_Diabetes.pdf"
+        "pdfLink": "/pdfs/ML_Diabetes.pdf"
       }
     },
     {
