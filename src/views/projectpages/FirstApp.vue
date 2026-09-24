@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { resolveProjectImage } from '@/js/projectAssets.js'
 import carousel from '@/components/elements/carousel/types/justCarousel.vue';
 import {manipulate} from '@/js/headlineManipulation.js';
 import { findProjectPage, projectMeta } from '@/js/projects.js'
@@ -23,7 +24,7 @@ export default {
         return{
         page: findProjectPage('firstApp'),
             images:[{
-                img: require('@/assets/images/songwritingApp_1_0/projects.webp'),
+                img: resolveProjectImage('songwritingApp_1_0/projects.webp'),
                 position:0,
                 form: 'upright',
                 headline: 'Projects',
@@ -33,14 +34,14 @@ export default {
                   ]
                 },
                 {
-                img: require('@/assets/images/songwritingApp_1_0/recordwindow.webp'),
+                img: resolveProjectImage('songwritingApp_1_0/recordwindow.webp'),
                 position:1,
                 form: 'upright',
                 headline: 'Record',                
                 p : ['This is the app\'s home screen and also the area where recordings can be made. At the top you can see the three subdivisions. Record is where we are right now. In Texting, texts can be created and viewed. And in Projects there is a list of all the projects that have been created so far, which can be viewed.'],
                 },
                 {
-                img: require('@/assets/images/songwritingApp_1_0/recordedAudio.webp'),
+                img: resolveProjectImage('songwritingApp_1_0/recordedAudio.webp'),
                 position:2,
                 form: 'upright',
                 headline: 'Recorded',
@@ -50,7 +51,7 @@ export default {
                   ]
                 },
                 {
-                img: require('@/assets/images/songwritingApp_1_0/texteditor.webp'),
+                img: resolveProjectImage('songwritingApp_1_0/texteditor.webp'),
                 position:3,
                 form: 'upright',
                 headline: 'Texting/Texteditor',
@@ -61,7 +62,7 @@ export default {
                   ]
                 },
                 {
-                img: require('@/assets/images/songwritingApp_1_0/song.webp'),
+                img: resolveProjectImage('songwritingApp_1_0/song.webp'),
                 position:4,
                 form: 'upright',
                 headline: 'Texting/Songview',

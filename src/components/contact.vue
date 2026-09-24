@@ -29,7 +29,7 @@ export default {
     mounted(){
         window.addEventListener("scroll", this.onScroll, true);
     },
-    beforeDestroy(){
+    beforeUnmount(){
         window.removeEventListener("scroll", this.onScroll, true);
     },
     methods:{

@@ -74,7 +74,7 @@ export default {
       this.aboutTop = this.about?.getBoundingClientRect().top
     }
   },
-  beforeDestroy(){
+  beforeUnmount(){
     destroyCanvas()
     window.removeEventListener('scroll',this.onScroll)
     

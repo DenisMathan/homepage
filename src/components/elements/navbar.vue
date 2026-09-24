@@ -1,14 +1,14 @@
 <template>
   <div>
     <!-- button -->
-    <div class="fixed top-6 right-12 h-12 w-12 hidden tablet:block cursor-pointer" style="z-index: 51" @click="toggleNav"><img class="h-full w-full" :src="require('@/assets/icons/menu.webp')" alt="menu-button"></div>
+    <div class="fixed top-6 right-12 h-12 w-12 hidden tablet:block cursor-pointer" style="z-index: 51" @click="toggleNav"><img class="h-full w-full" src="@/assets/icons/menu.webp" alt="menu-button"></div>
     <!-- navigation -->
     <div ref="navbar" id="navbar" class="navbar h-screen fixed w-32 bg-backgroundLight tablet:z-50 tablet:fixed tablet:w-screen tablet:h-screen tablet:border-none tablet:right-full tablet:bg-background tropacity">  
       <div class="absolute tablet:relative tablet:w-1/2 tablet:min-w-nav m-auto mb-12">
         <div class="p-2 max-w-logo m-auto tablet:mt-32 ">
           <a :href="path==='/'?'#welcome':'./'" aria-label="Go back Home">
             <button class="w-full h-full logoshadow" title="Back to Home">
-            <img class="w-full h-full" :src="require('@/assets/logo.webp')" alt="">
+            <img class="w-full h-full" src="@/assets/logo.webp" alt="">
           </button>
         </a>
 

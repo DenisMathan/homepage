@@ -16,8 +16,8 @@
         <div data-vid class="h-12 mobile:h-4 w-full relative">
             <!-- play pause -->
             <div data-vid class="play h-12 w-12 mobile:h-4 mobile:w-4 absolute left-2 cursor-pointer" @click="playing=!playing">
-                <img data-vid v-if="!playing" class="w-6 mobile:w-2 h-auto absolute top-1/2 left-1/2 -translate-1/2" :src="require('@/components/elements/video/icons/play.png')" alt="">
-                <img data-vid v-else class="w-6 mobile:w-2 h-auto absolute top-1/2 left-1/2 -translate-1/2" :src="require('@/components/elements/video/icons/pause.png')" alt="">
+                <img data-vid v-if="!playing" class="w-6 mobile:w-2 h-auto absolute top-1/2 left-1/2 -translate-1/2" src="@/components/elements/video/icons/play.png" alt="">
+                <img data-vid v-else class="w-6 mobile:w-2 h-auto absolute top-1/2 left-1/2 -translate-1/2" src="@/components/elements/video/icons/pause.png" alt="">
             </div>
             <!-- timecode -->
             <div class="time h-12 mobile:h-4 absolute left-16 mobile:left-20">
@@ -28,12 +28,12 @@
             </div>
             <!-- volume -->
             <div class="volume h-12 w-12 mobile:h-4 mobile:w-4 absolute right-16 mobile:right-8 cursor-pointer"  @click="muted=!muted">
-                 <img data-vid class="w-6 mobile:w-2 h-auto absolute top-1/2 left-1/2 -translate-1/2" :class="(muted)?'opacity-50':''" :src="require('@/components/elements/video/icons/volume.png')" alt="">
+                 <img data-vid class="w-6 mobile:w-2 h-auto absolute top-1/2 left-1/2 -translate-1/2" :class="(muted)?'opacity-50':''" src="@/components/elements/video/icons/volume.png" alt="">
             </div>
             <!-- fullscreen -->
             <div class="fullscreen h-12 w-12 mobile:h-4 mobile:w-4 absolute right-2 cursor-pointer" @click="fullscreen=!fullscreen">
-              <img data-vid v-if="!fullscreen" class="w-6 mobile:w-2 h-auto absolute top-1/2 left-1/2 -translate-1/2" :src="require('@/components/elements/video/icons/fullscreen.png')" alt="">
-              <img data-vid v-else class="w-6 mobile:w-2 h-auto absolute top-1/2 left-1/2 -translate-1/2" :src="require('@/components/elements/video/icons/minimize.png')" alt="">
+              <img data-vid v-if="!fullscreen" class="w-6 mobile:w-2 h-auto absolute top-1/2 left-1/2 -translate-1/2" src="@/components/elements/video/icons/fullscreen.png" alt="">
+              <img data-vid v-else class="w-6 mobile:w-2 h-auto absolute top-1/2 left-1/2 -translate-1/2" src="@/components/elements/video/icons/minimize.png" alt="">
             </div>
         </div>
       </div>     
@@ -84,7 +84,7 @@ export default {
     mounted(){
         this.$refs.fullscreen.addEventListener('fullscreenchange', this.checkRatio)
     },
-    beforeDestroy(){
+    beforeUnmount(){
          this.$refs.fullscreen.removeEventListener('fullscreenchange', this.checkRatio);
     },
     methods:{
@@ -205,6 +205,4 @@ export default {
 /* .smooth{
     transition: width 0.25s;
 } */
-</style>
-
 </style>

@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { resolveProjectImage } from '@/js/projectAssets.js'
 import carousel from '@/components/elements/carousel/types/justCarousel.vue';
 import {manipulate} from '@/js/headlineManipulation.js';
 import { findProjectPage, projectMeta } from '@/js/projects.js'
@@ -26,12 +27,12 @@ export default {
             images:[{
                 position:0,
                 headline: 'History & Notification',
-                img: require('@/assets/images/valueminer/historyNotification.webp'),
+                img: resolveProjectImage('valueminer/historyNotification.webp'),
                 p : [
                   'The history is ultimately the program\'s memory and is one of my significant contributions to the application. Essentially, I tracked and stored all user activities within the app. When writing the history entry, the program also checks if it involves another user. If so, those users are promptly informed of the changes via email or within the app.']
                 },
                 {
-                img: require('@/assets/images/valueminer/calculator.webp'),
+                img: resolveProjectImage('valueminer/calculator.webp'),
                 position:1,
                 headline: 'CO2 Calculator',    
                 // link:{link:'https://www.imago-design.de/', name: 'Imago-site'},       
@@ -42,9 +43,9 @@ export default {
                 ],
                 },
                 {
-                // img: require('@/assets/images/praktikum-coma/comaTools.webp'),
+                // img: resolveProjectImage('praktikum-coma/comaTools.webp'),
                 position:2,
-                img: require('@/assets/images/valueminer/dbToValueminer.webp'),
+                img: resolveProjectImage('valueminer/dbToValueminer.webp'),
                 headline: 'Random DB -> Valueminer Data',
                 // link:{link:'https://www.coma.de/blog', name: 'coma-Blog'},
                 p : [

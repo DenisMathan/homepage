@@ -181,7 +181,6 @@ label{
 }
 .user {
   margin-left: auto;
-  margin-right: 0.5;
 }
 .assistant::after {
  transform: scaleX(-1);

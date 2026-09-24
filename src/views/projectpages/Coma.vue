@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { resolveProjectImage } from '@/js/projectAssets.js'
 import carousel from '@/components/elements/carousel/types/justCarousel.vue';
 import {manipulate} from '@/js/headlineManipulation.js';
 import { findProjectPage, projectMeta } from '@/js/projects.js'
@@ -31,7 +32,7 @@ export default {
                   'With Wordpress, I got to develop an entire website with the help of one of our designers. However, this site never went live and eventually fizzled out. Still, I was able to gain quite a bit of experience.']
                 },
                 {
-                img: require('@/assets/images/praktikum-coma/imago.webp'),
+                img: resolveProjectImage('praktikum-coma/imago.webp'),
                 position:1,
                 headline: 'Imago',    
                 link:{link:'https://www.imago-design.de/', name: 'Imago-site'},       
@@ -40,7 +41,7 @@ export default {
                   'The technologies that were mainly worked with here were nunjucks.js, gulp.js and tailwindcss.'],
                 },
                 {
-                img: require('@/assets/images/praktikum-coma/comaTools.webp'),
+                img: resolveProjectImage('praktikum-coma/comaTools.webp'),
                 position:2,
                 headline: 'coma - Tools',
                 link:{link:'https://www.coma.de/blog', name: 'coma-Blog'},

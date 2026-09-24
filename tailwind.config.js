@@ -1,15 +1,12 @@
 const colors = require('tailwindcss/colors')
 module.exports = {
-  purge: [    
-    './src/*.vue',
-    './src/views/*.vue',
-    './src/views/**/*.vue',
-    './src/components/**/*.vue',
+  content: [
+    './index.html',
+    './src/**/*.{vue,js,json}',
   ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
-      gray: colors.trueGray,
+      gray: colors.neutral,
       myGreen: 'rgb(23 144 191)',//'#4BC96A',
       green: '#4BC96A',
       red: '#E82F0C',
@@ -49,9 +46,6 @@ module.exports = {
         'nav': '300px'
       }
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 }

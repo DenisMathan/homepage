@@ -41,7 +41,7 @@ export default {
       window.addEventListener("scroll", this.onScroll, true);
       window.addEventListener("resize", this.updateWindowSize, true);
     },
-    beforeDestroy(){
+    beforeUnmount(){
         window.removeEventListener("scroll", this.onScroll, true);
         window.removeEventListener("resize", this.updateWindowSize, true);
     },

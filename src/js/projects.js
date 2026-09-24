@@ -17,8 +17,8 @@ export function findProjectPage(slug) {
   return findProject(slug)?.page || {}
 }
 
-// vue-meta config for a project page: its title plus a description that
-// replaces the site-wide fallback from App.vue (same vmid).
+// metaInfo for a project page (see head.js): its title plus a description that
+// replaces the site-wide fallback from App.vue.
 export function projectMeta(slug) {
   const page = findProjectPage(slug)
   return {

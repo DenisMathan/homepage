@@ -12,10 +12,11 @@
 
 <script>
 // @ is an alias to /src
+import { defineAsyncComponent } from 'vue'
 import Welcome from '@/components/welcome.vue'
 import Projects from '@/components/Projects.vue'
 import About from '@/components/about.vue'
-const Skills = ()=> import ('@/components/skills.vue')
+const Skills = defineAsyncComponent(() => import('@/components/skills.vue'))
 import Navbar from '@/components/elements/navbar.vue'
 import myfooter from '@/components/footer.vue'
 

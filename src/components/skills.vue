@@ -96,7 +96,7 @@ export default {
         startAnimation();
       }
     },
-    beforeDestroy(){
+    beforeUnmount(){
       window.removeEventListener("scroll", this.onScroll, true);
       window.removeEventListener("resize", this.resizing, true);
   }

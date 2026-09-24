@@ -1,9 +1,4 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import VueMeta from 'vue-meta'
-
-Vue.use(VueRouter)
-Vue.use(VueMeta)
+import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
@@ -121,15 +116,14 @@ const routes = [
     props: { projectSlug: 'vector' }
   },
   {
-    path: '*',
+    path: '/:pathMatch(.*)*',
     name: 'NotFound',
     component: () => import ('../views/NotFound.vue')
   }
 ]
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes
 })
 

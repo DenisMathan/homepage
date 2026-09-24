@@ -146,7 +146,7 @@ export default {
         return pdfLink;
       }
 
-      return `${process.env.BASE_URL}${pdfLink.replace(/^\/+/, '')}`;
+      return `${import.meta.env.BASE_URL}${pdfLink.replace(/^\/+/, '')}`;
     },
     pdfDownloadName() {
       const pdfLink = this.currentPage.pdfLink;
