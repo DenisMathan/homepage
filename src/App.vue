@@ -69,7 +69,7 @@ export default {
   },
   beforeDestroy(){
     destroyCanvas()
-    window.addEventListener('scroll',this.onScroll)
+    window.removeEventListener('scroll',this.onScroll)
     
   }
 }

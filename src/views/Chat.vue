@@ -8,7 +8,7 @@
           <div v-if="message.link !== undefined" ><a :href="message.link">{{ message.link }}</a></div>
         </div>
       </div>
-      <textarea ref="area" @keyup.enter="sendMessage" type="text" name="chatInput" id="" placeholder="Type here!" v-model="input"> </textarea>
+      <textarea ref="area" @keydown.enter.exact.prevent="sendMessage" type="text" name="chatInput" id="" placeholder="Type here!" v-model="input"> </textarea>
       <div class="loading" v-if="loading || notavailable">
         <div v-if="loading" class ="loader"></div>
         <div v-if="loading"> The bot typically responds within 3 seconds...</div>
@@ -51,14 +51,20 @@ export default {
   },
   methods: {
     async requestKnowledge(){
-      this.knowledge = await getKnowledge();
-      this.notavailable = this.knowledge.length === 1;
+      try {
+        this.knowledge = await getKnowledge();
+      } catch {
+        this.knowledge = ['Sorry this bot is currently not reachable! :(']
+        this.notavailable = true;
+      }
     },
-    async sendMessage(e){
-      if(e.shiftKey) {
+    async sendMessage(){
+      const text = this.input.trim()
+      if(!text || this.loading) {
         return
       }
-      this.messages.push({role: "user", content: this.input})
+      this.messages.push({role: "user", content: text})
+      this.input = ''
       this.loading = true;
       this.$refs.area.blur()
       let response = {};
@@ -68,7 +74,6 @@ export default {
       } catch {
         response = {message: "I'm really sorry something went wrong :/ \nEither the server is offline currently, or your networks nameserver didn't find the proper address. \nFor more information about me go to", link: window.location + "bot"};
       }
-      this.input = ''
       this.receiveResponse(response)
     },
     receiveResponse(response) {

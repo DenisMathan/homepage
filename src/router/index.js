@@ -119,6 +119,11 @@ const routes = [
     name: 'Vector',
     component: () => import ('../views/projectpages/GenericProject.vue'),
     props: { projectSlug: 'vector' }
+  },
+  {
+    path: '*',
+    name: 'NotFound',
+    component: () => import ('../views/NotFound.vue')
   }
 ]
 

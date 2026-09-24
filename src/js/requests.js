@@ -43,7 +43,7 @@ const getKnowledge = () => {
       res(data)
     }).catch(error => {
       console.error('There was a problem with the server:', error);
-      res(['Sorry this bot is currently not reachable! :('])
+      rej(error)
     });
   })
 }
