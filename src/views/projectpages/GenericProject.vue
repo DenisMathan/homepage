@@ -19,6 +19,30 @@
       </h2>
     </div>
 
+    <div v-if="currentPage.problems && currentPage.problems.length" class="max-w-4xl mx-auto mt-8">
+      <div
+        v-for="(pair, index) in currentPage.problems"
+        :key="`problem-${index}`"
+        class="mb-10"
+      >
+        <h3 class="text-lg font-semibold text-orange mb-2">Problem {{ index + 1 }}</h3>
+        <p class="text-white mb-4">{{ pair.problem }}</p>
+        <h3 class="text-lg font-semibold text-green mb-2">Solution {{ index + 1 }}</h3>
+        <div>
+          <p
+            v-for="(solution, solIndex) in [].concat(pair.solution)"
+            :key="`solution-${index}-${solIndex}`"
+            class="text-white mb-4"
+            v-html="solution"
+          ></p>
+        </div>
+        <carousel
+          v-if="carouselSlides(pair).length"
+          :projects="carouselSlides(pair)"
+        />
+      </div>
+    </div>
+
     <div v-if="currentPage.versions" class="max-w-4xl mx-auto mt-8">
       <div class="flex flex-wrap gap-3 mb-6">
         <button
@@ -65,8 +89,16 @@
         </div>
       </object>
     </div>
-    <div v-if="currentPage.TODO" class="max-w-4xl mx-auto mt-8 text-yellow-400">
-      <p>TODO: {{ currentPage.TODO }}</p>
+    <div v-if="currentPage.TODO" class="max-w-4xl mx-auto mt-8">
+      <div class="rounded-2xl border border-orange border-opacity-40 bg-orange bg-opacity-10 px-6 py-5 shadow-lg">
+        <div class="flex items-start gap-3">
+          <span class="text-2xl leading-none">🚧</span>
+          <div>
+            <p class="font-semibold text-orange">Work in progress</p>
+            <p class="mt-1 text-sm text-white text-opacity-80">This project page is still being prepared and will be expanded soon.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -74,9 +106,14 @@
 <script>
 import { manipulate } from '@/js/headlineManipulation.js';
 import catalog from '@/assets/texts/projects.json';
+import carousel from '@/components/elements/carousel/types/justCarousel.vue';
+import { resolveProjectImage } from '@/js/projectAssets.js';
 
 export default {
   name: 'GenericProject',
+  components: {
+    carousel
+  },
   props: {
     projectSlug: {
       type: String,
@@ -146,6 +183,21 @@ export default {
   watch: {
     projectSlug() {
       this.selectedVersion = 0;
+    }
+  },
+  methods: {
+    carouselSlides(pair) {
+      if (!pair.images || !pair.images.length) {
+        return [];
+      }
+
+      return pair.images
+        .map((image, index) => ({
+          img: resolveProjectImage(image.img),
+          headline: image.caption || `image-${index}`,
+          p: image.caption ? [image.caption] : [].concat(pair.solution)
+        }))
+        .filter((slide) => slide.img);
     }
   }
 };

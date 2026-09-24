@@ -11,6 +11,7 @@ module.exports = {
     colors: {
       gray: colors.trueGray,
       myGreen: 'rgb(23 144 191)',//'#4BC96A',
+      green: '#4BC96A',
       red: '#E82F0C',
       orange: '#FFB001',
       background: '#000025',   

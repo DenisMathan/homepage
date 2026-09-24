@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(open \"http://localhost:8080/vector\")",
+      "Bash(npx --yes playwright --version)",
+      "Bash(node -e \"try{require.resolve\\('playwright'\\); console.log\\('playwright resolvable'\\)}catch\\(e\\){console.log\\('not resolvable: '+e.message\\)}\")",
+      "Bash(npx --yes playwright install --dry-run chromium)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --no-sandbox --window-size=1400,2400 --screenshot=/private/tmp/claude-501/-Users-denismathan-Programming-homepage/ec90bab3-0706-4a61-b82a-0e1ea5556895/scratchpad/vector.png http://localhost:8080/vector)"
+    ]
+  }
+}
