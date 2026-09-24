@@ -42,8 +42,8 @@ export default {
     return{
       width: 0,
       languages:{
-        javascript: {name: 'Javascript', percent: 95},
-        typescript: {name: 'Typescript', percent: 90},
+        javascript: {name: 'JavaScript', percent: 95},
+        typescript: {name: 'TypeScript', percent: 90},
         golang: {name:'Golang',percent:85},
         java: {name: 'Java', percent: 40},
         python: {name: 'Python', percent: 70},

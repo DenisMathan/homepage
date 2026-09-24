@@ -38,7 +38,7 @@ export default {
                 link:{link:'https://www.imago-design.de/', name: 'Imago-site'},       
                 p : [
                   'Imago was the biggest project that accompanied me at that time. It started shortly before I started my internship and was finished shortly before the end. Here I was allowed to rebuild complete webpages in the design given by the designers, implement animations and algorithms, fix bugs and much more.',
-                  'The technologies that were mainly worked with here were nunjucks.js, gulp.js and tailwindcss.'],
+                  'The technologies that were mainly worked with here were Nunjucks, Gulp and Tailwind CSS.'],
                 },
                 {
                 img: resolveProjectImage('praktikum-coma/comaTools.webp'),

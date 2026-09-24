@@ -1,28 +1,28 @@
 {
     "parts": [
-         {
+        {
             "title": "Goal",
-            "text": ["A chatbot which uses the Le Chat API and answers with my provided information."]
+            "text": ["A chatbot that uses the Mistral API and answers questions based on information I provided."]
         },
         {
-            "title": "Le Chat",
+            "title": "Mistral API",
             "text":[
-                "The local use of mistral was way to slow. Especialy running on a raspberry pi.",
-                "Once I realized there is an european version of a quite fast Large Language AI provider I wanted to try it and update my chatbot!"
+                "Running Mistral locally was far too slow, especially on a Raspberry Pi.",
+                "Once I found out there was a fast European LLM provider, I wanted to try it out and upgrade my chatbot."
             ]
         },
         {
             "title": "ChromaDB",
             "text":[
-                "To store the knowledge which is provided by the bot, I use the chromaDB. This is a database which creates vectors out of phrases. As soon the user inserts something into the chat it generates a vector and searches for similar entries insde chroma.",
-                "Once it finds those similarities (below a certain threshold) it can provide the correct phrases which we can use in our prompt to generate an answer based on the provided information"
+                "The bot's knowledge is stored in ChromaDB, a vector database that turns text into embeddings. When the user sends a message, it is converted into a vector as well, and ChromaDB searches for similar entries.",
+                "Matches below a certain distance threshold are added to the prompt, so the model can generate an answer based on the provided information."
             ]
         },
         {
             "title": "Flask",
             "text": [
-                "I used Flask to create access to the chatbot and provide it as an HTTP service."
+                "Flask exposes the chatbot as an HTTP service."
             ]
         }
-    ] 
+    ]
 }

@@ -8,9 +8,9 @@
       "goto": "https://www.vector.com/",
       "goto_label": "Company Website",
       "description": [
-        "As a working student in software development, I was building a SharePoint web part for visualizing an organization's structure.",
+        "As a working student in software development, I built a SharePoint web part that visualizes an organization's structure.",
         "Added new graph and table views, plus a built-in editor with conflict handling to make updates faster and safer.",
-        "My editor solution I provided by my own initiative was way more efficient than the previous process, which required a lengthy git-merge and often involved redundant data across multiple JSON files."
+        "On my own initiative, I built an editor that replaced the previous process — a lengthy git merge with data duplicated across multiple JSON files."
       ],
       "techstack": [
         "React",
@@ -24,7 +24,7 @@
       "size": "middle",
       "page": {
         "title": "Working Student at Vector",
-        "metaDescription": "This page describes the working student position developer Denis Mathan held at Vector, in software development.",
+        "metaDescription": "Denis Mathan's work as a software development working student at Vector: a SharePoint web part for visualizing and editing organizational structures.",
         "intro": [
           "As a working student in software development at Vector, I worked on a SharePoint web part that visualizes an organization's structure.",
           "I built a new diagram view of the organization using ReactFlow, alongside a table-based view, both dynamically driven by data configured in SharePoint.",
@@ -51,9 +51,9 @@
       "goto": "https://aumovio.com/",
       "goto_label": "Company Website",
       "description": [
-        "As a working student in DevOps I was adapting and automating a live product demo.",
-        "Built a lot of scripts as for example the autostart script which started AWS EC2 instances which then needed to be connected to each other and connect the Device to the service.",
-        "Simulated an automotive processor (NXP S32N55) on a Raspberry Pi"
+        "As a working student in DevOps, I adapted and automated a live product demo.",
+        "Wrote the automation scripts — e.g. an autostart script that launches AWS EC2 instances, connects them to each other, and connects the device to the service.",
+        "Simulated an automotive processor (NXP S32N55) on a Raspberry Pi."
       ],
       "techstack": [
         "Bash",
@@ -67,7 +67,7 @@
       "size": "middle",
       "page": {
         "title": "Working Student at Aumovio",
-        "metaDescription": "This page describes the working student position developer Denis Mathan held at Aumovio, in DevOps.",
+        "metaDescription": "Denis Mathan's work as a DevOps working student at Aumovio: automating a live product demo on AWS for the IAA.",
         "intro": [
           "As a working student in DevOps at Aumovio, I adapted the frontend of a product demo and automated it for presentation at the IAA (Internationale Automobil-Ausstellung).",
           "Part of the work involved simulating an NXP S32N55 automotive chip on a Raspberry Pi, so the demo could run on accessible hardware."
@@ -100,7 +100,7 @@
       ],
       "techstack": [
         "Angular",
-        "Typescript",
+        "TypeScript",
         "Golang",
         "Docker",
         "MySQL",
@@ -111,7 +111,7 @@
       "size": "middle",
       "page": {
         "title": "Experience at Valueminer",
-        "metaDescription": "This page describes the time that developer Denis Mathan experienced at Valueminer.",
+        "metaDescription": "Denis Mathan's work at Valueminer: dashboard widgets, an AI-powered CO2 calculator and a Firebird data converter.",
         "intro": [
           "In simplified terms, Valueminer sells a web-based management program that can be customized to meet customer requirements using low-code. In theory, it's a highly dynamic tool, limited only by the imagination of its users. In practice, those ideas still need to be built before they can be configured.",
           "My contributions there included several new dashboard widgets (charts, heatmaps, a machine-transfer widget, and more), a CO2 calculator built on top of the OpenAI API, and a persistence layer (a kind of memory) for the app. I also built the full Firebird-to-Valueminer converter from scratch — it can itself be configured via JSON, though the JSON-configuration side wasn't something I worked on directly. On top of that came a steady stream of general bugfixing.",
@@ -134,15 +134,15 @@
       "techstack": [
         "JavaScript",
         "Vue",
-        "gulp.js",
-        "tailwindcss",
+        "Gulp",
+        "Tailwind CSS",
         "PHP",
         "WordPress"
       ],
       "size": "middle",
       "page": {
         "title": "Internship at Coma",
-        "metaDescription": "This page describes the time that developer Denis Mathan experienced at coma.",
+        "metaDescription": "Denis Mathan's five-month web development internship at coma.",
         "intro": [
           "All in all, it was a very nice time there — great colleagues, a pleasant working atmosphere, and good assignments right from the start. I'm especially grateful to my boss at the time, who not only challenged me but also encouraged me. For example, on top of my regular tasks, I had to give a short presentation on an IT topic of my choice at every team meeting. Most of the time I couldn't tell the team anything new, but I learned a lot in the process."
         ],
@@ -158,8 +158,8 @@
       "img": "kacheln/chatbot.webp",
       "description": [
         "A chatbot with personal knowledge integration, built with RAG and LLaMA.",
-        "The First Version ran the llama model on a Raspberry Pi which was way too slow for practical use!",
-        "The Second Version does only the Vector search and uses the Le Chat API which is way faster and more powerful than the local model."
+        "The first version ran a LLaMA-based model locally on a Raspberry Pi — far too slow for practical use.",
+        "The second version only does the vector search locally and uses the Mistral API for answers — much faster and more capable."
       ],
       "learnMore": "chatbot",
       "github": "https://github.com/DenisMathan/Alfred",
@@ -174,7 +174,7 @@
       ],
       "page": {
         "title": "Chatbot",
-        "metaDescription": "This page presents a chatbot which I Denis Mathan developed as a sideproject",
+        "metaDescription": "A personal RAG chatbot built by Denis Mathan as a side project — from a local LLaMA model to the Mistral API.",
         "versions": [
           {
             "label": "Version 0",
@@ -188,7 +188,7 @@
             "label": "Version 1",
             "usedModel": [
               "mistral-large-latest",
-              "Le Chat API"
+              "Mistral API"
             ],
             "result": "A functional chatbot capable of answering questions in a basic manner — and much faster than the previous version, which ran locally on my own hardware."
           }
@@ -214,7 +214,7 @@
       ],
       "page": {
         "title": "Bachelor-Thesis",
-        "metaDescription": "This page presents the bachelor thesis of the developer Denis Mathan.",
+        "metaDescription": "Denis Mathan's bachelor thesis: a progressive web app combining a DAW with a lead-sheet editor for songwriters.",
         "intro": [
           "The bachelor thesis combined a digital audio workstation with a lead-sheet creation tool to support musicians in the songwriting process."
         ],
@@ -235,7 +235,7 @@
       ],
       "page": {
         "title": "First App",
-        "metaDescription": "The website describes the beginnings of a program to support musicians that Denis Mathan did in college.",
+        "metaDescription": "Denis Mathan's first app: an early songwriting tool for musicians, built with Cordova at university.",
         "intro": [
           "The project started in the fourth semester, in the Software Engineering course. The task was simply to build a simple app — but since I like projects to have real practical value, and I had this idea, I overshot the mark a bit.",
           "I'd given myself two weeks for it, since other university tasks still needed attention. Our professor had suggested Cordova, and with it I built a fairly decent program for my level at the time. Unfortunately the usability was too rough for me to ever actually use it. Still, I learned a lot along the way, and it's where the idea for my <a href=\"./bachelor-thesis\">bachelor thesis</a> came from.",
@@ -258,7 +258,7 @@
       ],
       "page": {
         "title": "Chess",
-        "metaDescription": "This site presents a very rudimentary chess program which the developer Denis Mathan had once started.",
+        "metaDescription": "A rudimentary chess program in Java that Denis Mathan built to learn object-oriented programming.",
         "intro": [
           "Welcome to my very rudimentary chess program, built in Java. The basics are already there, but there's still a long way to a finished game — one I probably won't walk. Still, it already served its purpose: teaching me object-oriented programming and Java. If you're curious about the existing code, come visit me on <a href=\"https://github.com/DenisMathan/Schach\">GitHub</a>."
         ],
@@ -557,7 +557,7 @@
       "experience.Internship Coma"
     ],
     "projects": [
-      "programming.Chatbot",
+      "programming.chatbot",
       "programming.grimlang",
       "programming.arcade-game",
       "programming.placemark-app",
