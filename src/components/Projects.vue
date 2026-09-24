@@ -59,7 +59,6 @@ export default {
             const project = projects[i];
 
           }
-          console.log(projects)
         },
         moveforward(){
           for(let i = 0; i<this.projects.length; i++){
@@ -70,9 +69,7 @@ export default {
             else{
               project.position = 0;
             }
-            console.log(project.position)
           }
-          console.log(this.projects)
         },
         updateWindowSize(){
           this.windowWidth = window.innerWidth

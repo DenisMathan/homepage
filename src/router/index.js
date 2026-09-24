@@ -120,19 +120,6 @@ const routes = [
     component: () => import ('../views/projectpages/GenericProject.vue'),
     props: { projectSlug: 'vector' }
   }
-  // {
-  //   path:'/video-player',
-  //   name: 'Video-Player',
-  //   component: () => import ('../views/VideoPlayer.vue')
-  // },
-  // {
-  //   path: '/about',
-  //   name: 'About',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  // }
 ]
 
 const router = new VueRouter({

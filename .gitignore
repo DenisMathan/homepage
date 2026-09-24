@@ -23,3 +23,14 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Firebase CLI cache
+.firebase/
+
+# Office lock/temp files
+~$*
+~WRL*.tmp
+
+# Claude Code
+.claude/
+CLAUDE.md

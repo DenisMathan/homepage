@@ -34,7 +34,6 @@ export default {
   },
     mounted(){
       let all_headings = [].slice.call(document.querySelectorAll("[data-headinganim-5]"));
-      console.log(all_headings)
       manipulate(all_headings);
     },
 }

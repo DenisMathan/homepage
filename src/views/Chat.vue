@@ -65,8 +65,7 @@ export default {
       try {
         let answer = await request(this.messages);
         response = {message: answer}
-      } catch (error) {
-        console.log(error.type)
+      } catch {
         response = {message: "I'm really sorry something went wrong :/ \nEither the server is offline currently, or your networks nameserver didn't find the proper address. \nFor more information about me go to", link: window.location + "bot"};
       }
       this.input = ''

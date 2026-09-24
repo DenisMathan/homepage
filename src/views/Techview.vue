@@ -93,11 +93,9 @@ function resolveCatalogReference(reference) {
   const parts = reference.split('.')
   let current = catalog
   for (const part of parts) {
-    console.log("part:", part, "current:", current)
     if (current == null) return null
     current = Array.isArray(current) ? current.filter((item) => item.name === part || item.id === part)[0] : current[part]
   }
-  console.log('Resolved catalog reference:', reference, 'to:', current)
   return current
 }
 
