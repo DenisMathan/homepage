@@ -23,8 +23,15 @@ export default {
     myfooter,
     Navbar
   },
+  metaInfo: {
+    titleTemplate: (title) => title ? `${title} | Denis Mathan` : 'Denis Mathan | Software Engineer',
+    meta: [{
+      vmid: 'description',
+      name: 'description',
+      content: 'Portfolio of Denis Mathan, software engineer: projects, experience, skills and contact.'
+    }]
+  },
   mounted(){
-    document.title = "Denis Mathan || Webdeveloper"
     window.addEventListener('scroll',this.onScroll)
     this.windowHeight = window.innerHeight
     initCanvas(this.$refs.can);

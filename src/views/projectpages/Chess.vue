@@ -14,21 +14,16 @@
 <script>
 import carousel from '@/components/elements/carousel/types/justCarousel.vue';
 import {manipulate} from '@/js/headlineManipulation.js';
-import catalog from '@/assets/texts/projects.json'
+import { findProjectPage, projectMeta } from '@/js/projects.js'
 export default {
   name: 'Chess',
-  metaInfo: {
-    meta:[{
-      name: 'description',
-      content: catalog.programming[3].metaDescription
-    }]
-  },
+  metaInfo: projectMeta('chess'),
   components:{
     carousel
   },
     data(){
         return{
-        page: catalog.programming[3].page,
+        page: findProjectPage('chess'),
             images:[{
                 img: require('@/assets/images/Schach/9damenUmwandlung.webp'),
                 position:0,

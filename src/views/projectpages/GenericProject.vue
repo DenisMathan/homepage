@@ -105,9 +105,9 @@
 
 <script>
 import { manipulate } from '@/js/headlineManipulation.js';
-import catalog from '@/assets/texts/projects.json';
 import carousel from '@/components/elements/carousel/types/justCarousel.vue';
 import { resolveProjectImage } from '@/js/projectAssets.js';
+import { findProject, projectMeta } from '@/js/projects.js';
 
 export default {
   name: 'GenericProject',
@@ -127,15 +127,7 @@ export default {
   },
   computed: {
     projectEntry() {
-      const entries = [...(catalog.experience || []), ...(catalog.programming || [])];
-      return entries.find((entry) => {
-        if (!entry) return false;
-        return (
-          entry.learnMore === this.projectSlug ||
-          entry.id === this.projectSlug ||
-          entry.name?.toLowerCase().replace(/\s+/g, '-') === this.projectSlug
-        );
-      });
+      return findProject(this.projectSlug);
     },
     currentPage() {
       return this.projectEntry?.page || {};
@@ -167,14 +159,7 @@ export default {
     }
   },
   metaInfo() {
-    return {
-      meta: [
-        {
-          name: 'description',
-          content: this.currentPage.metaDescription || 'Project page'
-        }
-      ]
-    };
+    return projectMeta(this.projectSlug);
   },
   mounted() {
     const allHeadings = [].slice.call(document.querySelectorAll('[data-headinganim-chess]'));

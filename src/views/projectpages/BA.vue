@@ -89,21 +89,16 @@
 import carousel from '@/components/elements/carousel/types/justCarousel.vue';
 import {manipulate} from '@/js/headlineManipulation.js';
 import text from '@/assets/texts/projectpages/ba.json';
-import catalog from '@/assets/texts/projects.json'
+import { findProjectPage, projectMeta } from '@/js/projects.js'
 export default {
   name: 'BA',
-  metaInfo: {
-    meta:[{
-      name: 'description',
-      content: catalog.programming[1].page,
-    }]
-  },
+  metaInfo: projectMeta('bachelor-thesis'),
   components:{
     carousel
   },
     data(){
         return{
-          page: catalog.programming[1].page,
+          page: findProjectPage('bachelor-thesis'),
           text: text['BA'],
           navigationCarousel:[
               {

@@ -34,9 +34,12 @@
 <script>
 export default {
   metaInfo: {
+    title: 'Datenschutz',
+    htmlAttrs: { lang: 'de' },
     meta:[{
+      vmid: 'description',
       name: 'description',
-      content: 'This is the imprint of the great developer Denis Mathan!'
+      content: 'Privacy policy (Datenschutzerklärung) of the homepage of Denis Mathan.'
     }]
   },
 }

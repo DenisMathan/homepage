@@ -130,9 +130,10 @@ export default {
     Pill,
   },
   metaInfo: {
-    title: 'Denis Mathan || Techview',
+    title: 'Techview',
     meta: [
       {
+        vmid: 'description',
         name: 'description',
         content:
           'A structured software-focused portfolio view for Denis Mathan with selected work, stack, and direct hiring signals.',

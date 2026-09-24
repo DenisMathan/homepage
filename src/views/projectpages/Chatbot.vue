@@ -64,22 +64,17 @@ import text0 from '@/assets/texts/projectpages/chatbot_0.json';
 import text1 from '@/assets/texts/projectpages/chatbot_1.json';
 import dynContent from '../../components/dynContent.vue';
 import { getKnowledge } from '../../js/requests';
-import catalog from '@/assets/texts/projects.json'
+import { findProjectPage, projectMeta } from '@/js/projects.js'
 export default {
   name: 'BA',
-  metaInfo: {
-    meta:[{
-      name: 'description',
-      content: catalog.programming[0].metaDescription
-    }]
-  },
+  metaInfo: projectMeta('chatbot'),
   components:{
     carousel,
     dynContent
   },
     data(){
         return{
-          page: catalog.programming[0].page,
+          page: findProjectPage('chatbot'),
           texts: text1['parts'],
           version: 1,
           knowledge: []

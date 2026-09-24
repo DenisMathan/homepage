@@ -27,7 +27,9 @@ import {request, getKnowledge} from '@/js/requests.js'
 import dynContent from '../components/dynContent.vue';
 export default {
   metaInfo: {
+    title: 'Chatbot',
     meta:[{
+      vmid: 'description',
       name: 'description',
       content: 'On this page you can communicate with a chatbot who interacts as Denis Mathan'
     }]

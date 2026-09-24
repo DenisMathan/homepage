@@ -15,7 +15,10 @@
 <script>
 export default {
   metaInfo: {
+    title: 'Impressum',
+    htmlAttrs: { lang: 'de' },
     meta:[{
+      vmid: 'description',
       name: 'description',
       content: 'This is the imprint of the great developer Denis Mathan!'
     }]

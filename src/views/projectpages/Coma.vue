@@ -14,20 +14,15 @@
 <script>
 import carousel from '@/components/elements/carousel/types/justCarousel.vue';
 import {manipulate} from '@/js/headlineManipulation.js';
-import catalog from '@/assets/texts/projects.json'
+import { findProjectPage, projectMeta } from '@/js/projects.js'
 export default {
-  metaInfo: {
-    meta:[{
-      name: 'description',
-      content: catalog.experience[3].page.metaDescription 
-    }]
-  },
+  metaInfo: projectMeta('coma'),
   components:{
     carousel
   },
     data(){
         return{
-        page: catalog.experience[3].page,
+        page: findProjectPage('coma'),
             images:[{
                 position:0,
                 headline: 'CMS-Systems',

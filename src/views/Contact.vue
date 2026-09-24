@@ -27,7 +27,9 @@
 import {manipulate} from '@/js/headlineManipulation.js';
 export default {
   metaInfo: {
+    title: 'Contact',
     meta:[{
+      vmid: 'description',
       name: 'description',
       content: 'On this page the developer Denis Mathan can be contacted.'
     }]

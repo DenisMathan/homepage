@@ -12,21 +12,16 @@
 <script>
 import carousel from '@/components/elements/carousel/types/justCarousel.vue';
 import {manipulate} from '@/js/headlineManipulation.js';
-import catalog from '@/assets/texts/projects.json'
+import { findProjectPage, projectMeta } from '@/js/projects.js'
 export default {
   name:'Sonwriting-App',
-  metaInfo: {
-    meta:[{
-      name: 'description',
-      content: catalog.programming[2].page.metaDescription
-    }]
-  },
+  metaInfo: projectMeta('firstApp'),
   components:{
     carousel
   },
     data(){
         return{
-        page: catalog.programming[2].page,
+        page: findProjectPage('firstApp'),
             images:[{
                 img: require('@/assets/images/songwritingApp_1_0/projects.webp'),
                 position:0,
