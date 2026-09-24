@@ -532,7 +532,7 @@
       "name": "Pirate",
       "position": 1,
       "vid": "videos/walkcycle.mp4",
-      "img": "videos/walkcycle.webp",
+      "img": "walkcycle.webp",
       "description": [
         "A simple animation exercise: recreating a running pirate.",
         "Made with After Effects and the Duik Bassel plugin."

@@ -1,6 +1,4 @@
 const imageContext = require.context('../assets/images', true, /\.(png|jpe?g|webp|gif)$/)
-const videoImageContext = require.context('../assets/videos', true, /\.(png|jpe?g|webp|gif)$/)
-const videoContext = require.context('../assets/videos', true, /\.(mp4|webm)$/)
 
 function resolveFromContext(context, assetPath) {
   try {
@@ -12,12 +10,13 @@ function resolveFromContext(context, assetPath) {
 
 export function resolveProjectImage(assetPath) {
   if (!assetPath) return null
-  const normalizedPath = assetPath.replace(/^videos\//, '').replace(/^images\//, '')
-  return resolveFromContext(imageContext, normalizedPath) || resolveFromContext(videoImageContext, normalizedPath)
+  const normalizedPath = assetPath.replace(/^images\//, '')
+  return resolveFromContext(imageContext, normalizedPath)
 }
 
+// Videos live in public/videos/ and are served as-is (not bundled by webpack),
+// so JSON paths like "videos/Simon.mp4" map straight to a URL.
 export function resolveProjectVideo(assetPath) {
   if (!assetPath) return null
-  const normalizedPath = assetPath.replace(/^videos\//, '')
-  return resolveFromContext(videoContext, normalizedPath) || resolveFromContext(videoContext, assetPath)
+  return process.env.BASE_URL + assetPath.replace(/^\/+/, '')
 }

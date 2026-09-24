@@ -1,7 +1,7 @@
 <template>
   <div ref="fullscreen"  class="vid-container w-full h-full relative" :style="'height:+'+'px'" @click="controlsOn" @mousemove="controlsOn" >
       <div class="h-full w-full flex justify-center items-center" @click="playing=!playing">
-              <video data-vid ref="vid"  :class="(ratio<=1.8)?('w-full h-auto'):('w-auto h-full')" @loadedmetadata="fillData" :muted="muted" :src="url"  :poster="poster" controlslist="nodownload"></video>
+              <video data-vid ref="vid"  :class="(ratio<=1.8)?('w-full h-auto'):('w-auto h-full')" @loadedmetadata="fillData" :muted="muted" :src="url"  :poster="poster" preload="metadata" controlslist="nodownload"></video>
       </div>
       <div ref="controls" data-vid class="controls controls-on absolute w-full bg-gray-700 bg-opacity-70 bottom-0">
           <!-- Timeline -->
