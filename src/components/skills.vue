@@ -2,22 +2,22 @@
 <section id="skills" ref= "content" class="about">
   <h2 data-headinganim-skills class="opacity-0">&lt;Skills&gt;</h2>
   <div class="flex tablet:flex-col justify-stretch">
-    <div class="w-1/2 tablet:w-full pr-12 flex items-center">
+    <div class="w-1/2 tablet:w-full pr-12 tablet:pr-0 flex items-center">
     <div class="w-full">
-      <h3>Languages</h3>
-      <div v-for="program in languages" :key="program.name" class="px-6">
-        <h4>{{program.name}}</h4>
-        <div class="bg-gray-600 w-full h-1 rounded-full skill-container" >
-          <div class="h-full bg-myGreen rounded-full skill"  :style="'width:'+program.percent+'%'"></div>
-        </div>
+      <h3>What I do</h3>
+      <div v-for="focus in focusAreas" :key="focus.title" class="px-6 mobile:px-0 mb-6">
+        <h4>{{focus.title}}</h4>
+        <p class="text-white mb-1">{{focus.text}}</p>
+        <p class="text-sm text-gray-300">
+          e.g.
+          <template v-for="(example, index) in focus.examples" :key="example.link">
+            <a :href="example.link" class="text-myGreen">{{example.name}}</a><span v-if="index < focus.examples.length - 1">, </span>
+          </template>
+        </p>
       </div>
-      <h3 class="mt-4">Frameworks</h3>
-      <div v-for="program in frameworks" :key="program.name" class="px-6">
-        <h4>{{program.name}}</h4>
-        <div class="bg-gray-600 w-full h-1 rounded-full skill-container" >
-          <div class="h-full bg-myGreen rounded-full skill"  :style="'width:'+program.percent+'%'"></div>
-        </div>
-      </div>
+      <p class="px-6 mobile:px-0 text-sm text-gray-300">
+        Beyond that: Python for <a href="./chatbot" class="text-myGreen">AI</a> and <a href="./hits-and-history" class="text-myGreen">data</a> projects, C for <a href="./grimlang" class="text-myGreen">low-level experiments</a>.
+      </p>
     </div>
 
     </div>
@@ -36,34 +36,36 @@
 <script>
 import {manipulate} from '@/js/headlineManipulation.js';
 import {init, resize, startAnimation} from '@/js/threeD.js';
-// const loadThreeD = ()=> import ('@/js/threeD.js')
 export default {
   data(){
     return{
       width: 0,
-      languages:{
-        javascript: {name: 'JavaScript', percent: 95},
-        typescript: {name: 'TypeScript', percent: 90},
-        golang: {name:'Golang',percent:85},
-        java: {name: 'Java', percent: 40},
-        python: {name: 'Python', percent: 70},
-        c: {name: 'C', percent: 20}
-      },
-      frameworks: {
-        angular: {name:'Angular',percent:90},
-        vue: {name: 'Vue', percent: 70},
-        react: {name: 'React', percent: 40}
-      },
-      creative: {
-        DsMax: {name:'3D\'s Max',percent:20},
-        illustrator: {name:'Illustrator',percent:60},
-        photoshp: {name:'Photoshop',percent:60},
-        Ableton: {name: 'Ableton Live', percent:20}
-      }
+      focusAreas: [
+        {
+          title: 'Frontend — TypeScript, React, Angular',
+          text: 'Data-heavy interfaces like dashboards, diagram views and editors that stay usable when the data gets complex.',
+          examples: [
+            {name: 'Vector', link: './vector'},
+            {name: 'Valueminer', link: './valueminer'}
+          ]
+        },
+        {
+          title: 'Backend — Go',
+          text: 'Services, data converters and persistence layers behind those interfaces.',
+          examples: [
+            {name: 'Valueminer', link: './valueminer'}
+          ]
+        },
+        {
+          title: 'Cloud — AWS, Docker, Linux',
+          text: 'Automating setups so they start, connect and run on their own.',
+          examples: [
+            {name: 'Aumovio', link: './aumovio'},
+            {name: 'Valueminer', link: './valueminer'}
+          ]
+        }
+      ]
     }
-  },
-  created(){
-
   },
     mounted(){
         window.addEventListener("scroll", this.onScroll, true);
@@ -82,11 +84,6 @@ export default {
               let all_headings = [].slice.call(document.querySelectorAll("[data-headinganim-skills]"));
               manipulate(all_headings);
               window.removeEventListener("scroll", this.onScroll, true)
-              let skills = document.querySelectorAll('.skill');
-              for(let i= 0; i<skills.length; i++){
-                const skill = skills[i];
-                skill.classList.add('show')
-              }
           }
       },
       resizing(){
@@ -102,18 +99,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>
-<style scoped>
-.skill{
-  transform-origin: left;
-  transition:all 4s ease-out;
-  transform:scale(0,1);
-  box-shadow: 0px 0px 4px 2px #21FFFD;
-}
-.show{
-  transform:scale(1,1);
-}
-</style>

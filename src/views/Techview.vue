@@ -160,7 +160,6 @@ export default {
     return {
       companies: companies,
       projects: projects,
-      stackGroups: catalog.techview.stackGroups,
     }
   },
   mounted() {

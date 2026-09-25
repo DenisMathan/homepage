@@ -197,7 +197,7 @@
     },
     {
       "name": "Bachelor-Thesis",
-      "position": 10,
+      "position": 3,
       "img": "kacheln/baKachel.webp",
       "description": [
         "A progressive web app that supports musicians during the songwriting process.",
@@ -223,6 +223,7 @@
     },
     {
       "id": "firstApp",
+      "position": 10,
       "name": "First App",
       "img": "kacheln/songwritingApp0_1Kachel.webp",
       "description": [
@@ -246,7 +247,7 @@
     },
     {
       "name": "Chess",
-      "position": 99,
+      "position": 11,
       "img": "kacheln/chess.webp",
       "learnMore": "chess",
       "description": [
@@ -267,7 +268,7 @@
     },
     {
       "id": "arcade-game",
-      "position": 1,
+      "position": 9,
       "name": "Arcade Game",
       "img": "kacheln/arcade.jpg",
       "text": "dark",
@@ -301,7 +302,7 @@
     },
     {
       "id": "tutor-app",
-      "position": 90,
+      "position": 8,
       "name": "Tutor App",
       "img": "kacheln/tutor.jpg",
       "text": "dark",
@@ -339,7 +340,7 @@
     },
     {
       "id": "placemark-app",
-      "position": 30,
+      "position": 5,
       "name": "Placemark App",
       "img": "kacheln/placemark.jpg",
       "github": "https://github.com/DenisMathan/placemark-application",
@@ -377,7 +378,7 @@
     },
     {
       "id": "hits-and-history",
-      "position": 20,
+      "position": 4,
       "name": "Hits & History",
       "img": "kacheln/dw.jpg",
       "text": "dark",
@@ -416,7 +417,7 @@
     },
     {
       "id": "quantum-computing-fundamentals",
-      "position": 20,
+      "position": 7,
       "name": "Quantum Computing Fundamentals",
       "img": "kacheln/quantum.jpg",
       "text": "dark",
@@ -447,7 +448,7 @@
     },
     {
       "id": "ml-diabetes-prediction",
-      "position": 30,
+      "position": 6,
       "name": "ML Diabetes Prediction",
       "img": "kacheln/diabetes.jpg",
       "text": "dark",
@@ -483,7 +484,7 @@
     },
     {
       "id": "grimlang",
-      "position": 15,
+      "position": 2,
       "name": "Grimlang",
       "img": "kacheln/grimlang.jpg",
       "learnMore": "grimlang",
@@ -559,67 +560,14 @@
     "projects": [
       "programming.chatbot",
       "programming.grimlang",
-      "programming.arcade-game",
-      "programming.placemark-app",
-      "programming.hits-and-history",
-      "programming.tutor-app",
-      "programming.quantum-computing-fundamentals",
-      "programming.ml-diabetes-prediction",
       "programming.Bachelor-Thesis",
+      "programming.hits-and-history",
+      "programming.placemark-app",
+      "programming.ml-diabetes-prediction",
+      "programming.quantum-computing-fundamentals",
+      "programming.tutor-app",
+      "programming.arcade-game",
       "programming.Chess"
-    ],
-    "stackGroups": [
-      {
-        "title": "Frontend",
-        "items": [
-          {
-            "name": "JavaScript",
-            "level": "95%"
-          },
-          {
-            "name": "TypeScript",
-            "level": "90%"
-          },
-          {
-            "name": "Vue",
-            "level": "70%"
-          }
-        ]
-      },
-      {
-        "title": "Backend / tooling",
-        "items": [
-          {
-            "name": "Golang",
-            "level": "85%"
-          },
-          {
-            "name": "Python",
-            "level": "70%"
-          },
-          {
-            "name": "Java",
-            "level": "40%"
-          }
-        ]
-      },
-      {
-        "title": "Creative tech",
-        "items": [
-          {
-            "name": "3D's Max",
-            "level": "20%"
-          },
-          {
-            "name": "Illustrator",
-            "level": "60%"
-          },
-          {
-            "name": "Photoshop",
-            "level": "60%"
-          }
-        ]
-      }
     ]
   }
 }
